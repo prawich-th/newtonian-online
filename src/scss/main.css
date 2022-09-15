@@ -19,7 +19,10 @@ h2 {
   font-size: 3rem; }
 
 p {
-  font-size: 1.5rem; }
+  font-size: 1.75rem; }
+
+a {
+  color: #9e9e9e; }
 
 :root {
   --signature-white: #eeece9; }
@@ -69,3 +72,62 @@ p {
   .footer h4 {
     margin: 0;
     font-weight: 400; }
+
+.home__banner {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 6fr 4fr;
+  gap: 2rem;
+  height: fit-content; }
+  .home__banner--readmore {
+    width: 100%;
+    text-align: right; }
+    .home__banner--readmore a {
+      color: #9e9e9e;
+      font-size: 1.5rem; }
+  .home__banner--info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    .home__banner--info h1 {
+      font-family: "IM Fell Double Pica SC";
+      font-size: 4.5rem; }
+    .home__banner--info p {
+      font-size: 1.75rem;
+      text-align: justify;
+      line-height: 160%; }
+  .home__banner--cover img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; }
+
+.letter {
+  width: 55%; }
+  .letter__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+  .letter__signatures {
+    display: flex;
+    gap: 5rem; }
+    .letter__signatures h3 {
+      font-size: 1.75rem;
+      margin: 0;
+      font-weight: 400; }
+    .letter__signatures h4 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-top: 0.5rem; }
+    .letter__signatures--wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .letter__signatures--item {
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .letter__signatures--item img {
+        width: 10rem; }
