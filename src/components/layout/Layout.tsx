@@ -1,6 +1,7 @@
-import Header from "./header";
+import Header from "./Header";
 
 const Layout: React.FC<{ children: any }> = (props) => {
+  console.log(props);
   return (
     <>
       <Header />

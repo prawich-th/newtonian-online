@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,13 +9,13 @@ const Header = () => {
       <div className="header__nav">
         <ul>
           <li>
-            <Link href={"/categories"}>Categories</Link>
+            <Link to={"/categories"}>Categories</Link>
           </li>
           <li>
-            <Link href={"/issues"}>Issues</Link>
+            <Link to={"/issues"}>Issues</Link>
           </li>
           <li>
-            <Link href={"/about-us"}>About Us</Link>
+            <Link to={"/about-us"}>About Us</Link>
           </li>
         </ul>
       </div>
