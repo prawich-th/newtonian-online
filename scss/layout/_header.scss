@@ -1,4 +1,42 @@
 .header {
   background-color: #eeece9;
-  height: 7rem;
+  height: 10rem;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: max;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    margin-left: 1rem;
+    img {
+      width: auto;
+      height: 8rem;
+    }
+  }
+
+  &__nav {
+    height: 8rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 2rem;
+
+    ul {
+      // border-top: #000 0.1rem solid;
+      border-bottom: #000 0.1rem solid;
+      padding: 0.5rem;
+      width: 100%;
+      list-style: none;
+      height: fit-content;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      a {
+        text-decoration: none;
+        color: #000;
+        font-size: 1.75rem;
+      }
+    }
+  }
 }
