@@ -1,0 +1,16 @@
+{
+  "short_name": "Newston",
+  "name": "The Newtonian",
+  "description": "The Newtonian is a student-led newspaper that publishes articles and multimedia created by Newton Sixth Form students.",
+  "icons": [
+    {
+      "src": "N.png",
+      "type": "image/png",
+      "sizes": "343x343"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

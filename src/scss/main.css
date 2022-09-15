@@ -7,16 +7,22 @@ body {
   margin: 0; }
 
 main {
-  margin: 2rem; }
+  margin: 2rem;
+  min-height: calc(100vh - 18.5rem); }
 
 h1 {
-  font-size: 3.5rem; }
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem; }
 
 h2 {
   font-size: 3rem; }
 
 p {
   font-size: 1.5rem; }
+
+:root {
+  --signature-white: #eeece9; }
 
 .header {
   background-color: #eeece9;
@@ -50,3 +56,16 @@ p {
         text-decoration: none;
         color: #000;
         font-size: 1.75rem; }
+
+.footer {
+  background-color: var(--signature-white);
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1.25rem; }
+  .footer h4 {
+    margin: 0;
+    font-weight: 400; }

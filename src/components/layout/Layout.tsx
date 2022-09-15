@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout: React.FC<{ children: any }> = (props) => {
@@ -6,6 +7,7 @@ const Layout: React.FC<{ children: any }> = (props) => {
     <>
       <Header />
       <main>{props.children}</main>
+      <Footer />
     </>
   );
 };
