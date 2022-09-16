@@ -6,6 +6,10 @@
     gap: 2rem;
     height: fit-content;
 
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
+
     &--readmore {
       width: 100%;
       text-align: right;

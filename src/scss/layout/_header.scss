@@ -7,16 +7,39 @@
   justify-content: space-between;
   align-items: center;
 
+  @include custom(800px) {
+    height: fit-content;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
   &__logo {
     margin-left: 1rem;
+    @include custom(800px) {
+      margin: 0;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
     img {
       width: auto;
       height: 8rem;
+      @include custom(800px) {
+        height: 6rem;
+        padding-top: 2rem;
+      }
     }
   }
 
   &__nav {
     height: 8rem;
+    @include custom(800px) {
+      height: fit-content;
+      justify-content: center;
+      padding: 2rem;
+      padding-bottom: 0rem;
+      padding-top: 1rem;
+    }
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
