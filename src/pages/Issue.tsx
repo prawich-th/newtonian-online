@@ -9,7 +9,7 @@ const Letters = [
       {
         name: "Dr. Teerakiat Jaroensettasin M.D. Ph.D.",
         position: "Headmaster of The Newton Sixth Form School",
-        img: "/eics-signatures/kimnite.png",
+        img: "/signatures/teerakiat.png",
       },
     ],
   },
@@ -20,7 +20,7 @@ const Letters = [
       {
         name: "Yanitta Iewwongcharoen",
         position: "Editor-in-chief",
-        img: "/eics-signatures/krapook.png",
+        img: "/signatures/krapook.png",
       },
     ],
   },
@@ -31,7 +31,7 @@ const Letters = [
       {
         name: "Kunapas Sumpunwetchakul",
         position: "Deputy Editor-in-chief",
-        img: "/eics-signatures/kimnite.png",
+        img: "/signatures/kimnite.png",
       },
     ],
   },

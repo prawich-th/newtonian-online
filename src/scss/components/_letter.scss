@@ -5,6 +5,11 @@
     width: 100%;
   }
 
+  @include custom(800px) {
+    width: 80%;
+  }
+
+  margin-top: 2rem;
   width: 55%;
 
   &__signatures {
@@ -28,17 +33,18 @@
       width: 100%;
       height: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
     }
 
     &--item {
-      height: 20rem;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       img {
-        width: 10rem;
+        width: 13rem;
+        padding-bottom: 2rem;
       }
     }
   }

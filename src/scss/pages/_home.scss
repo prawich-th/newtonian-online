@@ -1,4 +1,14 @@
 .home {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include respond(big-desktop) {
+    width: 65%;
+  }
+
   &__banner {
     display: grid;
     width: 100%;

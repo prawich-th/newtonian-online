@@ -11,25 +11,27 @@ const article = {
 
 const Home = () => {
   return (
-    <>
-      <section className="home__banner">
-        <div className="home__banner--cover">
-          <Link to={`/article/${article.main.id}`}>
-            <img src={article.main.image} alt="Main Article Cover picture" />
-          </Link>
-        </div>
-        <div className="home__banner--info">
-          <span>
-            <h1>{article.main.title}</h1>
-            <p>{article.main.text}...</p>
-          </span>
+    <div className="home__wrapper">
+      <div className="home">
+        <section className="home__banner">
+          <div className="home__banner--cover">
+            <Link to={`/article/${article.main.id}`}>
+              <img src={article.main.image} alt="Main Article Cover picture" />
+            </Link>
+          </div>
+          <div className="home__banner--info">
+            <span>
+              <h1>{article.main.title}</h1>
+              <p>{article.main.text}...</p>
+            </span>
 
-          <span className="home__banner--readmore">
-            <Link to={`/article/${article.main.id}`}>Read More</Link>
-          </span>
-        </div>
-      </section>
-    </>
+            <span className="home__banner--readmore">
+              <Link to={`/article/${article.main.id}`}>Read More</Link>
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
   );
 };
 

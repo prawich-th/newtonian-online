@@ -95,6 +95,15 @@ a {
     margin: 0;
     font-weight: 400; }
 
+.home__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+@media only screen and (min-width: 1800px) {
+  .home {
+    width: 65%; } }
+
 .home__banner {
   display: grid;
   width: 100%;
@@ -127,11 +136,15 @@ a {
     width: 100%; }
 
 .letter {
+  margin-top: 2rem;
   width: 55%; }
   .letter__wrapper {
     display: flex;
     justify-content: center;
     width: 100%; }
+  @media only screen and (max-width: 800px) {
+    .letter {
+      width: 80%; } }
   .letter__signatures {
     display: flex;
     gap: 5rem; }
@@ -147,12 +160,13 @@ a {
       width: 100%;
       height: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: left;
       align-items: center; }
     .letter__signatures--item {
-      height: 20rem;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
       .letter__signatures--item img {
-        width: 10rem; }
+        width: 13rem;
+        padding-bottom: 2rem; }
