@@ -127,6 +127,9 @@ a {
     .home__banner--info h1 {
       font-family: "IM Fell Double Pica SC";
       font-size: 4.5rem; }
+      @media only screen and (max-width: 800px) {
+        .home__banner--info h1 {
+          font-size: 3.5rem; } }
     .home__banner--info p {
       font-size: 1.75rem;
       text-align: justify;
