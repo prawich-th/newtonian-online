@@ -35,5 +35,8 @@
   &__content {
     text-align: justify;
     width: 60%;
+    @include respond(breaking) {
+      width: 100%;
+    }
   }
 }
