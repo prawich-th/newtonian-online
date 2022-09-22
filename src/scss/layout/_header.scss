@@ -1,5 +1,18 @@
 .header {
-  background-color: #eeece9;
+  &__wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeece9;
+  }
+
+  @include respond(big-desktop) {
+    width: 65%;
+  }
+
+  width: 100%;
   height: 10rem;
   display: grid;
   grid-template-columns: 7fr 3fr;
