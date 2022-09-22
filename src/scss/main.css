@@ -169,6 +169,11 @@ a {
     .home__articles--list {
       grid-template-columns: 1fr; } }
 
+.article__wrapper {
+  display: grid;
+  width: 100%;
+  place-items: center; }
+
 .article__heading {
   text-align: center;
   display: grid;
@@ -177,10 +182,6 @@ a {
   @media only screen and (max-width: 800px) {
     .article__heading {
       width: 100%; } }
-  .article__heading--wrapper {
-    display: grid;
-    width: 100%;
-    place-items: center; }
   .article__heading h2 {
     margin-top: 1rem !important;
     margin: 0;
@@ -192,6 +193,10 @@ a {
     font-size: 2rem;
     margin: 1rem 0rem 1.75rem 0rem;
     color: #737373; }
+
+.article__content {
+  text-align: justify;
+  width: 60%; }
 
 .letter {
   margin-top: 2rem;

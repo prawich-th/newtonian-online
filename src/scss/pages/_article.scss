@@ -1,4 +1,10 @@
 .article {
+  &__wrapper {
+    display: grid;
+    width: 100%;
+    place-items: center;
+  }
+
   &__heading {
     text-align: center;
     display: grid;
@@ -9,12 +15,6 @@
     }
 
     place-items: center;
-
-    &--wrapper {
-      display: grid;
-      width: 100%;
-      place-items: center;
-    }
 
     h2 {
       margin-top: 1rem !important;
@@ -30,5 +30,10 @@
       margin: 1rem 0rem 1.75rem 0rem;
       color: #737373;
     }
+  }
+
+  &__content {
+    text-align: justify;
+    width: 60%;
   }
 }
