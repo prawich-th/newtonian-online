@@ -10,7 +10,7 @@
     display: grid;
     width: 60%;
 
-    @include respond(breaking) {
+    @include respond(tab-port) {
       width: 100%;
     }
 
@@ -35,6 +35,9 @@
   &__content {
     text-align: justify;
     width: 60%;
+    @include respond(tab-port) {
+      width: 80%;
+    }
     @include respond(breaking) {
       width: 100%;
     }

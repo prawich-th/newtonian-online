@@ -180,7 +180,7 @@ a {
   display: grid;
   width: 60%;
   place-items: center; }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     .article__heading {
       width: 100%; } }
   .article__heading h2 {
@@ -198,6 +198,9 @@ a {
 .article__content {
   text-align: justify;
   width: 60%; }
+  @media only screen and (max-width: 900px) {
+    .article__content {
+      width: 80%; } }
   @media only screen and (max-width: 800px) {
     .article__content {
       width: 100%; } }
