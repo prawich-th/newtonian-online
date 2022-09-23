@@ -20,7 +20,8 @@ const Article = () => {
               year: "numeric",
               month: "long",
               day: "numeric",
-            })}
+            })}{" "}
+            - {Math.round(article.text.split(" ").length / 300)} min.
           </h3>
           <ImageC image={article.img} caption={article.heading} />
         </div>

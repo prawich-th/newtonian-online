@@ -11,13 +11,13 @@ const Header = () => {
         </div>
         <div className="header__nav">
           <ul>
-            <li>
+            <li key={"ca"}>
               <Link to={"/categories"}>Categories</Link>
             </li>
-            <li>
+            <li key={"iss"}>
               <Link to={"/issues"}>Issues</Link>
             </li>
-            <li>
+            <li key={"abtus"}>
               <Link to={"/about-us"}>About Us</Link>
             </li>
           </ul>
