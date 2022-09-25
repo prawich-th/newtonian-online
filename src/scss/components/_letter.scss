@@ -2,6 +2,10 @@
   width: 100%;
   text-align: justify;
 
+  h1 {
+    text-align: left;
+  }
+
   &__signatures {
     display: flex;
     gap: 5rem;

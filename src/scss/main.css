@@ -266,6 +266,8 @@ a {
 .letter {
   width: 100%;
   text-align: justify; }
+  .letter h1 {
+    text-align: left; }
   .letter__signatures {
     display: flex;
     gap: 5rem; }
