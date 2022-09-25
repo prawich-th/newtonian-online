@@ -211,10 +211,17 @@ a {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media only screen and (max-width: 800px) {
+    .issue {
+      width: 100%; } }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
-    gap: 1.25rem; }
+    gap: 1.25rem;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 900px) {
+      .issue__info {
+        grid-template-columns: 1fr; } }
     .issue__info--content h4 {
       margin: 0;
       font-style: italic;
