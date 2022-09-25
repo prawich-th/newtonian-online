@@ -62,7 +62,7 @@ const Issue = () => {
             <ImageC image="/issue1-cover.png" caption="issue 1 - cover" />
           </div>
           <div className="issue__info--content">
-            <h4>Table Of Content</h4>
+            <h4>Table Of Contents</h4>
             <div className="issue__info--article">
               <h5>Letter From The Headmaster</h5>
               <h6>Dr. Teerakiat Jaroensettasin M.D. Ph.D.</h6>

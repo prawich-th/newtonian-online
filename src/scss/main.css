@@ -103,6 +103,8 @@ a {
   padding-left: 2rem;
   padding-right: 2rem;
   font-size: 1.25rem; }
+  .footer__right {
+    text-align: right; }
   .footer h4 {
     margin: 0;
     font-weight: 400; }
