@@ -7,6 +7,29 @@ import {
 import ImageC from "../components/ImageC";
 import Letter from "../components/Letter";
 
+const Contents = [
+  {
+    id: "256fde4g123df",
+    heading: "Letter From the headmaster",
+    author: "Dr. Teerakiat Jaroensettasin M.D. Ph.D.",
+  },
+  {
+    id: "123sfd456sdfd",
+    heading: "Oam and Shang: The two great minds behind the Newton Musical",
+    author: "Yanitta Iewwongcharoen",
+  },
+  {
+    id: "er4789dfg123f",
+    heading: "An uncompleted guide: to write a web application",
+    author: "Prawich Thawansaldivudhi",
+  },
+  {
+    id: "ijdfsu338jd93",
+    heading: "Newton geçt feature in the National Geographic",
+    author: "Yanitta Iewwongcharoen",
+  },
+];
+
 const Letters = [
   {
     title: "Headmaster",
@@ -43,6 +66,17 @@ const Letters = [
   },
 ];
 
+const ArticleLink: React.FC<{ id: string; heading: string; author: string }> = (
+  props
+) => {
+  return (
+    <Link className="issue__info--article" to={`/article/${props.id}`}>
+      <h5>{props.heading}</h5>
+      <h6>{props.author}</h6>
+    </Link>
+  );
+};
+
 const Issue = () => {
   const [query, setQuery] = useSearchParams();
   const param = useParams();
@@ -53,30 +87,17 @@ const Issue = () => {
   return (
     <div className="issue__wrapper">
       <div className="issue">
-        <div className="issue__heading">
-          <h1>Issue {param.id}</h1>
-          <h3>31th October 2022</h3>
-        </div>
         <div className="issue__info">
           <div className="issue__info--cover">
             <ImageC image="/issue1-cover.png" caption="issue 1 - cover" />
           </div>
           <div className="issue__info--content">
-            <h4>Table Of Content</h4>
-            <div className="issue__info--article">
-              <h5>Letter From The Headmaster</h5>
-              <h6>Dr. Teerakiat Jaroensettasin M.D. Ph.D.</h6>
+            <div className="issue__heading">
+              <h1>Issue {param.id}</h1>
+              <h3>31th October 2022</h3>
             </div>
-            <div className="issue__info--article">
-              <h5>
-                Oam and Shang: The two great minds behind the Newton Musical
-              </h5>
-              <h6>Yanitta Iewwongcharoen</h6>
-            </div>
-            <div className="issue__info--article">
-              <h5>Letter From The Headmaster</h5>
-              <h6>Dr. Teerakiat Jaroensettasin M.D. Ph.D.</h6>
-            </div>
+            <h4>Table Of Contents</h4>
+            {Contents && Contents.map((e) => <ArticleLink {...e} />)}
           </div>
         </div>
         {Letters &&
