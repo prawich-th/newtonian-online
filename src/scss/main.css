@@ -221,7 +221,7 @@ a {
     grid-template-columns: 1.25fr 2fr;
     gap: 3rem;
     margin-bottom: 2rem; }
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 600px) {
       .issue__info {
         grid-template-columns: 1fr; } }
     .issue__info--content h4 {
