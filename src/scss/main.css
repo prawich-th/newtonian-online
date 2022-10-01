@@ -213,13 +213,13 @@ a {
     width: 100%;
     display: flex;
     justify-content: center; }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1200px) {
     .issue {
       width: 100%; } }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
-    gap: 1.25rem;
+    gap: 3rem;
     margin-bottom: 2rem; }
     @media only screen and (max-width: 900px) {
       .issue__info {
@@ -230,12 +230,17 @@ a {
       font-size: 2rem;
       font-weight: 400;
       margin-bottom: 1rem !important; }
+    .issue__info a {
+      text-decoration: none;
+      color: black; }
     .issue__info--article {
       width: 100%;
       display: grid;
       grid-template-columns: 3fr 2.25fr;
       align-items: center;
       gap: 1rem; }
+      .issue__info--article:nth-child(odd) {
+        background-color: #efefef; }
       .issue__info--article h5 {
         font-weight: 400;
         margin-left: 1rem !important;
@@ -250,10 +255,8 @@ a {
         color: var(--signature-grey);
         margin-right: 1rem !important;
         text-align: right; }
-      .issue__info--article:nth-child(even) {
-        background-color: #efefef; }
   .issue__heading {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem; }
     .issue__heading h1 {
       font-family: "IM Fell Double Pica SC";
