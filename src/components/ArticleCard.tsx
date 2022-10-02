@@ -12,7 +12,7 @@ const ArticleCard: React.FC<{
     <div className="article-card">
       <span>
         <div className="article-card__image">
-          <Link to={`/articles/${props.id}`}>
+          <Link to={`/article/${props.id}`}>
             <img
               src={props.image}
               alt={`Preview Image of the article ${props.title}`}
