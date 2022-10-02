@@ -13,7 +13,10 @@ const ArticleCard: React.FC<{
       <span>
         <div className="article-card__image">
           <Link to={`/articles/${props.id}`}>
-            <img src={props.image} alt="Preview Image of the article" />
+            <img
+              src={props.image}
+              alt={`Preview Image of the article ${props.title}`}
+            />
           </Link>
         </div>
         <div className="article-card__info">

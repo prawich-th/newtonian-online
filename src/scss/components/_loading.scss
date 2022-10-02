@@ -1,0 +1,19 @@
+.loading {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 18.5rem - 4rem);
+  }
+  height: 100%;
+  text-align: center;
+  display: grid;
+  gap: 1.25rem;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}

@@ -14,6 +14,10 @@
       width: 100%;
     }
 
+    @include respond(tab-land) {
+      width: 80%;
+    }
+
     place-items: center;
 
     h2 {

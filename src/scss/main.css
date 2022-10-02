@@ -118,13 +118,17 @@ a {
   .home {
     width: 65%; } }
 
+@media only screen and (max-width: 900px) {
+  .home {
+    width: 100%; } }
+
 .home__banner {
   display: grid;
   width: 100%;
   grid-template-columns: 6fr 4fr;
   gap: 2rem;
   height: fit-content; }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1100px) {
     .home__banner {
       grid-template-columns: 1fr; } }
   .home__banner--readmore {
@@ -185,6 +189,9 @@ a {
   @media only screen and (max-width: 900px) {
     .article__heading {
       width: 100%; } }
+  @media only screen and (max-width: 1200px) {
+    .article__heading {
+      width: 80%; } }
   .article__heading h2 {
     margin-top: 1rem !important;
     margin: 0;
@@ -213,9 +220,12 @@ a {
     width: 100%;
     display: flex;
     justify-content: center; }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 600px) {
     .issue {
       width: 100%; } }
+  @media only screen and (max-width: 1200px) {
+    .issue {
+      width: 80%; } }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
@@ -339,3 +349,19 @@ a {
     margin: 0;
     text-align: right;
     color: #737373; }
+
+.loading {
+  height: 100%;
+  text-align: center;
+  display: grid;
+  gap: 1.25rem; }
+  .loading__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 18.5rem - 4rem); }
+  .loading h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0; }

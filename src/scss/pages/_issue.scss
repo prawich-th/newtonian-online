@@ -5,8 +5,11 @@
     justify-content: center;
   }
   width: 60%;
-  @include respond(tab-land) {
+  @include respond(phone) {
     width: 100%;
+  }
+  @include respond(tab-land) {
+    width: 80%;
   }
 
   &__info {

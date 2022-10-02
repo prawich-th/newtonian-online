@@ -1,112 +1,52 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
-
-const article = {
-  main: {
-    id: "87yhjsm39dkfdis83ndso",
-    title: "Oam and Shang: The two great minds behind the Newton Musical",
-    text: "Oam and Shang are the two lead directors and founders of the Newton Musical, an event that will occur within this school year (AY 2022/23), showcasing multiple performances of a musical inspired by Dear Evan Hansen. This will be the first musical to ever be performed and created by the Newton Sixth Form student body, and they have recruited a talented group of actors to portray the different characters in the musical. One of the performances will be at the Siam Pic-Ganesha, the largest theater in Thailand, on December 24th, 2022.",
-    author: "Yanitta Iewwongcharoen",
-    image: "/shang-oam.png",
-  },
-  other: [
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "Letter From The Headmaster",
-      text: "I'm very proud of the student's progress on making this club, this will promote the student on their reading and writing skill.",
-      image:
-        "https://expatlifeinthailand.com//assets/media/2020/03/DSC00925-scaled.jpg",
-      author: "Yanitta Iewwongcharoen",
-      date: "2022-09-22",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "Newton geçt feature in the National Geographic",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image:
-        "https://ngthai.com/app/uploads/2022/01/271939248_265006249014747_703847268792885236_n.jpg",
-      author: "Yanitta Iewwongcharoen",
-      date: "2021-11-10",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "Green bird III - The school activity",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu urna non ipsum hendrerit venenatis. Sed fringilla commodo leo pellentesque commodo. Maecenas hendrerit, orci ac ornare blandit, felis leo semper purus, viverra imperdiet neque nisl ut metus. Vivamus finibus porttitor est sit amet condimentum. In hac habitasse platea dictumst. Praesent dignissim justo ut felis dictum, ac efficitur neque hendrerit. Praesent tellus quam, vulputate quis sagittis sed, aliquam sed nibh",
-      image: "https://www.greenbird.jp/assets/shared/diary/0000021239_01.jpg",
-      author: "Yanitta Iewwongcharoen",
-      date: "2022-05-12",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "Is the old campus accually looks beeter than the old one?",
-      text: "I have been wondering why is the new campus looks better than the new one. I am interviewing people on their opinion on the new campus at siamscape.",
-      image:
-        "https://expatlifeinthailand.com/assets/media/2020/03/DSC00930-1200x800.jpg",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-02-12",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
-    },
-  ],
-};
+import Loading from "../components/Loading";
+import { homepage } from "../data";
 
 const Home = () => {
+  const [homepageData, setHomepageData] = useState({
+    main: { id: "", image: "", title: "", text: "" },
+    other: [{ id: "", image: "", title: "", text: "", author: "", date: "" }],
+  });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setHomepageData(homepage);
+    setIsLoading(false);
+  });
+
+  if (isLoading) return <Loading />;
+
   return (
     <div className="home__wrapper">
       <div className="home">
         <section className="home__banner">
           <div className="home__banner--cover">
-            <Link to={`/article/${article.main.id}`}>
-              <img src={article.main.image} alt="Main Article Cover picture" />
+            <Link to={`/article/${homepageData.main.id}`}>
+              <img
+                src={homepageData.main.image}
+                alt="Main homepageData Cover picture"
+              />
             </Link>
           </div>
           <div className="home__banner--info">
             <span>
-              <h1>{article.main.title}</h1>
-              <p>{article.main.text}...</p>
+              <h1>{homepageData.main.title}</h1>
+              <p>{homepageData.main.text}...</p>
             </span>
 
             <span className="home__banner--readmore">
-              <Link to={`/article/${article.main.id}`}>Read More</Link>
+              <Link to={`/article/${homepageData.main.id}`}>Read More</Link>
             </span>
           </div>
         </section>
-        <section className="home__articles">
-          <div className="home__articles--title">
-            <h2>Articles</h2>
+        <section className="home__homepageDatas">
+          <div className="home__homepageDatas--title">
+            <h2>homepageDatas</h2>
           </div>
-          <div className="home__articles--list">
-            {article.other.map((e) => {
+          <div className="home__homepageDatas--list">
+            {homepageData.other.map((e) => {
               return (
                 <ArticleCard
                   id={e.id}
