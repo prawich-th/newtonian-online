@@ -41,11 +41,11 @@ const Home = () => {
             </span>
           </div>
         </section>
-        <section className="home__homepageDatas">
-          <div className="home__homepageDatas--title">
-            <h2>homepageDatas</h2>
+        <section className="home__articles">
+          <div className="home__articles--title">
+            <h2>Articles</h2>
           </div>
-          <div className="home__homepageDatas--list">
+          <div className="home__articles--list">
             {homepageData.other.map((e) => {
               return (
                 <ArticleCard
