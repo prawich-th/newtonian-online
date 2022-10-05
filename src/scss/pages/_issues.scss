@@ -1,0 +1,23 @@
+.issues {
+  h2 {
+    font-weight: 400;
+    font-style: italic;
+  }
+  &__list {
+    justify-items: center;
+    display: grid;
+    gap: 2.25rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    @include respond(tab-land) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    @include custom(800px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include custom(450px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    width: 100%;
+  }
+}

@@ -78,10 +78,7 @@ const ArticleLink: React.FC<{ id: string; heading: string; author: string }> = (
 };
 
 const Issue = () => {
-  const [query, setQuery] = useSearchParams();
   const param = useParams();
-
-  console.log(query.get("id"));
   console.log(param);
 
   return (
@@ -97,7 +94,7 @@ const Issue = () => {
               <h3>31th October 2022</h3>
             </div>
             <h4>Table Of Contents</h4>
-            {Contents && Contents.map((e) => <ArticleLink {...e} />)}
+            {Contents && Contents.map((e) => <ArticleLink key={e.id} {...e} />)}
           </div>
         </div>
         {Letters &&

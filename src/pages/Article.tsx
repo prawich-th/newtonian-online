@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import { article } from "../data";
 import Loading from "../components/Loading";
+import { useParams } from "react-router-dom";
 
 const Article = () => {
   const [articleData, setArticleData] = useState({
@@ -13,6 +14,8 @@ const Article = () => {
     text: "",
   });
   const [isLoading, setIsLoading] = useState(true);
+
+  const articleId = useParams().id;
 
   useEffect(() => {
     setArticleData(article);

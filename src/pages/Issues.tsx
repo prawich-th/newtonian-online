@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
+import ImageC from "../components/ImageC";
+import IssueCard from "../components/IssueCard";
 import Letter from "../components/Letter";
 
 const Issues = () => {
   return (
-    <div>
-      <h1>A list of Issues (will be update)</h1>
+    <div className="issues">
+      <h2>All Issues</h2>
 
-      <span style={{ fontSize: "1.75rem" }}>
-        <Link to={"/issues/1"}>Issue 1</Link>
-      </span>
+      <div className="issues__list">
+        <IssueCard no={1} date={"10-31-2022"} cover={"/issue1-cover.png"} />
+      </div>
     </div>
   );
 };
