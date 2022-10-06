@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=IM+Fell+Double+Pica+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap");
 html {
-  font-family: "EB Garamond", "IBM Plex Sans Thai" !important;
+  font-family: "EB Garamond", serif !important;
   font-size: 10px; }
 
 body {
@@ -344,7 +344,7 @@ a {
       object-fit: cover;
       width: 100%; }
   .article-card__info--content h4 {
-    font-family: "IM Fell Double Pica SC", "IBM Plex Sans Thai";
+    font-family: "IM Fell Double Pica SC", serif;
     font-size: 2.25rem;
     margin: 0;
     margin-bottom: 0.5rem; }

@@ -84,3 +84,63 @@ export const homepage = {
     },
   ],
 };
+export const Contents = {
+  iss1: [
+    {
+      id: "256fde4g123df",
+      heading: "Letter From the headmaster",
+      author: "Dr. Teerakiat Jaroensettasin M.D. Ph.D.",
+    },
+    {
+      id: "123sfd456sdfd",
+      heading: "Oam and Shang: The two great minds behind the Newton Musical",
+      author: "Yanitta Iewwongcharoen",
+    },
+    {
+      id: "er4789dfg123f",
+      heading: "An uncompleted guide: to write a web application",
+      author: "Prawich Thawansaldivudhi",
+    },
+    {
+      id: "ijdfsu338jd93",
+      heading: "Newton geçt feature in the National Geographic",
+      author: "Yanitta Iewwongcharoen",
+    },
+  ],
+};
+
+export const Letters = [
+  {
+    title: "Headmaster",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus elit vel varius consectetur. Sed blandit eros id vehicula semper. Maecenas ullamcorper et arcu a feugiat. Curabitur nec iaculis enim. Nullam dapibus egestas mauris, scelerisque interdum dolor congue sit amet. Vestibulum quis dui a orci ornare venenatis. Sed ut iaculis sapien. Suspendisse in lobortis lacus. Curabitur luctus luctus risus et consectetur. Morbi eget sapien vel nunc molestie varius. Praesent eu ante at est eleifend egestas. Ut vel nisi a elit imperdiet bibendum. Nunc accumsan felis sed sapien commodo dapibus. Donec blandit, nisl eu consequat feugiat, tellus tortor scelerisque purus, sed convallis eros ex sed purus. Donec nec varius massa.",
+    signatures: [
+      {
+        name: "Dr. Teerakiat Jaroensettasin M.D. Ph.D.",
+        position: "Headmaster of The Newton Sixth Form School",
+        img: "/signatures/teerakiat.png",
+      },
+    ],
+  },
+  {
+    title: "Editor-in-chief",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus elit vel varius consectetur. Sed blandit eros id vehicula semper. Maecenas ullamcorper et arcu a feugiat. Curabitur nec iaculis enim. Nullam dapibus egestas mauris, scelerisque interdum dolor congue sit amet. Vestibulum quis dui a orci ornare venenatis. Sed ut iaculis sapien. Suspendisse in lobortis lacus. Curabitur luctus luctus risus et consectetur. Morbi eget sapien vel nunc molestie varius. Praesent eu ante at est eleifend egestas. Ut vel nisi a elit imperdiet bibendum. Nunc accumsan felis sed sapien commodo dapibus. Donec blandit, nisl eu consequat feugiat, tellus tortor scelerisque purus, sed convallis eros ex sed purus. Donec nec varius massa.",
+    signatures: [
+      {
+        name: "Yanitta Iewwongcharoen",
+        position: "Editor-in-chief",
+        img: "/signatures/krapook.png",
+      },
+    ],
+  },
+  {
+    title: "Deputy Editor-in-chief",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus elit vel varius consectetur. Sed blandit eros id vehicula semper. Maecenas ullamcorper et arcu a feugiat. Curabitur nec iaculis enim. Nullam dapibus egestas mauris, scelerisque interdum dolor congue sit amet. Vestibulum quis dui a orci ornare venenatis. Sed ut iaculis sapien. Suspendisse in lobortis lacus. Curabitur luctus luctus risus et consectetur. Morbi eget sapien vel nunc molestie varius. Praesent eu ante at est eleifend egestas. Ut vel nisi a elit imperdiet bibendum. Nunc accumsan felis sed sapien commodo dapibus. Donec blandit, nisl eu consequat feugiat, tellus tortor scelerisque purus, sed convallis eros ex sed purus. Donec nec varius massa.",
+    signatures: [
+      {
+        name: "Kunapas Sumpunwetchakul",
+        position: "Deputy Editor-in-chief",
+        img: "/signatures/kimnite.png",
+      },
+    ],
+  },
+];
