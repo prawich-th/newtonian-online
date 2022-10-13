@@ -11,6 +11,7 @@
   @include respond(tab-port) {
     width: 100%;
   }
+  width: 80%;
 
   &__banner {
     display: grid;

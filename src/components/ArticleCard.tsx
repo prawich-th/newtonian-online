@@ -22,7 +22,7 @@ const ArticleCard: React.FC<{
         <div className="article-card__info">
           <div className="article-card__info--content">
             <h4>{props.title}</h4>
-            <p>{props.text.slice(0, 115) + "..."}</p>
+            <p>{props.text.slice(0, 100) + "..."}</p>
           </div>
         </div>
       </span>
@@ -31,7 +31,7 @@ const ArticleCard: React.FC<{
           {props.author} -{" "}
           {new Date(props.date).toLocaleString("en-UK", {
             day: "numeric",
-            month: "long",
+            month: "short",
             year: "numeric",
           })}
         </h5>

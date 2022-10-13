@@ -16,6 +16,15 @@ export const homepage = {
   },
   other: [
     {
+      id: "87yhjsm39dkfdis83ndso",
+      title: "Oam and Shang: The two great minds behind the Newton Musical",
+      text: "Oam and Shang are the two lead directors and founders of the Newton Musical, an event that will occur within this school year (AY 2022/23), showcasing multiple performances of a musical inspired by Dear Evan Hansen. This will be the first musical to ever be performed and created by the Newton Sixth Form student body, and they have recruited a talented group of actors to portray the different characters in the musical. One of the performances will be at the Siam Pic-Ganesha, the largest theater in Thailand, on December 24th, 2022.",
+      author: "Yanitta Iewwongcharoen",
+      image: "/shang-oam.png",
+      date: "2022-09-22",
+      categories: "Interview",
+    },
+    {
       id: "fi904nvsutiodjfodj4e",
       title: "Letter From The Headmaster",
       text: "I'm very proud of the student's progress on making this club, this will promote the student on their reading and writing skill.",
@@ -23,6 +32,7 @@ export const homepage = {
         "https://expatlifeinthailand.com//assets/media/2020/03/DSC00925-scaled.jpg",
       author: "Yanitta Iewwongcharoen",
       date: "2022-09-22",
+      categories: "Letter",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -31,6 +41,7 @@ export const homepage = {
       image: "/shang-oam.png",
       author: "Prawich Thawansaldivudhi",
       date: "2022-09-22",
+      categories: "AdviceEssay",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -40,6 +51,7 @@ export const homepage = {
         "https://ngthai.com/app/uploads/2022/01/271939248_265006249014747_703847268792885236_n.jpg",
       author: "Yanitta Iewwongcharoen",
       date: "2021-11-10",
+      categories: "SchoolUpdate",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -48,6 +60,7 @@ export const homepage = {
       image: "https://www.greenbird.jp/assets/shared/diary/0000021239_01.jpg",
       author: "Yanitta Iewwongcharoen",
       date: "2022-05-12",
+      categories: "SchoolUpdate",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -57,6 +70,16 @@ export const homepage = {
         "https://expatlifeinthailand.com/assets/media/2020/03/DSC00930-1200x800.jpg",
       author: "Prawich Thawansaldivudhi",
       date: "2022-02-12",
+      categories: "Oped",
+    },
+    {
+      id: "fi904nvsutiodjfodj4e",
+      title: "Shang & Oam Performing under the bright spotlight of Siam Pic",
+      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
+      image: "/shang-oam.png",
+      author: "Prawich Thawansaldivudhi",
+      date: "2022-09-22",
+      categories: "PerformingArts",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -65,6 +88,7 @@ export const homepage = {
       image: "/shang-oam.png",
       author: "Prawich Thawansaldivudhi",
       date: "2022-09-22",
+      categories: "AdviceEssay",
     },
     {
       id: "fi904nvsutiodjfodj4e",
@@ -73,14 +97,7 @@ export const homepage = {
       image: "/shang-oam.png",
       author: "Prawich Thawansaldivudhi",
       date: "2022-09-22",
-    },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
+      categories: "AdviceEssay",
     },
   ],
 };

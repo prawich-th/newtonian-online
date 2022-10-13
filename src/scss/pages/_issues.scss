@@ -2,21 +2,28 @@
   h2 {
     font-weight: 400;
     font-style: italic;
+    margin: 0 0 1rem 0;
   }
+  &__wrapper {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  width: 80%;
   &__list {
     justify-items: center;
     display: grid;
     gap: 2.25rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
     @include respond(tab-land) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    @include custom(800px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    @include custom(450px) {
+    @include custom(800px) {
       grid-template-columns: 1fr 1fr;
+    }
+    @include custom(450px) {
+      grid-template-columns: 1fr;
     }
     width: 100%;
   }
