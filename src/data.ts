@@ -90,15 +90,6 @@ export const homepage = {
       date: "2022-09-22",
       categories: "AdviceEssay",
     },
-    {
-      id: "fi904nvsutiodjfodj4e",
-      title: "An uncompleted guide: to write a web application",
-      text: "How to write a good web-application. A good one. In this essay I will guide you on how to make a functional web-application",
-      image: "/shang-oam.png",
-      author: "Prawich Thawansaldivudhi",
-      date: "2022-09-22",
-      categories: "AdviceEssay",
-    },
   ],
 };
 export const Contents = {

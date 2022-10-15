@@ -14,9 +14,7 @@ import Layout from "./components/layout/Layout";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Layout>
-        <App />
-      </Layout>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

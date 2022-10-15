@@ -2,6 +2,10 @@ html {
   font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  // @include respond(big-desktop) {
+  // font-size: 70%;
+  // }
 }
 
 body {

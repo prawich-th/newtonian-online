@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=IM+Fell+Double+Pica+SC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0");
 html {
   font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
@@ -48,7 +48,7 @@ a {
   @media only screen and (min-width: 1800px) {
     .header {
       width: 65%; } }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     .header {
       width: 100%; } }
   @media only screen and (max-width: 800px) {
@@ -123,7 +123,7 @@ a {
   @media only screen and (min-width: 1800px) {
     .home {
       width: 65%; } }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     .home {
       width: 100%; } }
   .home__banner {
@@ -147,7 +147,7 @@ a {
       flex-direction: column; }
       .home__banner--info h1 {
         font-family: "IM Fell Double Pica SC";
-        font-size: 4.5rem; }
+        font-size: 4.25rem; }
         @media only screen and (max-width: 800px) {
           .home__banner--info h1 {
             font-size: 3.5rem; } }
@@ -226,6 +226,9 @@ a {
     width: 100%;
     justify-content: center;
     display: flex; }
+  @media only screen and (min-width: 1800px) {
+    .issues {
+      width: 65%; } }
   .issues__list {
     justify-items: center;
     display: grid;
@@ -248,12 +251,15 @@ a {
     width: 100%;
     display: flex;
     justify-content: center; }
-  @media only screen and (max-width: 600px) {
-    .issue {
-      width: 100%; } }
   @media only screen and (max-width: 1200px) {
     .issue {
       width: 80%; } }
+  @media only screen and (min-width: 1800px) {
+    .issue {
+      width: 65%; } }
+  @media only screen and (max-width: 680px) {
+    .issue {
+      width: 100%; } }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
@@ -346,6 +352,71 @@ a {
     @media only screen and (max-width: 450px) {
       .categories__articles--list {
         grid-template-columns: 1fr; } }
+
+.member {
+  width: 80%; }
+  .member__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (max-width: 1000px) {
+    .member {
+      width: 100%; } }
+  .member__info {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    width: 100%; }
+    @media only screen and (max-width: 800px) {
+      .member__info {
+        grid-template-columns: 1fr; } }
+    .member__info--left {
+      width: 100%;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 3fr; }
+      @media only screen and (max-width: 1100px) {
+        .member__info--left {
+          grid-template-columns: 1fr 2fr; } }
+      @media only screen and (max-width: 800px) {
+        .member__info--left {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 2fr; } }
+    .member__info--bio h3 {
+      font-size: 2.75rem;
+      font-weight: 400;
+      margin: 1rem 0; }
+    .member__info--bio h4 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.75rem; }
+    .member__info--bio h5 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 1rem 0; }
+    .member__info--bio p {
+      width: 70%; }
+      @media only screen and (max-width: 900px) {
+        .member__info--bio p {
+          width: 100%; } }
+    .member__info--image {
+      display: block;
+      width: 100%; }
+      @media only screen and (max-width: 800px) {
+        .member__info--image {
+          height: 100%;
+          justify-self: center; } }
+      .member__info--image img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/4; }
+    .member__info--right {
+      width: 100%;
+      align-self: center; }
+      @media only screen and (max-width: 900px) {
+        .member__info--right {
+          display: none; } }
+      .member__info--right img {
+        width: 100%; }
 
 .letter {
   width: 100%;
@@ -456,3 +527,14 @@ a {
       margin: 0.25rem 0 0 0;
       font-size: 1.5rem;
       font-weight: 400; }
+
+.unsupport {
+  text-align: center;
+  width: 80%;
+  font-size: 1.5rem; }
+  .unsupport__wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; }

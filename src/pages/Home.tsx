@@ -33,7 +33,7 @@ const Home = () => {
           <div className="home__banner--info">
             <span>
               <h1>{homepageData.main.title}</h1>
-              <p>{homepageData.main.text}...</p>
+              <p>{homepageData.main.text.slice(0, 460)}...</p>
             </span>
 
             <span className="home__banner--readmore">

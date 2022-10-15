@@ -5,17 +5,45 @@ import Issue from "./pages/Issue";
 import Issues from "./pages/Issues";
 import Article from "./pages/Article";
 import Categories from "./pages/Categories";
+import Member from "./pages/Member";
+import { useMediaQuery } from "react-responsive";
+import Layout from "./components/layout/Layout";
+
 const App = () => {
+  const isUnsupported = useMediaQuery({ maxWidth: "330px" });
+
+  if (isUnsupported)
+    return (
+      <div className="unsupport__wrapper">
+        <div className="unsupport">
+          <span
+            style={{
+              fontSize: "5rem",
+            }}
+            className="material-symbols-sharp"
+          >
+            devices_fold
+          </span>
+          <br />
+          This screen resolution is not supported. If you're using a folable
+          phone please unfold your screen.
+        </div>
+      </div>
+    );
+
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/issues" element={<Issues />} />
-        <Route path="/issues/:id" element={<Issue />} />
-        <Route path="/article/:id" element={<Article />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/issues" element={<Issues />} />
+          <Route path="/issues/:id" element={<Issue />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/member/:id" element={<Member />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
     </>
   );
 };

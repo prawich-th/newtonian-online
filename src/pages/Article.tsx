@@ -41,9 +41,26 @@ const Article = () => {
           <ImageC image={article.img} caption={article.heading} />
         </div>
         <div className="article__content">
-          <p>
-            <ReactMarkdown>{article.text}</ReactMarkdown>
-          </p>
+          <ReactMarkdown
+            components={{
+              // @ts-ignore
+              p: (paragraph: { children?: boolean; node?: any }) => {
+                const { node } = paragraph;
+
+                if (node.children[0].tagName === "img") {
+                  const image = node.children[0];
+                  const caption = image.properties.alt;
+
+                  return (
+                    <ImageC image={image.properties.src} caption={caption} />
+                  );
+                }
+                return <p>{paragraph.children}</p>;
+              },
+            }}
+          >
+            {article.text}
+          </ReactMarkdown>
         </div>
       </div>
     </div>
