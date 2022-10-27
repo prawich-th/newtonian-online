@@ -1,0 +1,87 @@
+.member {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  width: 80%;
+
+  @include custom(1000px) {
+    width: 100%;
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    width: 100%;
+
+    @include respond(breaking) {
+      grid-template-columns: 1fr;
+    }
+
+    &--left {
+      width: 100%;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 3fr;
+
+      @include custom(1100px) {
+        grid-template-columns: 1fr 2fr;
+      }
+      @include respond(breaking) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+      }
+    }
+
+    &--bio {
+      h3 {
+        font-size: 2.75rem;
+        font-weight: 400;
+        margin: 1rem 0;
+      }
+      h4 {
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.75rem;
+      }
+      h5 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 1rem 0;
+      }
+      p {
+        width: 70%;
+        @include respond(tab-port) {
+          width: 100%;
+        }
+      }
+    }
+
+    &--image {
+      display: block;
+      width: 100%;
+
+      @include respond(breaking) {
+        height: 100%;
+        justify-self: center;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+      }
+    }
+
+    &--right {
+      width: 100%;
+      align-self: center;
+      @include respond(tab-port) {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

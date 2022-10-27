@@ -1,0 +1,43 @@
+.article-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 0.5rem;
+
+    img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    &--content {
+      h4 {
+        font-family: "IM Fell Double Pica SC", serif;
+        font-size: 2.25rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 0.5rem;
+
+        font-size: 1.75rem;
+      }
+    }
+  }
+  &__author {
+    h5 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #6d6d6d;
+      margin: 0;
+    }
+  }
+}

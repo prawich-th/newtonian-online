@@ -1,0 +1,21 @@
+.members {
+  @include default-padding;
+
+  display: grid;
+
+  &__important {
+    place-self: center;
+    height: 20rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    place-items: center;
+
+    &--card {
+      height: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

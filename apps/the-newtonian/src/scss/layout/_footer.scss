@@ -1,0 +1,19 @@
+.footer {
+  background-color: var(--signature-white);
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1.25rem;
+
+  &__right {
+    text-align: right;
+  }
+
+  h4 {
+    margin: 0;
+    font-weight: 400;
+  }
+}
