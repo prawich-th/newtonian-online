@@ -8,6 +8,9 @@ import Categories from "./pages/Categories";
 import Member from "./pages/Member";
 import { useMediaQuery } from "react-responsive";
 import Layout from "./components/layout/Layout";
+import Members from "./pages/Members";
+import UploadArticle from "./pages/eics/UploadArticle";
+import ConnectionErr from "./pages/Connection";
 
 const App = () => {
   const isUnsupported = useMediaQuery({ maxWidth: "330px" });
@@ -40,6 +43,9 @@ const App = () => {
           <Route path="/issues/:id" element={<Issue />} />
           <Route path="/article/:id" element={<Article />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/members" element={<Members />} />
+          <Route path="/conn" element={<ConnectionErr />} />
+          <Route path="/eics/upload" element={<UploadArticle />} />
           <Route path="/member/:id" element={<Member />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

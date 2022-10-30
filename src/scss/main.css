@@ -151,6 +151,11 @@ a {
         @media only screen and (max-width: 800px) {
           .home__banner--info h1 {
             font-size: 3.5rem; } }
+      .home__banner--info h5 {
+        font-weight: 400;
+        font-size: 1.75rem;
+        color: var(--signature-grey);
+        margin: 0; }
       .home__banner--info p {
         font-size: 1.75rem;
         text-align: justify;
@@ -224,11 +229,14 @@ a {
     margin: 0 0 1rem 0; }
   .issues__wrapper {
     width: 100%;
-    justify-content: center;
-    display: flex; }
+    display: flex;
+    justify-content: center; }
   @media only screen and (min-width: 1800px) {
     .issues {
       width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .issues {
+      width: 100%; } }
   .issues__list {
     justify-items: center;
     display: grid;
@@ -260,6 +268,18 @@ a {
   @media only screen and (max-width: 680px) {
     .issue {
       width: 100%; } }
+  .issue__pdf {
+    width: calc(100% - 2rem);
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    background-color: #dfd8c7;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .issue__pdf h3 {
+      font-family: "IM Fell Double Pica SC";
+      font-size: 1.75rem;
+      font-weight: 400; }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
@@ -268,6 +288,8 @@ a {
     @media only screen and (max-width: 600px) {
       .issue__info {
         grid-template-columns: 1fr; } }
+    .issue__info--cover .image-c img {
+      border: var(--signature-grey) solid 0.1rem; }
     .issue__info--content h4 {
       margin: 0;
       font-style: italic;
@@ -283,7 +305,7 @@ a {
       grid-template-columns: 3fr 2.25fr;
       align-items: center;
       gap: 1rem; }
-      .issue__info--article:nth-child(odd) {
+      .issue__info--article:nth-child(even) {
         background-color: #efefef; }
       .issue__info--article h5 {
         font-weight: 400;
@@ -299,14 +321,14 @@ a {
         color: var(--signature-grey);
         margin-right: 1rem !important;
         text-align: right; }
-  .issue__heading {
+  .issue__headline {
     text-align: left;
     margin-bottom: 2rem; }
-    .issue__heading h1 {
+    .issue__headline h1 {
       font-family: "IM Fell Double Pica SC";
       font-size: 5rem;
       margin: 0; }
-    .issue__heading h3 {
+    .issue__headline h3 {
       margin: 0;
       font-weight: 400;
       font-size: 1.75rem;
@@ -318,7 +340,10 @@ a {
     width: 100%;
     display: flex;
     justify-content: center; }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (min-width: 1800px) {
+    .not-found {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
     .not-found {
       width: 100%; } }
 
@@ -331,7 +356,7 @@ a {
   @media only screen and (min-width: 1800px) {
     .categories {
       width: 65%; } }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     .categories {
       width: 100%; } }
   .categories__articles--title h2 {
@@ -418,6 +443,95 @@ a {
       .member__info--right img {
         width: 100%; }
 
+.members {
+  width: 80%;
+  display: grid; }
+  .members__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (min-width: 1800px) {
+    .members {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .members {
+      width: 100%; } }
+  .members__important {
+    place-self: center;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    place-items: center;
+    width: 60%;
+    padding-bottom: 2rem; }
+    @media only screen and (max-width: 600px) {
+      .members__important {
+        grid-template-columns: 1fr; } }
+    .members__important--card {
+      height: 100%; }
+      .members__important--card h3 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 1rem 0; }
+      .members__important--card h4 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0.5rem 0;
+        color: var(--signature-grey); }
+      .members__important--card img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover; }
+  .members__list {
+    place-self: center;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+    place-items: center; }
+    @media only screen and (max-width: 1200px) {
+      .members__list {
+        grid-template-columns: 1fr 1fr 1fr; } }
+    @media only screen and (max-width: 800px) {
+      .members__list {
+        grid-template-columns: 1fr 1fr; } }
+    @media only screen and (max-width: 450px) {
+      .members__list {
+        grid-template-columns: 1fr; } }
+    .members__list--card {
+      height: 100%; }
+      .members__list--card h3 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 1rem 0; }
+      .members__list--card h4 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0.5rem 0;
+        color: var(--signature-grey); }
+      .members__list--card img {
+        aspect-ratio: 3/4;
+        width: 100%;
+        object-fit: cover; }
+
+.u-article {
+  width: 80%; }
+  .u-article__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (min-width: 1800px) {
+    .u-article {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .u-article {
+      width: 100%; } }
+
 .letter {
   width: 100%;
   text-align: justify; }
@@ -425,7 +539,8 @@ a {
     text-align: left; }
   .letter__signatures {
     display: flex;
-    gap: 5rem; }
+    gap: 5rem;
+    height: 100%; }
     .letter__signatures h3 {
       font-size: 1.75rem;
       margin: 0;
@@ -438,7 +553,7 @@ a {
       text-align: left; }
     .letter__signatures--wrap {
       width: 100%;
-      height: 100%;
+      height: 15rem;
       display: flex;
       justify-content: left;
       align-items: center; }
@@ -513,7 +628,8 @@ a {
     color: black;
     text-decoration: none; }
   .issue-card__cover {
-    width: 100%; }
+    width: 100%;
+    border: 0.1rem var(--signature-grey) solid; }
     .issue-card__cover img {
       width: 100%; }
   .issue-card__info {
@@ -538,3 +654,68 @@ a {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.eics__form {
+  width: 45rem; }
+  .eics__form button {
+    width: 80%;
+    border: none;
+    height: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 1.1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-family: inherit;
+    transition: transform 0.2s; }
+    .eics__form button:hover {
+      transform: translateY(-0.5rem); }
+  .eics__form--area {
+    height: 30rem !important; }
+  .eics__form--field {
+    width: 100%;
+    height: 10rem;
+    border-radius: 1.1rem;
+    border: solid 0.1rem #dddddd;
+    padding: 2rem;
+    margin: 2rem 0; }
+    .eics__form--field p {
+      margin: 1rem 0;
+      font-weight: 600; }
+    .eics__form--field input {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem #dddddd;
+      width: 35rem;
+      font-family: inherit;
+      height: 5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      font-size: 1.5rem;
+      padding: 0 1rem; }
+    .eics__form--field textarea {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem #dddddd;
+      width: 35rem;
+      font-family: inherit;
+      height: 75%;
+      font-size: 1.5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      padding: 1rem; }
+    .eics__form--field select {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem #dddddd;
+      width: 35rem;
+      font-size: 1.5rem;
+      padding: 1rem;
+      font-family: inherit;
+      height: 5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      padding: 0 1rem; }

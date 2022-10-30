@@ -1,23 +1,16 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import ArticleCard from "../components/ArticleCard";
+import ArticleList from "../components/ArticleList";
 import Loading from "../components/Loading";
 import { homepage } from "../data";
 
 const Categories = () => {
-  const [articles, setArticles] = useState([
-    {
-      id: "",
-      image: "",
-      title: "",
-      text: "",
-      author: "",
-      date: "",
-      categories: "",
-    },
-  ]);
+  const [articles, setArticles] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
 
   const catergories = [
+    { name: "Letter", id: "Letter" },
     {
       name: "Interview",
       id: "Interview",
@@ -51,11 +44,20 @@ const Categories = () => {
       id: "NBS",
     },
   ];
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setArticles(homepage.other);
-    setIsLoading(false);
-  });
+    fetch(`http://localhost:8000/api/reader/all-articles`)
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data);
+        setArticles(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        navigate("/conn");
+      });
+  }, []);
 
   if (isLoading) return <Loading />;
 
@@ -69,19 +71,16 @@ const Categories = () => {
                 <h2>{c.name}</h2>
               </div>
               <div className="categories__articles--list">
-                {articles.map((e) => {
-                  if (e.categories !== c.id) return;
-                  return (
-                    <ArticleCard
-                      id={e.id}
-                      image={e.image}
-                      title={e.title}
-                      text={e.text}
-                      author={e.author}
-                      date={e.date}
-                    />
-                  );
-                })}
+                {articles[c.id].map((e: any) => (
+                  <ArticleCard
+                    id={e.id}
+                    image={e.image}
+                    title={e.title}
+                    text={e.text}
+                    author={e.author}
+                    date={e.date}
+                  />
+                ))}
               </div>
             </section>
           ))}

@@ -4,15 +4,8 @@
     font-style: italic;
     margin: 0 0 1rem 0;
   }
-  &__wrapper {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-  }
-  width: 80%;
-  @include respond(big-desktop) {
-    width: 65%;
-  }
+  @include default-padding;
+
   &__list {
     justify-items: center;
     display: grid;

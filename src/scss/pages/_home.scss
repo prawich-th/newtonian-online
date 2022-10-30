@@ -1,17 +1,5 @@
 .home {
-  &__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  @include respond(big-desktop) {
-    width: 65%;
-  }
-  @include custom(1000px) {
-    width: 100%;
-  }
-  width: 80%;
+  @include default-padding;
 
   &__banner {
     display: grid;
@@ -44,6 +32,12 @@
         @include respond(breaking) {
           font-size: 3.5rem;
         }
+      }
+      h5 {
+        font-weight: 400;
+        font-size: 1.75rem;
+        color: var(--signature-grey);
+        margin: 0;
       }
       p {
         font-size: 1.75rem;

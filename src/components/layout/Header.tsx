@@ -17,8 +17,8 @@ const Header = () => {
             <li key={"iss"}>
               <Link to={"/issues"}>Issues</Link>
             </li>
-            <li key={"abtus"}>
-              <Link to={"/about-us"}>About Us</Link>
+            <li key={"members"}>
+              <Link to={"/members"}>Members</Link>
             </li>
           </ul>
         </div>

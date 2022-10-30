@@ -1,17 +1,5 @@
 .categories {
-  &__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  @include respond(big-desktop) {
-    width: 65%;
-  }
-  @include respond(tab-port) {
-    width: 100%;
-  }
-  width: 80%;
+  @include default-padding;
 
   &__articles {
     &--title {

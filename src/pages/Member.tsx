@@ -1,34 +1,57 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import ArticleList from "../components/ArticleList";
+import Loading from "../components/Loading";
 import { homepage } from "../data";
+import NotFound from "./NotFound";
 
 const Member = () => {
+  const [memberData, setMemberData] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [isNotFound, setNotFound] = useState(false);
+  const id = useParams().id;
+  console.log(id);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/api/member/${id}`)
+      .then((data) => data.json())
+      .then((data) => {
+        setMemberData(data);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) return <Loading />;
+  if (isNotFound) return <NotFound />;
+
   return (
     <div className="member__wrapper">
       <div className="member">
         <div className="member__info">
           <div className="member__info--left">
             <div className="member__info--image">
-              <img src="/members/prawich.jpg" alt="member's image" />
+              <img
+                src={`http://localhost:8000/images${memberData.image}`}
+                alt="member's image"
+              />
             </div>
             <div className="member__info--bio">
-              <h3>Prawich Thawansakdivudhi</h3>
-              <h4>Year 11 - Medical</h4>
-              <h5>Head Technician</h5>
-              <h5>Writer</h5>
-              <p>
-                Prawich was an Assumption student before he came to the Newton
-                Sixth Form School. He is a talented programmer, accually he
-                written this website himself along with P' Kane. However, he's
-                hooked with the idea of micro biology and thus want to pursue
-                being a researcher.
-              </p>
+              <h3>{memberData.name}</h3>
+              <h4>
+                Year {memberData.year} - {memberData.track}
+              </h4>
+              <h5>{memberData.position.join(" / ")}</h5>
+              <p>{memberData.bio}</p>
             </div>
           </div>
           <div className="member__info--right">
-            <img src="/signatures/prawich.png" alt="Member's Signature" />
+            <img
+              src={`http://localhost:8000/images${memberData.signature}`}
+              alt="Member's Signature"
+            />
           </div>
         </div>
-        <ArticleList articles={homepage.other} />
+        <ArticleList articles={memberData.articles} />
       </div>
     </div>
   );

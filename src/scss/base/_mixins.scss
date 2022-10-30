@@ -35,3 +35,20 @@
     @content;
   }
 }
+
+@mixin default-padding {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include respond(big-desktop) {
+    width: 65%;
+  }
+
+  @include custom(1000px) {
+    width: 100%;
+  }
+  width: 80%;
+}

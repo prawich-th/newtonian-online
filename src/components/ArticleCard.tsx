@@ -4,15 +4,15 @@ const ArticleCard: React.FC<{
   image: string;
   text: string;
   title: string;
-  author: string;
+  author: { name: string; _id: string };
   date: string;
-  id: string;
+  _id: string;
 }> = (props) => {
   return (
     <div className="article-card">
       <span>
         <div className="article-card__image">
-          <Link to={`/article/${props.id}`}>
+          <Link to={`/article/${props._id}`}>
             <img
               src={props.image}
               alt={`Preview Image of the article ${props.title}`}
@@ -27,14 +27,16 @@ const ArticleCard: React.FC<{
         </div>
       </span>
       <div className="article-card__author">
-        <h5>
-          {props.author} -{" "}
-          {new Date(props.date).toLocaleString("en-UK", {
-            day: "numeric",
-            month: "short",
-            year: "numeric",
-          })}
-        </h5>
+        <Link to={`/member/${props.author._id}`}>
+          <h5>
+            {props.author.name} -{" "}
+            {new Date(props.date).toLocaleString("en-UK", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+          </h5>
+        </Link>
       </div>
     </div>
   );

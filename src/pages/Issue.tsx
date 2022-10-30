@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {
   Link,
   useLocation,
+  useNavigate,
   useParams,
   useSearchParams,
 } from "react-router-dom";
@@ -10,12 +11,14 @@ import Letter from "../components/Letter";
 import Loading from "../components/Loading";
 import { Contents, Letters } from "../data";
 
-const ArticleLink: React.FC<{ id: string; heading: string; author: string }> = (
-  props
-) => {
+const ArticleLink: React.FC<{
+  id: string;
+  headline: string;
+  author: string;
+}> = (props) => {
   return (
     <Link className="issue__info--article" to={`/article/${props.id}`}>
-      <h5>{props.heading}</h5>
+      <h5>{props.headline}</h5>
       <h6>{props.author}</h6>
     </Link>
   );
@@ -27,10 +30,11 @@ const Issue = () => {
   const [contents, setContents] = useState([
     {
       id: "",
-      heading: "",
+      headline: "",
       author: "",
     },
   ]);
+  const navigate = useNavigate();
   const [letters, setLetters] = useState([
     { title: "", text: "", signatures: [{ name: "", img: "", position: "" }] },
   ]);
@@ -38,9 +42,17 @@ const Issue = () => {
 
   useEffect(() => {
     if (!param.id) return;
-    setContents(Contents["iss1"]);
-    setLetters(Letters);
-    setIsLoading(false);
+
+    fetch(`http://localhost:8000/api/reader/issue/getIssue/${param.id}`)
+      .then((data) => data.json())
+      .then((data) => {
+        setContents(data.articles);
+        setLetters(data.letters);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        navigate("/conn");
+      });
   }, []);
 
   if (isLoading) return <Loading />;
@@ -53,10 +65,15 @@ const Issue = () => {
             <ImageC image="/issue1-cover.png" caption="issue 1 - cover" />
           </div>
           <div className="issue__info--content">
-            <div className="issue__heading">
+            <div className="issue__headline">
               <h1>Issue {param.id}</h1>
               <h3>31th October 2022</h3>
             </div>
+            <Link to={""}>
+              <div className="issue__pdf">
+                <h3>Access the pdf copy</h3>
+              </div>
+            </Link>
             <h4>Table Of Contents</h4>
             {contents && contents.map((e) => <ArticleLink key={e.id} {...e} />)}
           </div>

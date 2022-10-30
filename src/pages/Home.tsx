@@ -1,20 +1,44 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import Loading from "../components/Loading";
 import { homepage } from "../data";
 
 const Home = () => {
   const [homepageData, setHomepageData] = useState({
-    main: { id: "", image: "", title: "", text: "" },
-    other: [{ id: "", image: "", title: "", text: "", author: "", date: "" }],
+    main: {
+      _id: "",
+      image: "",
+      title: "",
+      text: "",
+      author: { name: "", _id: "" },
+    },
+    other: [
+      {
+        _id: "",
+        image: "",
+        title: "",
+        text: "",
+        author: { name: "", _id: "" },
+        date: "",
+      },
+    ],
   });
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setHomepageData(homepage);
-    setIsLoading(false);
-  });
+    fetch(`http://localhost:8000/api/reader/get-homepage-data`)
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data, homepage);
+        setHomepageData(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        navigate("/conn");
+      });
+  }, []);
 
   if (isLoading) return <Loading />;
 
@@ -23,7 +47,7 @@ const Home = () => {
       <div className="home">
         <section className="home__banner">
           <div className="home__banner--cover">
-            <Link to={`/article/${homepageData.main.id}`}>
+            <Link to={`/article/${homepageData.main._id}`}>
               <img
                 src={homepageData.main.image}
                 alt="Main homepageData Cover picture"
@@ -33,11 +57,12 @@ const Home = () => {
           <div className="home__banner--info">
             <span>
               <h1>{homepageData.main.title}</h1>
-              <p>{homepageData.main.text.slice(0, 460)}...</p>
+              <h5>By: {homepageData.main.author.name}</h5>
+              <p>{homepageData.main.text.slice(0, 440)}...</p>
             </span>
 
             <span className="home__banner--readmore">
-              <Link to={`/article/${homepageData.main.id}`}>Read More</Link>
+              <Link to={`/article/${homepageData.main._id}`}>Read More</Link>
             </span>
           </div>
         </section>
@@ -49,7 +74,8 @@ const Home = () => {
             {homepageData.other.map((e) => {
               return (
                 <ArticleCard
-                  id={e.id}
+                  key={e._id}
+                  _id={e._id}
                   image={e.image}
                   title={e.title}
                   text={e.text}

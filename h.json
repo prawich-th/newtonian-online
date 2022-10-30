@@ -1,0 +1,22 @@
+[
+  {
+    "name": "fname lname (nname)",
+    "position": ["job"],
+    "image": "/members/nickname/image.png",
+    "signature": "/members/nickname/signature.png",
+    "articles": [],
+    "year": 13,
+    "track": "Humanities",
+    "bio": ""
+  },
+  {
+    "name": "Phasit Thanitkul (Kane)",
+    "position": ["Technical"],
+    "image": "/members/Kane/image.png",
+    "signature": "/members/Kane/signature.png",
+    "articles": [],
+    "year": 13,
+    "track": "Computer Science",
+    "bio": "Your average computer science student and enthusiast. The dude; very chill, but (probably) gets work done."
+  }
+]

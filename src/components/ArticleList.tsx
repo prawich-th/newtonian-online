@@ -2,15 +2,16 @@ import ArticleCard from "./ArticleCard";
 
 const ArticleList: React.FC<{
   articles: {
-    id: string;
+    _id: string;
     image: string;
     title: string;
     text: string;
-    author: string;
+    author: { name: string; _id: string };
     date: string;
     // categories: string;
   }[];
 }> = (props) => {
+  console.log({ props });
   return (
     <section className="home__articles">
       <div className="home__articles--title">
@@ -20,7 +21,8 @@ const ArticleList: React.FC<{
         {props.articles.map((e) => {
           return (
             <ArticleCard
-              id={e.id}
+              key={e._id}
+              _id={e._id}
               image={e.image}
               title={e.title}
               text={e.text}
