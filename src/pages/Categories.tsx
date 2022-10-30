@@ -73,7 +73,7 @@ const Categories = () => {
               <div className="categories__articles--list">
                 {articles[c.id].map((e: any) => (
                   <ArticleCard
-                    id={e.id}
+                    _id={e.id}
                     image={e.image}
                     title={e.title}
                     text={e.text}
