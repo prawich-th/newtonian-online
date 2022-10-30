@@ -43,7 +43,7 @@ const Issue = () => {
   useEffect(() => {
     if (!param.id) return;
 
-    fetch(`http://localhost:8000/api/reader/issue/getIssue/${param.id}`)
+    fetch(`${import.meta.env.VITE_URL}/api/reader/issue/getIssue/${param.id}`)
       .then((data) => data.json())
       .then((data) => {
         setContents(data.articles);

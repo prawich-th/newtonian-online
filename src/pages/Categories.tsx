@@ -47,7 +47,7 @@ const Categories = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/reader/all-articles`)
+    fetch(`${import.meta.env.VITE_URL}/api/reader/all-articles`)
       .then((data) => data.json())
       .then((data) => {
         console.log(data);

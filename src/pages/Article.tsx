@@ -20,7 +20,7 @@ const Article = () => {
   const articleId = useParams().id;
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/reader/article/${articleId}`)
+    fetch(`${import.meta.env.VITE_URL}/api/reader/article/${articleId}`)
       .then((data) => {
         if (data.status !== 200) setNotFound(true);
         return data;
@@ -38,6 +38,7 @@ const Article = () => {
   }, []);
 
   if (isLoading) return <Loading />;
+
   if (notFound) return <NotFound />;
 
   return (
@@ -58,7 +59,7 @@ const Article = () => {
             - {Math.round(article.text.split(" ").length / 300)} min. read
           </h3>
           <ImageC
-            image={`http://localhost:8000/images${article.image}`}
+            image={`${import.meta.env.VITE_URL}/images${article.image}`}
             caption={article.title}
           />
         </div>

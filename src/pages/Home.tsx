@@ -27,8 +27,10 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
+  console.log(import.meta.env.VITE_URL);
+
   useEffect(() => {
-    fetch(`http://localhost:8000/api/reader/get-homepage-data`)
+    fetch(`${import.meta.env.VITE_URL}/api/reader/get-homepage-data`)
       .then((data) => data.json())
       .then((data) => {
         console.log(data, homepage);

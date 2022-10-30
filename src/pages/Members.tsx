@@ -26,7 +26,7 @@ const Members = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/member/members")
+    fetch("${import.meta.env.VITE_URL}/api/member/members")
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
@@ -59,7 +59,7 @@ const Members = () => {
               <Link to={`/member/${cur._id}`}>
                 <div className="members__important--card">
                   <img
-                    src={`http://localhost:8000/images${cur.image}`}
+                    src={`${import.meta.env.VITE_URL}/images${cur.image}`}
                     alt=""
                     className="members__important--image"
                   />
@@ -78,7 +78,7 @@ const Members = () => {
               <Link to={`/member/${cur._id}`}>
                 <div className="members__list--card">
                   <img
-                    src={`http://localhost:8000/images${cur.image}`}
+                    src={`${import.meta.env.VITE_URL}/images${cur.image}`}
                     alt=""
                     className="members__list--image"
                   />
