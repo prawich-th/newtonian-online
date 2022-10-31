@@ -12,14 +12,14 @@ import Loading from "../components/Loading";
 import { Contents, Letters } from "../data";
 
 const ArticleLink: React.FC<{
-  id: string;
-  headline: string;
-  author: string;
+  _id: string;
+  title: string;
+  author: any;
 }> = (props) => {
   return (
-    <Link className="issue__info--article" to={`/article/${props.id}`}>
-      <h5>{props.headline}</h5>
-      <h6>{props.author}</h6>
+    <Link className="issue__info--article" to={`/article/${props._id}`}>
+      <h5>{props.title}</h5>
+      <h6>{props.author.name}</h6>
     </Link>
   );
 };
@@ -29,14 +29,19 @@ const Issue = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [contents, setContents] = useState([
     {
-      id: "",
-      headline: "",
+      _id: "",
+      title: "",
       author: "",
     },
   ]);
   const navigate = useNavigate();
   const [letters, setLetters] = useState([
-    { title: "", text: "", signatures: [{ name: "", img: "", position: "" }] },
+    {
+      _id: "",
+      title: "",
+      text: "",
+      signatures: [{ name: "", img: "", position: "" }],
+    },
   ]);
   console.log(param);
 
@@ -48,6 +53,7 @@ const Issue = () => {
     )
       .then((data) => data.json())
       .then((data) => {
+        console.log(data);
         setContents(data.articles);
         setLetters(data.letters);
         setIsLoading(false);
@@ -81,14 +87,15 @@ const Issue = () => {
               </div>
             </a>
             <h4>Table Of Contents</h4>
-            {contents && contents.map((e) => <ArticleLink key={e.id} {...e} />)}
+            {contents &&
+              contents.map((e) => <ArticleLink key={e._id} {...e} />)}
           </div>
         </div>
         {letters &&
           letters.map((e) => {
             return (
               <Letter
-                key={e.title}
+                key={e._id}
                 title={e.title}
                 text={e.text}
                 signatures={e.signatures}
