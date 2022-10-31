@@ -28,6 +28,10 @@ const Categories = () => {
       id: "Fiction",
     },
     {
+      name: "Research",
+      id: "Research",
+    },
+    {
       name: "Performing Arts",
       id: "PerformingArts",
     },
@@ -73,7 +77,7 @@ const Categories = () => {
               <div className="categories__articles--list">
                 {articles[c.id].map((e: any) => (
                   <ArticleCard
-                    _id={e.id}
+                    _id={e._id}
                     image={e.image}
                     title={e.title}
                     text={e.text}

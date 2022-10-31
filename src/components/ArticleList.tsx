@@ -17,21 +17,27 @@ const ArticleList: React.FC<{
       <div className="home__articles--title">
         <h2>Articles</h2>
       </div>
-      <div className="home__articles--list">
-        {props.articles.map((e) => {
-          return (
-            <ArticleCard
-              key={e._id}
-              _id={e._id}
-              image={e.image}
-              title={e.title}
-              text={e.text}
-              author={e.author}
-              date={e.date}
-            />
-          );
-        })}
-      </div>
+      {props.articles.length === 0 ? (
+        <div className="home__articles--no">
+          <p>This member currently does not have any published work</p>
+        </div>
+      ) : (
+        <div className="home__articles--list">
+          {props.articles.map((e) => {
+            return (
+              <ArticleCard
+                key={e._id}
+                _id={e._id}
+                image={e.image}
+                title={e.title}
+                text={e.text}
+                author={e.author}
+                date={e.date}
+              />
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };

@@ -33,7 +33,7 @@ const Home = () => {
     fetch(`${import.meta.env.VITE_URL}/api/reader/get-homepage-data`)
       .then((data) => data.json())
       .then((data) => {
-        console.log(data, homepage);
+        console.log(data);
         setHomepageData(data);
         setIsLoading(false);
       })

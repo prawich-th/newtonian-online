@@ -62,6 +62,15 @@
       }
     }
 
+    &--no {
+      height: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--signature-grey);
+      font-style: italic;
+    }
+
     &--list {
       justify-items: center;
       display: grid;

@@ -70,12 +70,20 @@ const Article = () => {
               p: (paragraph: { children?: boolean; node?: any }) => {
                 const { node } = paragraph;
 
-                if (node.children[0].tagName === "image") {
+                console.log(node.children[0].tagName);
+                if (node.children[0].tagName === "img") {
                   const image = node.children[0];
                   const caption = image.properties.alt;
 
                   return (
-                    <ImageC image={image.properties.src} caption={caption} />
+                    <div className="article__content--image">
+                      <ImageC
+                        image={`${import.meta.env.VITE_URL}${
+                          image.properties.src
+                        }`}
+                        caption={caption}
+                      />
+                    </div>
                   );
                 }
                 return <p>{paragraph.children}</p>;

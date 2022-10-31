@@ -38,6 +38,15 @@
   &__content {
     text-align: justify;
     width: 60%;
+    &--image {
+      display: grid;
+      place-items: center;
+
+      .image-c {
+        width: 70%;
+      }
+    }
+
     @include respond(tab-port) {
       width: 80%;
     }

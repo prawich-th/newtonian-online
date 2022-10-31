@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, ScrollRestoration } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Issue from "./pages/Issue";
 import Issues from "./pages/Issues";
@@ -11,9 +11,12 @@ import Layout from "./components/layout/Layout";
 import Members from "./pages/Members";
 import UploadArticle from "./pages/eics/UploadArticle";
 import ConnectionErr from "./pages/Connection";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const App = () => {
   const isUnsupported = useMediaQuery({ maxWidth: "330px" });
+  const location = useLocation();
 
   if (isUnsupported)
     return (

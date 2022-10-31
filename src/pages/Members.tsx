@@ -26,8 +26,11 @@ const Members = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("${import.meta.env.VITE_URL}/api/member/members")
-      .then((data) => data.json())
+    fetch(`${import.meta.env.VITE_URL}/api/member/members`)
+      .then((data) => {
+        console.log(data);
+        return data.json();
+      })
       .then((data) => {
         console.log(data);
         const importantList: any[] = [];

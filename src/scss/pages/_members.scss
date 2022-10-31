@@ -2,6 +2,10 @@
   @include default-padding;
 
   display: grid;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   &__important {
     place-self: center;
