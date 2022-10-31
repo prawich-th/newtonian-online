@@ -6,7 +6,14 @@ const ImageC: React.FC<{
 }> = (props) => {
   return (
     <div className="image-c">
-      <img src={props.image} alt="Image With Caption" />
+      <img
+        src={props.image}
+        alt="Image With Caption"
+        onError={(e) => {
+          e.currentTarget.onerror = null;
+          e.currentTarget.src = "/notfound.png";
+        }}
+      />
       <p>{props.caption}</p>
     </div>
   );

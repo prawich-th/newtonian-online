@@ -14,8 +14,12 @@ const ArticleCard: React.FC<{
         <div className="article-card__image">
           <Link to={`/article/${props._id}`}>
             <img
-              src={`${import.meta.env.VITE_URL}/images/${props.image}`}
+              src={`https://apis.news.newton.ac.th/images/${props.image}`}
               alt={`Preview Image of the article ${props.title}`}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "/notfound.png";
+              }}
             />
           </Link>
         </div>

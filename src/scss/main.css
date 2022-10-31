@@ -505,8 +505,9 @@ a {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5rem;
-    place-items: center; }
+    gap: 4.5rem;
+    place-items: center;
+    align-items: stretch; }
     @media only screen and (max-width: 1200px) {
       .members__list {
         grid-template-columns: 1fr 1fr 1fr; } }

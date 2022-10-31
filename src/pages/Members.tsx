@@ -26,7 +26,7 @@ const Members = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/api/member/members`)
+    fetch(`https://apis.news.newton.ac.th/api/member/members`)
       .then((data) => {
         console.log(data);
         return data.json();
@@ -62,7 +62,7 @@ const Members = () => {
               <Link to={`/member/${cur._id}`}>
                 <div className="members__important--card">
                   <img
-                    src={`${import.meta.env.VITE_URL}/images${cur.image}`}
+                    src={`https://apis.news.newton.ac.th/images${cur.image}`}
                     alt=""
                     className="members__important--image"
                   />
@@ -81,9 +81,13 @@ const Members = () => {
               <Link to={`/member/${cur._id}`}>
                 <div className="members__list--card">
                   <img
-                    src={`${import.meta.env.VITE_URL}/images${cur.image}`}
+                    src={`https://apis.news.newton.ac.th/images${cur.image}`}
                     alt=""
                     className="members__list--image"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "/notfound.png";
+                    }}
                   />
                   <h3>{cur.name}</h3>
                   <h4>

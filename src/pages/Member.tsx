@@ -13,7 +13,7 @@ const Member = () => {
   console.log(id);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/api/member/${id}`)
+    fetch(`https://apis.news.newton.ac.th/api/member/${id}`)
       .then((data) => data.json())
       .then((data) => {
         setMemberData(data);
@@ -31,7 +31,7 @@ const Member = () => {
           <div className="member__info--left">
             <div className="member__info--image">
               <img
-                src={`${import.meta.env.VITE_URL}/images${memberData.image}`}
+                src={`https://apis.news.newton.ac.th/images${memberData.image}`}
                 alt="member's image"
               />
             </div>
@@ -46,7 +46,7 @@ const Member = () => {
           </div>
           <div className="member__info--right">
             <img
-              src={`${import.meta.env.VITE_URL}/images${memberData.signature}`}
+              src={`https://apis.news.newton.ac.th/images${memberData.signature}`}
               alt="Member's Signature"
             />
           </div>

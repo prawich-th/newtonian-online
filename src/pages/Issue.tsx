@@ -43,7 +43,9 @@ const Issue = () => {
   useEffect(() => {
     if (!param.id) return;
 
-    fetch(`${import.meta.env.VITE_URL}/api/reader/issue/getIssue/${param.id}`)
+    fetch(
+      `https://apis.news.newton.ac.th/api/reader/issue/getIssue/${param.id}`
+    )
       .then((data) => data.json())
       .then((data) => {
         setContents(data.articles);
@@ -69,11 +71,15 @@ const Issue = () => {
               <h1>Issue {param.id}</h1>
               <h3>31th October 2022</h3>
             </div>
-            <Link to={""}>
+            <a
+              href={
+                "https://drive.google.com/file/d/1NEBp3h-GWxHdTAYCwU-pZCvZGpAtJ4vh/view?usp=sharing"
+              }
+            >
               <div className="issue__pdf">
                 <h3>Access the pdf copy</h3>
               </div>
-            </Link>
+            </a>
             <h4>Table Of Contents</h4>
             {contents && contents.map((e) => <ArticleLink key={e.id} {...e} />)}
           </div>

@@ -30,7 +30,7 @@ const Home = () => {
   console.log(import.meta.env.VITE_URL);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/api/reader/get-homepage-data`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/get-homepage-data`)
       .then((data) => data.json())
       .then((data) => {
         console.log(data);

@@ -20,7 +20,7 @@ const Article = () => {
   const articleId = useParams().id;
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/api/reader/article/${articleId}`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/article/${articleId}`)
       .then((data) => {
         if (data.status !== 200) setNotFound(true);
         return data;
@@ -59,7 +59,7 @@ const Article = () => {
             - {Math.round(article.text.split(" ").length / 300)} min. read
           </h3>
           <ImageC
-            image={`${import.meta.env.VITE_URL}/images${article.image}`}
+            image={`https://apis.news.newton.ac.th/images${article.image}`}
             caption={article.title}
           />
         </div>
@@ -78,9 +78,7 @@ const Article = () => {
                   return (
                     <div className="article__content--image">
                       <ImageC
-                        image={`${import.meta.env.VITE_URL}${
-                          image.properties.src
-                        }`}
+                        image={`https://apis.news.newton.ac.th${image.properties.src}`}
                         caption={caption}
                       />
                     </div>

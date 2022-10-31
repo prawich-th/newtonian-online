@@ -39,7 +39,7 @@ const Letter: React.FC<{
             return (
               <div key={e.name} className="letter__signatures--item">
                 <div className="letter__signatures--wrap">
-                  <img src={`${import.meta.env.VITE_URL}/images${e.img}`} />
+                  <img src={`https://apis.news.newton.ac.th/images${e.img}`} />
                 </div>
                 <span>
                   <h3>{e.name}</h3>

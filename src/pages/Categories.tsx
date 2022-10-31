@@ -51,7 +51,7 @@ const Categories = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/api/reader/all-articles`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/all-articles`)
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
