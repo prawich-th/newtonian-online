@@ -555,7 +555,8 @@ a {
     text-align: left; }
   .letter__signatures {
     display: flex;
-    gap: 5rem;
+    gap: 4rem;
+    flex-wrap: wrap;
     height: 100%; }
     .letter__signatures h3 {
       font-size: 1.75rem;

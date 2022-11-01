@@ -8,7 +8,8 @@
 
   &__signatures {
     display: flex;
-    gap: 5rem;
+    gap: 4rem;
+    flex-wrap: wrap;
     height: 100%;
 
     h3 {

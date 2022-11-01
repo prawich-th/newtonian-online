@@ -1,9 +1,72 @@
 {
-  "name": "Phasit Thanitkul (Fruity)",
-  "position": ["Technical"],
-  "image": "/members/Fruity/image.png",
-  "signature": "/members/Fruity/signature.png",
-  "year": 13,
-  "track": "Computer Science",
-  "bio": ""
+  "_id": {
+    "$oid": "635f639555d5a5ec244bd467"
+  },
+  "cover": "/path/to/cover/image",
+  "date": "31-10-2022",
+  "no": 1,
+  "letters": [
+    {
+      "title": "Editors-in-chief",
+      "text": "Dear reader, \n\nThe members of Newtonian Newspaper club have coalesced to create this first issue from scratch, and we commend all their hard work. This issue would become the blueprint for all future issues of The Newtonian that have yet to come. This is the first and most important step that is going to lead us to obtaining an established foothold in the Newton Sixth Form School and the world of high school journalism.\n\nFirst and foremost, we would like to thank Dr. Teerakiat, the executive board, and the supervisors for their advice and assistance in helping this project come to fruition. Without their help and vision, this newspaper club would only be an amorphous idea.\n\nIt is an honor for the talents of the Newton Sixth Form school to be displayed in the form of a newspaper made by the students. Reading and writing are some of the most important aspects of education, and we hope to foster such skills to fellow Newtonians.\n\nThe objective of The Newtonian is to provide an accessible platform for aspiring writers to put their work on display, whether it be to create a world of their imagination in ink, to express their unique ideologies in the workings of the world, or simply to shine light on the small moments and the beautiful people that give nuance to our otherwise mundane lives.\n\nWe hope that you enjoy the issue we have carefully curated with our ink-stained hands, greasy keyboards and sleepless nights, and that our issue provides you with an enlightening insight of life at Newton.\n",
+      "signatures": [
+        {
+          "name": "Yanitta Iewwongcharoen (Krapook)",
+          "position": "Editor-in-chief",
+          "img": "/members/krapook/signature.png"
+        },
+        {
+          "name": "Kunapas Sumpunwetchakul (Kimnite)",
+          "position": "Deputy Editor-in-chief",
+          "img": "/members/Kimnite/signature.png"
+        },
+        {
+          "name": "Boonruk Saenghirunwattana (Shang)",
+          "position": "Head Writer",
+          "img": "/members/Shang/signature.png"
+        }
+      ]
+    }
+  ],
+  "articleIds": [
+    {
+      "$oid": "635b59a528d8654d0d80a120"
+    },
+    {
+      "$oid": "635ec33607c756bd7097c991"
+    },
+    {
+      "$oid": "635ec69739920488a5b44684"
+    },
+    {
+      "$oid": "635ec831c6059da4075334a1"
+    },
+    {
+      "$oid": "635ecad6c6059da407533506"
+    },
+    {
+      "$oid": "635ecc19c6059da40753351d"
+    },
+    {
+      "$oid": "635ecc95c6059da407533528"
+    },
+    {
+      "$oid": "635ecdbd026b4d26d32afbab"
+    },
+    {
+      "$oid": "635ece33026b4d26d32afbb2"
+    },
+    {
+      "$oid": "635ecefc026b4d26d32afbb9"
+    },
+    {
+      "$oid": "635ecf63026b4d26d32afbc0"
+    },
+    {
+      "$oid": "635ed009026b4d26d32afbdb"
+    },
+    {
+      "$oid": "635ed171026b4d26d32afbf2"
+    }
+  ]
 }
