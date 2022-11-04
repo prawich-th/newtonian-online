@@ -292,7 +292,8 @@ a {
     .issue__pdf h3 {
       font-family: "IM Fell Double Pica SC";
       font-size: 2rem;
-      font-weight: 400; }
+      font-weight: 400;
+      padding-left: 0.5rem; }
   .issue__info {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
