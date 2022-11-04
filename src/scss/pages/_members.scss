@@ -12,12 +12,16 @@
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    @include respond(phone) {
+
+    width: 70%;
+    @include respond(breaking) {
       grid-template-columns: 1fr;
+    }
+    @include respond(tab-land) {
+      width: 80%;
     }
     gap: 5rem;
     place-items: center;
-    width: 60%;
     padding-bottom: 2rem;
 
     &--card {
@@ -37,8 +41,8 @@
         color: var(--signature-grey);
       }
       img {
-        width: 100%;
         aspect-ratio: 3/4;
+        width: 100%;
         object-fit: cover;
       }
     }
@@ -49,17 +53,20 @@
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4.5rem;
 
     @include respond(tab-land) {
       grid-template-columns: 1fr 1fr 1fr;
     }
     @include custom(800px) {
       grid-template-columns: 1fr 1fr;
+      width: 80%;
     }
     @include custom(450px) {
       grid-template-columns: 1fr;
+      width: 70%;
+      gap: 3rem;
     }
-    gap: 4.5rem;
     place-items: center;
     align-items: stretch;
 

@@ -38,6 +38,8 @@
   &__content {
     text-align: justify;
     width: 60%;
+    word-break: break-all;
+
     &--image {
       display: grid;
       place-items: center;

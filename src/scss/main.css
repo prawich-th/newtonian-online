@@ -220,7 +220,8 @@ a {
 
 .article__content {
   text-align: justify;
-  width: 60%; }
+  width: 60%;
+  word-break: break-all; }
   .article__content--image {
     display: grid;
     place-items: center; }
@@ -282,7 +283,7 @@ a {
       width: 100%; } }
   .issue__pdf {
     width: calc(100% - 2rem);
-    height: 2.5rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     background-color: #dfd8c7;
@@ -290,7 +291,7 @@ a {
     margin-bottom: 1rem; }
     .issue__pdf h3 {
       font-family: "IM Fell Double Pica SC";
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: 400; }
   .issue__info {
     display: grid;
@@ -476,13 +477,16 @@ a {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 70%;
     gap: 5rem;
     place-items: center;
-    width: 60%;
     padding-bottom: 2rem; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       .members__important {
         grid-template-columns: 1fr; } }
+    @media only screen and (max-width: 1200px) {
+      .members__important {
+        width: 80%; } }
     .members__important--card {
       height: 100%; }
       .members__important--card h3 {
@@ -497,8 +501,8 @@ a {
         margin: 0.5rem 0;
         color: var(--signature-grey); }
       .members__important--card img {
-        width: 100%;
         aspect-ratio: 3/4;
+        width: 100%;
         object-fit: cover; }
   .members__list {
     place-self: center;
@@ -513,10 +517,13 @@ a {
         grid-template-columns: 1fr 1fr 1fr; } }
     @media only screen and (max-width: 800px) {
       .members__list {
-        grid-template-columns: 1fr 1fr; } }
+        grid-template-columns: 1fr 1fr;
+        width: 80%; } }
     @media only screen and (max-width: 450px) {
       .members__list {
-        grid-template-columns: 1fr; } }
+        grid-template-columns: 1fr;
+        width: 70%;
+        gap: 3rem; } }
     .members__list--card {
       height: 100%; }
       .members__list--card h3 {

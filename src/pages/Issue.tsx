@@ -83,7 +83,9 @@ const Issue = () => {
               }
             >
               <div className="issue__pdf">
-                <h3>Access the pdf copy</h3>
+                <span className="material-symbols-sharp">picture_as_pdf</span>
+
+                <h3> Access the pdf copy</h3>
               </div>
             </a>
             <h4>Table Of Contents</h4>
