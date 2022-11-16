@@ -61,6 +61,7 @@ const Article = () => {
           <ImageC
             image={`https://apis.news.newton.ac.th/images${article.image}`}
             caption={article.title}
+            notfound="gone"
           />
         </div>
         <div className="article__content">
@@ -80,6 +81,7 @@ const Article = () => {
                       <ImageC
                         image={`https://apis.news.newton.ac.th${image.properties.src}`}
                         caption={caption}
+                        notfound="gone"
                       />
                     </div>
                   );

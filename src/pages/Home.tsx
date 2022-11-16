@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { Link, useNavigate } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import Loading from "../components/Loading";
@@ -60,7 +61,25 @@ const Home = () => {
             <span>
               <h1>{homepageData.main.title}</h1>
               <h5>By: {homepageData.main.author.name}</h5>
-              <p>{homepageData.main.text.slice(0, 440)}...</p>
+              <ReactMarkdown
+                components={{
+                  // @ts-ignore
+                  p: (paragraph: { children?: boolean; node?: any }) => {
+                    const { node } = paragraph;
+
+                    console.log(node.children[0].tagName);
+                    if (node.children[0].tagName === "img") {
+                      const image = node.children[0];
+                      const caption = image.properties.alt;
+
+                      return <></>;
+                    }
+                    return <p>{paragraph.children}</p>;
+                  },
+                }}
+              >
+                {homepageData.main.text.slice(0, 440) + "..."}
+              </ReactMarkdown>
             </span>
 
             <span className="home__banner--readmore">

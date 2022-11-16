@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 
 const ArticleCard: React.FC<{
@@ -26,7 +27,27 @@ const ArticleCard: React.FC<{
         <div className="article-card__info">
           <div className="article-card__info--content">
             <h4>{props.title}</h4>
-            <p>{props.text.slice(0, 100) + "..."}</p>
+            <p>
+              <ReactMarkdown
+                components={{
+                  // @ts-ignore
+                  p: (paragraph: { children?: boolean; node?: any }) => {
+                    const { node } = paragraph;
+
+                    console.log(node.children[0].tagName);
+                    if (node.children[0].tagName === "img") {
+                      const image = node.children[0];
+                      const caption = image.properties.alt;
+
+                      return <></>;
+                    }
+                    return paragraph.children;
+                  },
+                }}
+              >
+                {props.text.slice(0, 100) + "..."}
+              </ReactMarkdown>
+            </p>
           </div>
         </div>
       </span>
