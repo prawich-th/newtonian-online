@@ -51,7 +51,7 @@ const Member = () => {
             />
           </div>
         </div>
-        <ArticleList articles={memberData.articles} />
+        <ArticleList title={"Articles"} articles={memberData.articles} />
       </div>
     </div>
   );
