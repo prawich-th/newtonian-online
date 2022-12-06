@@ -8,7 +8,7 @@ const IssueCard: React.FC<{ date: string; no: number; cover: string }> = (
     <div className="issue-card">
       <Link to={`/issues/${props.no}`}>
         <div className="issue-card__cover">
-          <img src={props.cover} />
+          <img src={`https://apis.news.newton.ac.th/images${props.cover}`} />
         </div>
         <div className="issue-card__info">
           <h3>Issue {props.no}</h3>

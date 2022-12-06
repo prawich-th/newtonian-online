@@ -71,21 +71,7 @@ const Categories = () => {
         {catergories &&
           catergories.map((c) => (
             <section className="categories__articles">
-              <div className="categories__articles--title">
-                <h2>{c.name}</h2>
-              </div>
-              <div className="categories__articles--list">
-                {articles[c.id].map((e: any) => (
-                  <ArticleCard
-                    _id={e._id}
-                    image={e.image}
-                    title={e.title}
-                    text={e.text}
-                    author={e.author}
-                    date={e.date}
-                  />
-                ))}
-              </div>
+              <ArticleList title={c.name} articles={articles[c.id]} />
             </section>
           ))}
       </div>

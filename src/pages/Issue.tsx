@@ -81,6 +81,7 @@ const Issue = () => {
               href={
                 "https://drive.google.com/file/d/1NEBp3h-GWxHdTAYCwU-pZCvZGpAtJ4vh/view?usp=sharing"
               }
+              target={`_blank`}
             >
               <div className="issue__pdf">
                 <span className="material-symbols-sharp">picture_as_pdf</span>

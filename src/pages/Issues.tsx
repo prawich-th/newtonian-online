@@ -1,16 +1,39 @@
-import { Link } from "react-router-dom";
-import ImageC from "../components/ImageC";
+import { useEffect, useState } from "react";
 import IssueCard from "../components/IssueCard";
-import Letter from "../components/Letter";
+import Loading from "../components/Loading";
 
 const Issues = () => {
+  const [issueList, setIssueList] = useState<any>({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://apis.news.newton.ac.th/api/reader/issue/getIssues")
+      .then((data) => data.json())
+      .then((data) => {
+        setIssueList(data);
+        setIsLoading(false);
+      });
+  }, []);
+
+  console.log(issueList);
+  if (isLoading) return <Loading />;
+
   return (
     <div className="issues__wrapper">
       <div className="issues">
         <h2>All Issues</h2>
 
         <div className="issues__list">
-          <IssueCard no={1} date={"10-31-2022"} cover={"/issue1-cover.png"} />
+          {issueList.map((issue: any) => {
+            return (
+              <IssueCard
+                key={issue._id}
+                no={issue.no}
+                date={issue.date}
+                cover={issue.cover}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
