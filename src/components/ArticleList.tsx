@@ -24,7 +24,7 @@ const ArticleList: React.FC<{
       </div>
       {props.articles.length === 0 ? (
         <div className="home__articles--no">
-          {location.pathname.endsWith("member") ? (
+          {location.pathname.split("/")[1] === "member" ? (
             <p>This member currently does not have any published work</p>
           ) : (
             <p>We does not have a published article related this topic yet</p>

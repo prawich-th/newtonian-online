@@ -16,6 +16,7 @@ const Member = () => {
     fetch(`https://apis.news.newton.ac.th/api/member/${id}`)
       .then((data) => data.json())
       .then((data) => {
+        document.title = `${data.name} | The Newtonian`;
         setMemberData(data);
         setIsLoading(false);
       });

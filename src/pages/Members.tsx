@@ -26,6 +26,8 @@ const Members = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.title = `Members | The Newtonian`;
+
     fetch(`https://apis.news.newton.ac.th/api/member/members`)
       .then((data) => {
         console.log(data);

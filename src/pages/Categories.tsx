@@ -51,6 +51,8 @@ const Categories = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = `Catergories | The Newtonian`;
+
     fetch(`https://apis.news.newton.ac.th/api/reader/all-articles`)
       .then((data) => data.json())
       .then((data) => {

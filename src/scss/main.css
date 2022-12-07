@@ -112,14 +112,26 @@ a {
         font-size: 1.75rem; }
 
 .footer {
-  background-color: var(--signature-white);
+  width: 80%;
   height: 4.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-size: 1.25rem; }
+  font-size: 1.35rem; }
+  .footer__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (min-width: 1800px) {
+    .footer {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .footer {
+      width: 100%; } }
+  .footer__wrapper {
+    background-color: var(--signature-white); }
   .footer__right {
     text-align: right; }
   .footer h4 {

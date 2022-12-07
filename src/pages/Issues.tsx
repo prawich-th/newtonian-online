@@ -7,6 +7,8 @@ const Issues = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.title = `Issues | The Newtonian`;
+
     fetch("https://apis.news.newton.ac.th/api/reader/issue/getIssues")
       .then((data) => data.json())
       .then((data) => {

@@ -28,6 +28,7 @@ const Article = () => {
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
+        document.title = `${data.title} | The Newtonian`;
         setArticle(data);
         setIsLoading(false);
       })

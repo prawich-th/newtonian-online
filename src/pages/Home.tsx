@@ -32,6 +32,7 @@ const Home = () => {
   console.log(import.meta.env.VITE_URL);
 
   useEffect(() => {
+    document.title = `Home | The Newtonian`;
     fetch(`https://apis.news.newton.ac.th/api/reader/get-homepage-data`)
       .then((data) => data.json())
       .then((data) => {

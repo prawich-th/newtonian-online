@@ -51,6 +51,8 @@ const Issue = () => {
   useEffect(() => {
     if (!param.id) return;
 
+    document.title = `Issue ${param.id} | The Newtonian`;
+
     fetch(
       `https://apis.news.newton.ac.th/api/reader/issue/getIssue/${param.id}`
     )

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import nth from "../utilities/nth";
 import ImageC from "./ImageC";
 
 const IssueCard: React.FC<{ date: string; no: number; cover: string }> = (
@@ -12,13 +13,7 @@ const IssueCard: React.FC<{ date: string; no: number; cover: string }> = (
         </div>
         <div className="issue-card__info">
           <h3>Issue {props.no}</h3>
-          <h4>
-            {new Date(props.date).toLocaleDateString("en-UK", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </h4>
+          <h4>{nth(props.date)}</h4>
         </div>
       </Link>
     </div>
