@@ -26,6 +26,7 @@ const Home = () => {
     ],
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [mainPreview, setMainPreview] = useState("");
   const navigate = useNavigate();
 
   console.log(import.meta.env.VITE_URL);
@@ -36,6 +37,13 @@ const Home = () => {
       .then((data) => {
         console.log(data);
         setHomepageData(data);
+        const text = homepageData.main.text.split(".").slice(0, 4).join(".");
+
+        console.info(text);
+        text.length >= 400
+          ? setMainPreview(text.split(" ").slice(0, 80).join(" "))
+          : setMainPreview(text);
+
         setIsLoading(false);
       })
       .catch((err) => {
@@ -83,8 +91,7 @@ const Home = () => {
                   },
                 }}
               >
-                {homepageData.main.text.split(".").slice(0, 4).join(".") +
-                  "..."}
+                {mainPreview + "..."}
               </ReactMarkdown>
             </span>
 
