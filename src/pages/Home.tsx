@@ -35,11 +35,10 @@ const Home = () => {
     fetch(`https://apis.news.newton.ac.th/api/reader/get-homepage-data`)
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data.main.text);
         setHomepageData(data);
-        const text = homepageData.main.text.split(".").slice(0, 4).join(".");
+        const text = data.main.text.split(".").slice(0, 4).join(".");
 
-        console.info(text);
         text.length >= 400
           ? setMainPreview(text.split(" ").slice(0, 80).join(" "))
           : setMainPreview(text);
@@ -80,7 +79,6 @@ const Home = () => {
                   p: (paragraph: { children?: boolean; node?: any }) => {
                     const { node } = paragraph;
 
-                    console.log(node.children[0].tagName);
                     if (node.children[0].tagName === "img") {
                       const image = node.children[0];
                       const caption = image.properties.alt;
