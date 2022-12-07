@@ -10,6 +10,7 @@ import ImageC from "../components/ImageC";
 import Letter from "../components/Letter";
 import Loading from "../components/Loading";
 import { Contents, Letters } from "../data";
+import nth from "../utilities/nth";
 
 const ArticleLink: React.FC<{
   _id: string;
@@ -27,6 +28,8 @@ const ArticleLink: React.FC<{
 const Issue = () => {
   const param = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const [pubDate, setPubDate] = useState("");
+  const [pdfLink, setPdfLink] = useState("");
   const [contents, setContents] = useState([
     {
       _id: "",
@@ -53,8 +56,9 @@ const Issue = () => {
     )
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
+        setPubDate(data.publishingDate);
         setContents(data.articles);
+        setPdfLink(data.pdf);
         setLetters(data.letters);
         setIsLoading(false);
       })
@@ -70,19 +74,17 @@ const Issue = () => {
       <div className="issue">
         <div className="issue__info">
           <div className="issue__info--cover">
-            <ImageC image="/issue1-cover.png" caption="issue 1 - cover" />
+            <ImageC
+              image={`https://apis.news.newton.ac.th/images/cover/issue${param.id}.png`}
+              caption={`issue ${param.id} - cover`}
+            />
           </div>
           <div className="issue__info--content">
             <div className="issue__headline">
               <h1>Issue {param.id}</h1>
-              <h3>31th October 2022</h3>
+              <h3>{nth(pubDate)}</h3>
             </div>
-            <a
-              href={
-                "https://drive.google.com/file/d/1NEBp3h-GWxHdTAYCwU-pZCvZGpAtJ4vh/view?usp=sharing"
-              }
-              target={`_blank`}
-            >
+            <a href={pdfLink} target={`_blank`}>
               <div className="issue__pdf">
                 <span className="material-symbols-sharp">picture_as_pdf</span>
 

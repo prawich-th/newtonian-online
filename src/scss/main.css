@@ -4,9 +4,21 @@ html {
   font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
   scroll-behavior: smooth; }
+  html *::-webkit-scrollbar {
+    background-color: transparent;
+    width: 15px; }
+  html *::-webkit-scrollbar-track {
+    background-color: transparent; }
+  html *::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 4px solid transparent;
+    background-color: #b7b1a96d;
+    backdrop-filter: blur(1.5rem);
+    background-clip: content-box; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  overflow: overlay; }
 
 main {
   margin: 2rem;

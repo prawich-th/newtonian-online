@@ -1,5 +1,5 @@
 import axios, { Axios, AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useRef, useState } from "react";
 
 const catergories = [
   {
@@ -45,6 +45,8 @@ const UploadArticle = () => {
   const [eicName, setEicName] = useState("Prawich Thawansakdivudhi");
   const [isLoading, setIsLoading] = useState(true);
 
+  const [content, setContent] = useState("");
+
   useEffect(() => {
     const token: string | null = localStorage.getItem("token");
 
@@ -62,6 +64,10 @@ const UploadArticle = () => {
       setPermission(true);
     } else setIsLoading(false);
   }, []);
+
+  useEffect(() => {
+    console.log(content);
+  }, [content]);
 
   if (!permission)
     return (
@@ -93,7 +99,7 @@ const UploadArticle = () => {
           <h1>Upload Article For Eics</h1>
           <p>Uplad an article as {eicName}</p>
         </div>
-        <form className="eics__form">
+        <form className="eics__form" onSubmit={(e) => e.preventDefault()}>
           <div className="eics__form--field">
             <p>Article Name</p>
             <input
@@ -126,7 +132,12 @@ const UploadArticle = () => {
           </div>
           <div className="eics__form--field eics__form--area">
             <p>Content</p>
-            <textarea cols={30} rows={10}></textarea>
+            <textarea
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              cols={200}
+              rows={330}
+            ></textarea>
           </div>
 
           <button type="submit">Submit</button>

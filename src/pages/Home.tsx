@@ -52,7 +52,7 @@ const Home = () => {
           <div className="home__banner--cover">
             <Link to={`/article/${homepageData.main._id}`}>
               <img
-                src={homepageData.main.image}
+                src={`https://apis.news.newton.ac.th/images${homepageData.main.image}`}
                 alt="Main homepageData Cover picture"
               />
             </Link>
@@ -60,7 +60,12 @@ const Home = () => {
           <div className="home__banner--info">
             <span>
               <h1>{homepageData.main.title}</h1>
-              <h5>By: {homepageData.main.author.name}</h5>
+              <h5>
+                By:{" "}
+                <Link to={`/member/${homepageData.main.author._id}`}>
+                  {homepageData.main.author.name}
+                </Link>
+              </h5>
               <ReactMarkdown
                 components={{
                   // @ts-ignore
@@ -78,7 +83,8 @@ const Home = () => {
                   },
                 }}
               >
-                {homepageData.main.text.slice(0, 440) + "..."}
+                {homepageData.main.text.split(".").slice(0, 4).join(".") +
+                  "..."}
               </ReactMarkdown>
             </span>
 
