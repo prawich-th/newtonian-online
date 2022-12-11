@@ -76,7 +76,7 @@ const Issue = () => {
         <div className="issue__info">
           <div className="issue__info--cover">
             <ImageC
-              image={`https://apis.news.newton.ac.th/images/cover/issue${param.id}.png`}
+              image={`https://apis.news.newton.ac.th/images/cover/issue${param.id}.webp`}
               caption={`issue ${param.id} - cover`}
             />
           </div>

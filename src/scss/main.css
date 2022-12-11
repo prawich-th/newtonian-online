@@ -696,6 +696,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center; }
+  .unsupport i {
+    font-size: 4 rem; }
 
 .eics__form {
   width: 45rem; }

@@ -22,14 +22,7 @@ const App = () => {
     return (
       <div className="unsupport__wrapper">
         <div className="unsupport">
-          <span
-            style={{
-              fontSize: "5rem",
-            }}
-            className="material-symbols-sharp"
-          >
-            devices_fold
-          </span>
+          <i className="bx bx-devices"></i>
           <br />
           This screen resolution is not supported. If you're using a folable
           phone please unfold your screen.
