@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import ArticleCard from "../components/ArticleCard";
 import ArticleList from "../components/ArticleList";
 import Loading from "../components/Loading";
-import { homepage } from "../data";
 
 const Categories = () => {
   const [articles, setArticles] = useState<any>({});

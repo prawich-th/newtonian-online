@@ -88,7 +88,7 @@ const Members = () => {
                     className="members__list--image"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "/notfound.png";
+                      e.currentTarget.src = "/notfound.webp";
                     }}
                   />
                   <h3>{cur.name}</h3>

@@ -19,7 +19,7 @@ const ArticleCard: React.FC<{
               alt={`Preview Image of the article ${props.title}`}
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = "/notfound.png";
+                e.currentTarget.src = "/notfound.webp";
               }}
             />
           </Link>
@@ -45,7 +45,7 @@ const ArticleCard: React.FC<{
                   },
                 }}
               >
-                {props.text.slice(0, 100) + "..."}
+                {props.text.split(" ").slice(0, 20).join(" ") + "..."}
               </ReactMarkdown>
             </p>
           </div>

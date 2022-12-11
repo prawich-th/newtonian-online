@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    width: 70%;
+    width: 60%;
     @include respond(breaking) {
       grid-template-columns: 1fr;
     }

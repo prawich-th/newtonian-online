@@ -20,7 +20,7 @@ const ImageC: React.FC<{
             return;
           }
           e.currentTarget.onerror = null;
-          e.currentTarget.src = "/notfound.png";
+          e.currentTarget.src = "/notfound.webp";
         }}
       />
       <p>{props.caption}</p>

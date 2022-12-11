@@ -9,7 +9,6 @@ import {
 import ImageC from "../components/ImageC";
 import Letter from "../components/Letter";
 import Loading from "../components/Loading";
-import { Contents, Letters } from "../data";
 import nth from "../utilities/nth";
 
 const ArticleLink: React.FC<{
@@ -88,7 +87,7 @@ const Issue = () => {
             </div>
             <a href={pdfLink} target={`_blank`}>
               <div className="issue__pdf">
-                <span className="material-symbols-sharp">picture_as_pdf</span>
+                <i className="bx bxs-file-pdf"></i>
 
                 <h3> Access the pdf copy</h3>
               </div>
