@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import { Link, useNavigate } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import Loading from "../components/Loading";
-import { homepage } from "../data";
 
 const Home = () => {
   const [homepageData, setHomepageData] = useState({

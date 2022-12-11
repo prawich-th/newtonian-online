@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ArticleList from "../components/ArticleList";
 import Loading from "../components/Loading";
-import { homepage } from "../data";
 import NotFound from "./NotFound";
 
 const Member = () => {
