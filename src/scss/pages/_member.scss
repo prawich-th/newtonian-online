@@ -20,16 +20,16 @@
 
     &--left {
       width: 100%;
-      display: grid;
       gap: 2rem;
-      grid-template-columns: 1fr 3fr;
 
+      display: grid;
+      grid-template-columns: 1fr 3fr;
       @include custom(1100px) {
         grid-template-columns: 1fr 2fr;
       }
       @include respond(breaking) {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 1fr;
       }
     }
 
