@@ -5,7 +5,7 @@ import ArticleList from "../components/ArticleList";
 import Loading from "../components/Loading";
 
 const Categories = () => {
-  const [articles, setArticles] = useState<any>({});
+  const [articles, setArticles] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const catergories = [
@@ -52,7 +52,7 @@ const Categories = () => {
   useEffect(() => {
     document.title = `Catergories | The Newtonian`;
 
-    fetch(`https://apis.news.newton.ac.th/api/reader/all-articles`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/article`)
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
@@ -70,11 +70,15 @@ const Categories = () => {
     <div className="categories__wrapper">
       <div className="categories">
         {catergories &&
-          catergories.map((c) => (
-            <section className="categories__articles">
-              <ArticleList title={c.name} articles={articles[c.id]} />
-            </section>
-          ))}
+          catergories.map((c) => {
+            const l = articles.filter((a) => a.category === c.id);
+            console.log(l);
+            return (
+              <section className="categories__articles">
+                <ArticleList headline={c.name} articles={l} />
+              </section>
+            );
+          })}
       </div>
     </div>
   );

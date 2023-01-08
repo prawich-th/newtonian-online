@@ -3,17 +3,20 @@ import ReactMarkdown from "react-markdown";
 import ImageC from "./ImageC";
 
 const Letter: React.FC<{
-  title: string;
-  text: string;
+  sender: string;
+  content: string;
   signatures: {
-    img: string;
-    name: string;
-    position: string;
+    members: {
+      signature: string;
+      name: string;
+      role: string;
+    };
   }[];
 }> = (props) => {
+  console.log(props);
   return (
     <div className="letter">
-      <h1>Letter From {props.title}</h1>
+      <h1>Letter From {props.sender}</h1>
 
       <ReactMarkdown
         components={{
@@ -31,19 +34,21 @@ const Letter: React.FC<{
           },
         }}
       >
-        {props.text}
+        {props.content}
       </ReactMarkdown>
       <div className="letter__signatures">
         {props.signatures.length > 0 &&
           props.signatures.map((e) => {
             return (
-              <div key={e.name} className="letter__signatures--item">
+              <div key={e.members.name} className="letter__signatures--item">
                 <div className="letter__signatures--wrap">
-                  <img src={`https://apis.news.newton.ac.th/images${e.img}`} />
+                  <img
+                    src={`https://apis.news.newton.ac.th/images${e.members.signature}`}
+                  />
                 </div>
                 <span>
-                  <h3>{e.name}</h3>
-                  <h4>{e.position}</h4>
+                  <h3>{e.members.name}</h3>
+                  <h4>{e.members.role}</h4>
                 </span>
               </div>
             );

@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import nth from "../utilities/nth";
 import ImageC from "./ImageC";
 
-const IssueCard: React.FC<{ date: string; no: number; cover: string }> = (
-  props
-) => {
+const IssueCard: React.FC<{
+  publishingDate: string;
+  no: number;
+  cover: string;
+}> = (props) => {
   return (
     <div className="issue-card">
       <Link to={`/issues/${props.no}`}>
@@ -13,7 +15,7 @@ const IssueCard: React.FC<{ date: string; no: number; cover: string }> = (
         </div>
         <div className="issue-card__info">
           <h3>Issue {props.no}</h3>
-          <h4>{nth(props.date)}</h4>
+          <h4>{nth(props.publishingDate)}</h4>
         </div>
       </Link>
     </div>

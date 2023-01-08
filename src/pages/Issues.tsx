@@ -9,7 +9,7 @@ const Issues = () => {
   useEffect(() => {
     document.title = `Issues | The Newtonian`;
 
-    fetch("https://apis.news.newton.ac.th/api/reader/issue/getIssues")
+    fetch("https://apis.news.newton.ac.th/api/reader/issue")
       .then((data) => data.json())
       .then((data) => {
         setIssueList(data);
@@ -29,9 +29,9 @@ const Issues = () => {
           {issueList.map((issue: any) => {
             return (
               <IssueCard
-                key={issue._id}
-                no={issue.no}
-                date={issue.date}
+                key={issue.id}
+                no={issue.id}
+                publishingDate={issue.publishingDate}
                 cover={issue.cover}
               />
             );

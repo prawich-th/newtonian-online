@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 import NotFound from "./NotFound";
 const Article = () => {
   const [article, setArticle] = useState({
-    title: "",
-    image: "",
-    author: { _id: "", name: "" },
-    date: "",
-    text: "",
+    headline: "",
+    cover: "",
+    member: [{ id: "", name: "" }],
+    publishingDate: "",
+    content: "",
   });
   const [isLoading, setIsLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -28,7 +28,7 @@ const Article = () => {
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
-        document.title = `${data.title} | The Newtonian`;
+        document.title = `${data.headline} | The Newtonian`;
         setArticle(data);
         setIsLoading(false);
       })
@@ -46,22 +46,25 @@ const Article = () => {
     <div className="article">
       <div className="article__wrapper">
         <div className="article__heading">
-          <h2>{article.title}</h2>
+          <h2>{article.headline}</h2>
           <h3>
-            <Link to={`/member/${article.author._id}`}>
-              {article.author.name}
-            </Link>{" "}
-            -{" "}
-            {new Date(article.date).toLocaleDateString("en-UK", {
+            {article.member.map((member, i) => (
+              <span>
+                {i > 0 ? ", " : " "}
+                <Link to={`/member/${member.id}`}>{member.name}</Link>
+              </span>
+            ))}
+            - &nbsp;
+            {new Date(article.publishingDate).toLocaleDateString("en-UK", {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}{" "}
-            - {Math.round(article.text.split(" ").length / 300)} min. read
+            - {Math.round(article.content.split(" ").length / 300)} min. read
           </h3>
           <ImageC
-            image={`https://apis.news.newton.ac.th/images${article.image}`}
-            caption={article.title}
+            image={`https://apis.news.newton.ac.th/images${article.cover}`}
+            caption={article.headline}
             notfound="gone"
           />
         </div>
@@ -91,7 +94,7 @@ const Article = () => {
               },
             }}
           >
-            {article.text}
+            {article.content}
           </ReactMarkdown>
         </div>
       </div>

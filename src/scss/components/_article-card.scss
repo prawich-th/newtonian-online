@@ -18,8 +18,9 @@
   &__info {
     &--content {
       h4 {
-        font-family: "IM Fell Double Pica SC", serif;
+        font-family: "Playfair Display", serif;
         font-size: 2.25rem;
+        // line-height: 120%;
         margin: 0;
         margin-bottom: 0.5rem;
       }
@@ -36,7 +37,7 @@
     h5 {
       font-weight: 400;
       font-size: 1.5rem;
-      color: #6d6d6d;
+      color: var(--signature-grey);
       margin: 0;
     }
   }

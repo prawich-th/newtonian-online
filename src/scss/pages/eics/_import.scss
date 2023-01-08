@@ -1,32 +1,39 @@
-.eics {
+.import {
+  &__area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
   &__form {
-    button {
-      width: 80%;
-      border: none;
-      height: 5rem;
-      text-align: center;
-      font-size: 1.5rem;
-      border-radius: 1.1rem;
-      padding: 2rem;
-      margin: 2rem 0;
-      font-family: inherit;
-      transition: transform 0.2s;
+    border: solid 0.1rem var(--border-color);
+    display: block;
+    padding: 2rem;
+    border-radius: 1.1rem;
 
-      &:hover {
-        transform: translateY(-0.5rem);
-      }
+    h3 {
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    &--action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
     }
     &--area {
       height: 30rem !important;
+      display: block;
     }
 
     width: 45rem;
-    &--field {
-      width: 100%;
 
+    &--field {
       height: 10rem;
       border-radius: 1.1rem;
-      border: solid 0.1rem rgb(221, 221, 221);
+      border: solid 0.1rem var(--border-color);
       padding: 2rem;
       margin: 2rem 0;
 
@@ -37,7 +44,7 @@
       input {
         margin: 0;
         padding: 0;
-        border: solid 0.1rem rgb(221, 221, 221);
+        border: solid 0.1rem var(--border-color);
         width: 35rem;
         font-family: inherit;
         height: 5rem;
@@ -51,7 +58,7 @@
       textarea {
         margin: 0;
         padding: 0;
-        border: solid 0.1rem rgb(221, 221, 221);
+        border: solid 0.1rem var(--border-color);
         width: 35rem;
         font-family: inherit;
         height: 75%;
@@ -64,7 +71,7 @@
       select {
         margin: 0;
         padding: 0;
-        border: solid 0.1rem rgb(221, 221, 221);
+        border: solid 0.1rem var(--border-color);
         width: 35rem;
         font-size: 1.5rem;
 

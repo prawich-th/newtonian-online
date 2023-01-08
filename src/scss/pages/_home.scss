@@ -17,7 +17,7 @@
       text-align: right;
 
       a {
-        color: #9e9e9e;
+        color: var(--signature-grey);
         font-size: 1.5rem;
       }
     }
@@ -27,7 +27,8 @@
       justify-content: space-between;
       flex-direction: column;
       h1 {
-        font-family: "IM Fell Double Pica SC";
+        font-family: "Playfair Display";
+        // line-height: 120%;
         font-size: 4.25rem;
         @include respond(breaking) {
           font-size: 3.5rem;

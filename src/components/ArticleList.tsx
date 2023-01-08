@@ -3,14 +3,14 @@ import { useLocation } from "react-router";
 import ArticleCard from "./ArticleCard";
 
 const ArticleList: React.FC<{
-  title: string;
+  headline: string;
   articles: {
-    _id: string;
-    image: string;
-    title: string;
-    text: string;
-    author: { name: string; _id: string };
-    date: string;
+    id: string;
+    cover: string;
+    headline: string;
+    content: string;
+    member: [{ name: string; id: string }];
+    publishingDate: string;
     // categories: string;
   }[];
 }> = (props) => {
@@ -20,14 +20,16 @@ const ArticleList: React.FC<{
   return (
     <section className="home__articles">
       <div className="home__articles--title">
-        <h2>{props.title}</h2>
+        <h2>{props.headline}</h2>
       </div>
       {props.articles.length === 0 ? (
         <div className="home__articles--no">
           {location.pathname.split("/")[1] === "member" ? (
             <p>This member currently does not have any published work</p>
           ) : (
-            <p>We does not have a published article related this topic yet</p>
+            <p>
+              We does not have a published article related to this topic yet
+            </p>
           )}
         </div>
       ) : (
@@ -35,13 +37,13 @@ const ArticleList: React.FC<{
           {props.articles.map((e) => {
             return (
               <ArticleCard
-                key={e._id}
-                _id={e._id}
-                image={e.image}
-                title={e.title}
-                text={e.text}
-                author={e.author}
-                date={e.date}
+                key={e.id}
+                id={e.id}
+                cover={e.cover}
+                headline={e.headline}
+                text={e.content}
+                member={e.member}
+                publishingDate={e.publishingDate}
               />
             );
           })}

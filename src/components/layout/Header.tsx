@@ -6,7 +6,16 @@ const Header = () => {
       <div className="header">
         <div className="header__logo">
           <Link to="/">
-            <img src="/logo.svg" alt="The Newtonian Logo" />
+            <img
+              src="/logo.svg"
+              alt="The Newtonian Logo"
+              className="header__logo--light"
+            />
+            <img
+              src="/logo-dark.svg"
+              alt="The Newtonian Logo"
+              className="header__logo--dark"
+            />
           </Link>
         </div>
         <div className="header__nav">

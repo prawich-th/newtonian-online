@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eeece9;
+    background-color: var(--signature-white);
   }
 
   @include respond(big-desktop) {
@@ -65,7 +65,7 @@
 
     ul {
       // border-top: #000 0.1rem solid;
-      border-bottom: #000 0.1rem solid;
+      border-bottom: var(--font-color) 0.1rem solid;
       padding: 0.5rem;
       width: 100%;
       list-style: none;
@@ -75,7 +75,7 @@
       align-items: baseline;
       a {
         text-decoration: none;
-        color: #000;
+        color: var(--font-color);
         font-size: 1.75rem;
       }
     }

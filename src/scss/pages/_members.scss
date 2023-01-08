@@ -4,7 +4,7 @@
   display: grid;
   a {
     text-decoration: none;
-    color: black;
+    color: var(--font-color);
   }
 
   &__important {

@@ -12,14 +12,22 @@ import Loading from "../components/Loading";
 import nth from "../utilities/nth";
 
 const ArticleLink: React.FC<{
-  _id: string;
-  title: string;
-  author: any;
+  id: string;
+  headline: string;
+  member: any;
 }> = (props) => {
   return (
-    <Link className="issue__info--article" to={`/article/${props._id}`}>
-      <h5>{props.title}</h5>
-      <h6>{props.author.name}</h6>
+    <Link className="issue__info--article" to={`/article/${props.id}`}>
+      <h5>{props.headline}</h5>
+      <h6>
+        {" "}
+        {props.member.map((member: any, i: number) => (
+          <span key={i}>
+            {i > 0 ? ", " : ""}
+            {member.name}
+          </span>
+        ))}
+      </h6>
     </Link>
   );
 };
@@ -31,37 +39,47 @@ const Issue = () => {
   const [pdfLink, setPdfLink] = useState("");
   const [contents, setContents] = useState([
     {
-      _id: "",
-      title: "",
-      author: "",
+      id: "",
+      headline: "",
+      member: {
+        name: "",
+        nickname: "",
+        id: 0,
+      },
     },
   ]);
   const navigate = useNavigate();
-  const [letters, setLetters] = useState([
-    {
-      _id: "",
-      title: "",
-      text: "",
-      signatures: [{ name: "", img: "", position: "" }],
-    },
-  ]);
-  console.log(param);
+  const [letter, setLetter] = useState({
+    id: "",
+    sender: "",
+    content: "",
+    letterSigner: [
+      {
+        members: {
+          signature: "",
+          name: "",
+          role: "",
+        },
+      },
+    ],
+  });
+  const [main, setMain] = useState();
 
   useEffect(() => {
     if (!param.id) return;
 
     document.title = `Issue ${param.id} | The Newtonian`;
 
-    fetch(
-      `https://apis.news.newton.ac.th/api/reader/issue/getIssue/${param.id}`
-    )
+    fetch(`https://apis.news.newton.ac.th/api/reader/issue/${param.id}`)
       .then((data) => data.json())
       .then((data) => {
+        console.log(data);
         setPubDate(data.publishingDate);
         setContents(data.articles);
-        setPdfLink(data.pdf);
-        setLetters(data.letters);
+        setPdfLink(data.pdfLink);
+        setLetter(data.letter);
         setIsLoading(false);
+        setMain(data.mainArticlesId);
       })
       .catch((err) => {
         navigate("/conn");
@@ -88,26 +106,28 @@ const Issue = () => {
             <a href={pdfLink} target={`_blank`}>
               <div className="issue__pdf">
                 <i className="bx bxs-file-pdf"></i>
-
                 <h3> Access the pdf copy</h3>
               </div>
             </a>
             <h4>Table Of Contents</h4>
             {contents &&
-              contents.map((e) => <ArticleLink key={e._id} {...e} />)}
+              contents
+                .sort((a, b) => {
+                  let e = 0;
+                  if (a.id === main) e = 1000;
+                  return +b.id - e;
+                })
+                .map((e) => <ArticleLink key={e.id} {...e} />)}
           </div>
         </div>
-        {letters &&
-          letters.map((e) => {
-            return (
-              <Letter
-                key={e._id}
-                title={e.title}
-                text={e.text}
-                signatures={e.signatures}
-              />
-            );
-          })}
+        {letter && (
+          <Letter
+            key={letter.id}
+            sender={letter.sender}
+            content={letter.content}
+            signatures={letter.letterSigner}
+          />
+        )}
       </div>
     </div>
   );

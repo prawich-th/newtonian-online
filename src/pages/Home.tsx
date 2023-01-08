@@ -7,20 +7,20 @@ import Loading from "../components/Loading";
 const Home = () => {
   const [homepageData, setHomepageData] = useState({
     main: {
-      _id: "",
-      image: "",
-      title: "",
-      text: "",
-      author: { name: "", _id: "" },
+      id: "",
+      cover: "",
+      headline: "",
+      content: "",
+      member: [{ name: "", id: "" }],
     },
-    other: [
+    articles: [
       {
-        _id: "",
-        image: "",
-        title: "",
-        text: "",
-        author: { name: "", _id: "" },
-        date: "",
+        id: "",
+        cover: "",
+        headline: "",
+        content: "",
+        member: [{ name: "", id: "" }],
+        publishingDate: "",
       },
     ],
   });
@@ -32,12 +32,12 @@ const Home = () => {
 
   useEffect(() => {
     document.title = `Home | The Newtonian`;
-    fetch(`https://apis.news.newton.ac.th/api/reader/get-homepage-data`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/homepage`)
       .then((data) => data.json())
       .then((data) => {
         // console.log(data.main.text);
         setHomepageData(data);
-        const text = data.main.text.split(".").slice(0, 4).join(".");
+        const text = data.main.content.split(".").slice(0, 4).join(".");
 
         text.length >= 400
           ? setMainPreview(text.split(" ").slice(0, 80).join(" "))
@@ -46,7 +46,7 @@ const Home = () => {
         setIsLoading(false);
       })
       .catch((err) => {
-        navigate("/conn");
+        // navigate("/conn");
       });
   }, []);
 
@@ -57,21 +57,24 @@ const Home = () => {
       <div className="home">
         <section className="home__banner">
           <div className="home__banner--cover">
-            <Link to={`/article/${homepageData.main._id}`}>
+            <Link to={`/article/${homepageData.main.id}`}>
               <img
-                src={`https://apis.news.newton.ac.th/images${homepageData.main.image}`}
+                src={`https://apis.news.newton.ac.th/images${homepageData.main.cover}`}
                 alt="Main homepageData Cover picture"
               />
             </Link>
           </div>
           <div className="home__banner--info">
             <span>
-              <h1>{homepageData.main.title}</h1>
+              <h1>{homepageData.main.headline}</h1>
               <h5>
                 By:{" "}
-                <Link to={`/member/${homepageData.main.author._id}`}>
-                  {homepageData.main.author.name}
-                </Link>
+                {homepageData.main.member.map((member, i) => (
+                  <span>
+                    {i > 0 ? ", " : ""}
+                    <Link to={`/member/${member.id}`}>{member.name}</Link>
+                  </span>
+                ))}
               </h5>
               <ReactMarkdown
                 components={{
@@ -94,7 +97,7 @@ const Home = () => {
             </span>
 
             <span className="home__banner--readmore">
-              <Link to={`/article/${homepageData.main._id}`}>Read More</Link>
+              <Link to={`/article/${homepageData.main.id}`}>Read More</Link>
             </span>
           </div>
         </section>
@@ -103,16 +106,16 @@ const Home = () => {
             <h2>Articles</h2>
           </div>
           <div className="home__articles--list">
-            {homepageData.other.map((e) => {
+            {homepageData.articles.map((e) => {
               return (
                 <ArticleCard
-                  key={e._id}
-                  _id={e._id}
-                  image={e.image}
-                  title={e.title}
-                  text={e.text}
-                  author={e.author}
-                  date={e.date}
+                  key={e.id}
+                  id={e.id}
+                  cover={e.cover}
+                  headline={e.headline}
+                  text={e.content}
+                  member={e.member}
+                  publishingDate={e.publishingDate}
                 />
               );
             })}

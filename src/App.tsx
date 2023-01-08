@@ -9,14 +9,30 @@ import Member from "./pages/Member";
 import { useMediaQuery } from "react-responsive";
 import Layout from "./components/layout/Layout";
 import Members from "./pages/Members";
-import UploadArticle from "./pages/eics/UploadArticle";
+import UploadArticle from "./pages/eics/ImportArticle";
 import ConnectionErr from "./pages/Connection";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
+import ImportArticle from "./pages/eics/ImportArticle";
+import ArticlesAction from "./pages/eics/ArticlesAction";
+import UploadImage from "./pages/eics/UploadImg";
+import EicMembers from "./pages/eics/Members";
 
 const App = () => {
   const isUnsupported = useMediaQuery({ maxWidth: "330px" });
   const location = useLocation();
+
+  // return (
+  //   <div className="unsupport__wrapper">
+  //     <div className="unsupport">
+  //       <i className="bx bx-pen"></i>
+  //       <br />
+  //       The Newtonian Online is currently down for maintenance. Sorry for the
+  //       inconvenience. Please come back later.
+  //     </div>
+  //   </div>
+  // );
 
   if (isUnsupported)
     return (
@@ -32,6 +48,12 @@ const App = () => {
 
   return (
     <>
+      <Toaster
+        containerStyle={{
+          fontSize: "1.5rem",
+        }}
+      />
+
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -40,8 +62,11 @@ const App = () => {
           <Route path="/article/:id" element={<Article />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/members" element={<Members />} />
+          <Route path="/eics/upload-img" element={<UploadImage />} />
           <Route path="/conn" element={<ConnectionErr />} />
-          <Route path="/eics/upload" element={<UploadArticle />} />
+          <Route path="/eics/import" element={<ImportArticle />} />
+          <Route path="/eics/articles" element={<ArticlesAction />} />
+          <Route path="/eics/members" element={<EicMembers />} />
           <Route path="/member/:id" element={<Member />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

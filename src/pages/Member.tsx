@@ -31,7 +31,7 @@ const Member = () => {
           <div className="member__info--left">
             <div className="member__info--image">
               <img
-                src={`https://apis.news.newton.ac.th/images${memberData.image}`}
+                src={`https://apis.news.newton.ac.th/images${memberData.profile}`}
                 alt="member's image"
               />
             </div>
@@ -40,7 +40,7 @@ const Member = () => {
               <h4>
                 Year {memberData.year} - {memberData.track}
               </h4>
-              <h5>{memberData.position.join(" / ")}</h5>
+              <h5>{memberData.position}</h5>
               <p>{memberData.bio}</p>
             </div>
           </div>
@@ -51,7 +51,7 @@ const Member = () => {
             />
           </div>
         </div>
-        <ArticleList title={"Articles"} articles={memberData.articles} />
+        <ArticleList headline={"Articles"} articles={memberData.articles} />
       </div>
     </div>
   );

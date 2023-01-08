@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=IM+Fell+Double+Pica+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap");
 html {
   font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
@@ -18,7 +20,9 @@ html {
 
 body {
   margin: 0;
-  overflow: overlay; }
+  background-color: var(--background-color);
+  overflow: overlay;
+  color: var(--font-color); }
 
 main {
   margin: 2rem;
@@ -36,11 +40,53 @@ p {
   font-size: 1.75rem; }
 
 a {
-  color: #9e9e9e; }
+  color: var(--signature-grey); }
+
+button {
+  width: 80%;
+  border: none;
+  height: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 1.1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  font-family: inherit;
+  transition: transform 0.2s; }
+  button:hover {
+    transform: translateY(-0.5rem); }
 
 :root {
   --signature-white: #eeece9;
-  --signature-grey: #9e9e9e; }
+  --signature-grey: #9e9e9e;
+  --border-color: rgb(221, 221, 221);
+  --background-color: #ffffff;
+  --overlay-color: #ffffff75;
+  --font-color: #000; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --signature-white: #261e1e;
+    --background-color: #2e2727;
+    --overlay-color: #2e272775;
+    --signature-grey: #adc2b9;
+    --border-color: #675d53;
+    --font-color: #f8f8f7;
+    --alternating-color: #241e1e; }
+  .header__logo--light {
+    display: none; } }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --signature-white: #eeece9;
+    --signature-grey: #9e9e9e;
+    --background-color: #ffffff;
+    --overlay-color: #ffffff75;
+    --font-color: #000;
+    --border-color: rgb(221, 221, 221);
+    --alternating-color: #efefef; }
+  .header__logo--dark {
+    display: none; } }
 
 .header {
   width: 80%;
@@ -56,7 +102,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eeece9; }
+    background-color: var(--signature-white); }
   @media only screen and (min-width: 1800px) {
     .header {
       width: 65%; } }
@@ -98,7 +144,7 @@ a {
         padding-bottom: 0rem;
         padding-top: 1rem; } }
     .header__nav ul {
-      border-bottom: #000 0.1rem solid;
+      border-bottom: var(--font-color) 0.1rem solid;
       padding: 0.5rem;
       width: 100%;
       list-style: none;
@@ -108,7 +154,7 @@ a {
       align-items: baseline; }
       .header__nav ul a {
         text-decoration: none;
-        color: #000;
+        color: var(--font-color);
         font-size: 1.75rem; }
 
 .footer {
@@ -163,14 +209,14 @@ a {
       width: 100%;
       text-align: right; }
       .home__banner--readmore a {
-        color: #9e9e9e;
+        color: var(--signature-grey);
         font-size: 1.5rem; }
     .home__banner--info {
       display: flex;
       justify-content: space-between;
       flex-direction: column; }
       .home__banner--info h1 {
-        font-family: "IM Fell Double Pica SC";
+        font-family: "Playfair Display";
         font-size: 4.25rem; }
         @media only screen and (max-width: 800px) {
           .home__banner--info h1 {
@@ -234,7 +280,7 @@ a {
     margin-top: 1rem !important;
     margin: 0;
     width: 100%;
-    font-family: "IM Fell Double Pica SC";
+    font-family: "Playfair Display";
     font-size: 4rem; }
   .article__heading h3 {
     font-weight: 400;
@@ -310,16 +356,15 @@ a {
     height: 4rem;
     display: flex;
     align-items: center;
-    background-color: #dfd8c7;
+    background-color: var(--alternating-color);
     padding: 1rem;
     margin-bottom: 1rem;
     font-size: 2rem;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    color: #dfd8c7; }
+    text-shadow: -1px -1px 0 var(--font-color), 1px -1px 0 var(--font-color), -1px 1px 0 var(--font-color), 1px 1px 0 var(--font-color);
+    color: var(--alternating-color); }
     .issue__pdf h3 {
-      font-family: "IM Fell Double Pica SC";
+      color: var(--font-color);
       font-size: 2rem;
-      color: #000;
       text-shadow: none;
       font-weight: 400;
       padding-left: 0.5rem; }
@@ -340,16 +385,16 @@ a {
       font-weight: 400;
       margin-bottom: 1rem !important; }
     .issue__info a {
-      text-decoration: none;
-      color: black; }
+      text-decoration: none; }
     .issue__info--article {
+      color: var(--font-color);
       width: 100%;
       display: grid;
       grid-template-columns: 3fr 2.25fr;
       align-items: center;
       gap: 1rem; }
       .issue__info--article:nth-child(even) {
-        background-color: #efefef; }
+        background-color: var(--alternating-color); }
       .issue__info--article h5 {
         font-weight: 400;
         margin-left: 1rem !important;
@@ -368,14 +413,14 @@ a {
     text-align: left;
     margin-bottom: 2rem; }
     .issue__headline h1 {
-      font-family: "IM Fell Double Pica SC";
+      font-family: "Playfair Display";
       font-size: 5rem;
       margin: 0; }
     .issue__headline h3 {
       margin: 0;
       font-weight: 400;
       font-size: 1.75rem;
-      color: #9e9e9e; }
+      color: var(--signature-grey); }
 
 .not-found {
   width: 80%; }
@@ -473,6 +518,11 @@ a {
           display: none; } }
       .member__info--right img {
         width: 100%; }
+        @media (prefers-color-scheme: dark) {
+          .member__info--right img {
+            -webkit-filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%);
+            /* Safari/Chrome */
+            filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%); } }
 
 .members {
   width: 80%;
@@ -489,7 +539,7 @@ a {
       width: 100%; } }
   .members a {
     text-decoration: none;
-    color: black; }
+    color: var(--font-color); }
   .members__important {
     place-self: center;
     height: fit-content;
@@ -573,6 +623,225 @@ a {
     .u-article {
       width: 100%; } }
 
+.import__area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem; }
+
+.import__form {
+  border: solid 0.1rem var(--border-color);
+  display: block;
+  padding: 2rem;
+  border-radius: 1.1rem;
+  width: 45rem; }
+  .import__form h3 {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400; }
+  .import__form--action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem; }
+  .import__form--area {
+    height: 30rem !important;
+    display: block; }
+  .import__form--field {
+    height: 10rem;
+    border-radius: 1.1rem;
+    border: solid 0.1rem var(--border-color);
+    padding: 2rem;
+    margin: 2rem 0; }
+    .import__form--field p {
+      margin: 1rem 0;
+      font-weight: 600; }
+    .import__form--field input {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem var(--border-color);
+      width: 35rem;
+      font-family: inherit;
+      height: 5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      font-size: 1.5rem;
+      padding: 0 1rem; }
+    .import__form--field textarea {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem var(--border-color);
+      width: 35rem;
+      font-family: inherit;
+      height: 75%;
+      font-size: 1.5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      padding: 1rem; }
+    .import__form--field select {
+      margin: 0;
+      padding: 0;
+      border: solid 0.1rem var(--border-color);
+      width: 35rem;
+      font-size: 1.5rem;
+      padding: 1rem;
+      font-family: inherit;
+      height: 5rem;
+      border-radius: 1.1rem;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 2rem #00000020;
+      padding: 0 1rem; }
+
+.articles-action {
+  width: 80%; }
+  .articles-action__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (min-width: 1800px) {
+    .articles-action {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .articles-action {
+      width: 100%; } }
+  .articles-action a {
+    text-decoration: none;
+    width: 100%; }
+  .articles-action__btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0;
+    font-size: 2rem; }
+    .articles-action__btn--published {
+      background-color: #57b428;
+      color: white; }
+    .articles-action__btn--not-published {
+      background-color: #a7a7a7;
+      color: black; }
+    .articles-action__btn--delete {
+      background-color: #9c1b15;
+      color: white; }
+  .articles-action__right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+  .articles-action__item {
+    border: solid 0.1rem var(--border-color);
+    display: block;
+    padding: 2rem;
+    border-radius: 1.1rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr 3.5fr;
+    padding: 2rem;
+    gap: 2rem;
+    width: 100%; }
+    .articles-action__item--cover {
+      display: grid;
+      align-items: center; }
+      .articles-action__item--cover img {
+        object-fit: cover;
+        width: 100%;
+        height: auto; }
+    .articles-action__item--info h3 {
+      font-family: "Playfair Display";
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0; }
+    .articles-action__item--info h4 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0.5rem 0; }
+    .articles-action__item--action {
+      padding-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2rem; }
+
+.members-action {
+  width: 80%; }
+  .members-action__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media only screen and (min-width: 1800px) {
+    .members-action {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .members-action {
+      width: 100%; } }
+  .members-action a {
+    text-decoration: none;
+    width: 100%; }
+  .members-action__btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0;
+    font-size: 2rem; }
+    .members-action__btn--published {
+      background-color: #57b428;
+      color: white; }
+    .members-action__btn--not-published {
+      background-color: #a7a7a7;
+      color: black; }
+    .members-action__btn--delete {
+      background-color: #9c1b15;
+      color: white; }
+  .members-action__right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+  .members-action__item {
+    border: solid 0.1rem var(--border-color);
+    display: block;
+    padding: 2rem;
+    border-radius: 1.1rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 3.5fr;
+    padding: 2rem;
+    gap: 2rem; }
+    .members-action__item--cover {
+      display: grid;
+      align-items: center; }
+      .members-action__item--cover img {
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        width: 100%;
+        height: auto; }
+      .members-action__item--cover--signature {
+        display: grid;
+        align-items: center; }
+        .members-action__item--cover--signature img {
+          object-fit: cover;
+          aspect-ratio: 16/9;
+          width: 100%;
+          height: auto; }
+    .members-action__item--info h3 {
+      font-family: "Playfair Display";
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0; }
+    .members-action__item--info h4 {
+      font-weight: 400;
+      font-size: 1.75rem;
+      margin: 0.5rem 0; }
+    .members-action__item--info h5 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0.5rem 0; }
+    .members-action__item--action {
+      padding-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2rem; }
+
 .letter {
   width: 100%;
   text-align: justify; }
@@ -607,6 +876,11 @@ a {
       .letter__signatures--item img {
         width: 13rem;
         padding-bottom: 2rem; }
+        @media (prefers-color-scheme: dark) {
+          .letter__signatures--item img {
+            -webkit-filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%);
+            /* Safari/Chrome */
+            filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%); } }
 
 .article-card {
   width: 100%;
@@ -621,7 +895,7 @@ a {
       object-fit: cover;
       width: 100%; }
   .article-card__info--content h4 {
-    font-family: "IM Fell Double Pica SC", serif;
+    font-family: "Playfair Display", serif;
     font-size: 2.25rem;
     margin: 0;
     margin-bottom: 0.5rem; }
@@ -632,7 +906,7 @@ a {
   .article-card__author h5 {
     font-weight: 400;
     font-size: 1.5rem;
-    color: #6d6d6d;
+    color: var(--signature-grey);
     margin: 0; }
 
 .image-c {
@@ -645,7 +919,7 @@ a {
     font-size: 1.5rem;
     margin: 0;
     text-align: right;
-    color: #737373; }
+    color: var(--signature-grey); }
 
 .loading {
   height: 100%;
@@ -661,23 +935,26 @@ a {
   .loading h3 {
     font-size: 2rem;
     font-weight: 400;
-    margin: 0; }
+    margin: 0;
+    color: var(--signature-grey); }
 
 .issue-card {
   width: 100%;
   display: block; }
   .issue-card a {
-    color: black;
+    color: var(--font-color);
     text-decoration: none; }
   .issue-card__cover {
     width: 100%;
-    border: 0.1rem var(--signature-grey) solid; }
+    border: 0.1rem var(--signature-grey) solid;
+    background-color: white; }
     .issue-card__cover img {
-      width: 100%; }
+      width: 100%;
+      object-fit: cover; }
   .issue-card__info {
     text-align: center; }
     .issue-card__info h3 {
-      font-family: "IM FELL Double Pica SC";
+      font-family: "Playfair Display";
       margin: 1rem 0 0 0;
       font-size: 2.25rem; }
     .issue-card__info h4 {
@@ -689,7 +966,9 @@ a {
 .unsupport {
   text-align: center;
   width: 80%;
-  font-size: 1.5rem; }
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.75rem; }
   .unsupport__wrapper {
     width: 100%;
     height: 100vh;
@@ -697,69 +976,5 @@ a {
     align-items: center;
     justify-content: center; }
   .unsupport i {
-    font-size: 4 rem; }
-
-.eics__form {
-  width: 45rem; }
-  .eics__form button {
-    width: 80%;
-    border: none;
-    height: 5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    border-radius: 1.1rem;
-    padding: 2rem;
-    margin: 2rem 0;
-    font-family: inherit;
-    transition: transform 0.2s; }
-    .eics__form button:hover {
-      transform: translateY(-0.5rem); }
-  .eics__form--area {
-    height: 30rem !important; }
-  .eics__form--field {
-    width: 100%;
-    height: 10rem;
-    border-radius: 1.1rem;
-    border: solid 0.1rem #dddddd;
-    padding: 2rem;
-    margin: 2rem 0; }
-    .eics__form--field p {
-      margin: 1rem 0;
-      font-weight: 600; }
-    .eics__form--field input {
-      margin: 0;
-      padding: 0;
-      border: solid 0.1rem #dddddd;
-      width: 35rem;
-      font-family: inherit;
-      height: 5rem;
-      border-radius: 1.1rem;
-      background-color: #f9f9f9;
-      box-shadow: 0 0 2rem #00000020;
-      font-size: 1.5rem;
-      padding: 0 1rem; }
-    .eics__form--field textarea {
-      margin: 0;
-      padding: 0;
-      border: solid 0.1rem #dddddd;
-      width: 35rem;
-      font-family: inherit;
-      height: 75%;
-      font-size: 1.5rem;
-      border-radius: 1.1rem;
-      background-color: #f9f9f9;
-      box-shadow: 0 0 2rem #00000020;
-      padding: 1rem; }
-    .eics__form--field select {
-      margin: 0;
-      padding: 0;
-      border: solid 0.1rem #dddddd;
-      width: 35rem;
-      font-size: 1.5rem;
-      padding: 1rem;
-      font-family: inherit;
-      height: 5rem;
-      border-radius: 1.1rem;
-      background-color: #f9f9f9;
-      box-shadow: 0 0 2rem #00000020;
-      padding: 0 1rem; }
+    font-size: 4rem;
+    margin-bottom: 2rem; }

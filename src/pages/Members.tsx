@@ -5,22 +5,24 @@ import Loading from "../components/Loading";
 const Members = () => {
   const [important, setImportant] = useState([
     {
-      _id: "",
+      id: "",
       name: "Yanitta Iewwongcharoen (Krapook)",
-      image: "/members/krapook.png",
+      nickname: "Yanitta Iewwongcharoen (Krapook)",
+      profile: "/members/krapook.png",
       year: "13",
       track: "Humanities",
-      position: ["Editor-in-chief"],
+      role: "Editor-in-chief",
     },
   ]);
   const [members, setMembers] = useState([
     {
-      _id: "",
+      id: "",
       name: "Yanitta Iewwongcharoen (Krapook)",
-      image: "/members/krapook.png",
+      nickname: "Yanitta Iewwongcharoen (Krapook)",
+      profile: "/members/krapook.png",
       year: "13",
       track: "Humanities",
-      position: ["Editor-in-chief"],
+      role: "Editor-in-chief",
     },
   ]);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +30,7 @@ const Members = () => {
   useEffect(() => {
     document.title = `Members | The Newtonian`;
 
-    fetch(`https://apis.news.newton.ac.th/api/member/members`)
+    fetch(`https://apis.news.newton.ac.th/api/member`)
       .then((data) => {
         console.log(data);
         return data.json();
@@ -38,10 +40,10 @@ const Members = () => {
         const importantList: any[] = [];
         const memberList: any[] = [];
         data.map((e: any) => {
+          console.log(e);
           let isImportant = false;
-          e.position.map((p: string) => {
-            if (p.endsWith("Editor-in-chief")) isImportant = true;
-          });
+
+          if (e.role.endsWith("Editor-in-chief")) isImportant = true;
 
           if (isImportant) return importantList.push(e);
           return memberList.push(e);
@@ -61,18 +63,24 @@ const Members = () => {
         <section className="members__important">
           {important &&
             important.map((cur) => (
-              <Link to={`/member/${cur._id}`}>
+              <Link to={`/member/${cur.id}`}>
                 <div className="members__important--card">
                   <img
-                    src={`https://apis.news.newton.ac.th/images${cur.image}`}
+                    src={`https://apis.news.newton.ac.th/images${cur.profile}`}
                     alt=""
                     className="members__important--image"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "/notfound.webp";
+                    }}
                   />
-                  <h3>{cur.name}</h3>
+                  <h3>
+                    {cur.name} ({cur.nickname})
+                  </h3>
                   <h4>
                     Year {cur.year} - {cur.track}
                   </h4>
-                  <h4>{cur.position.join(" / ")}</h4>
+                  <h4>{cur.role}</h4>
                 </div>
               </Link>
             ))}
@@ -80,10 +88,10 @@ const Members = () => {
         <section className="members__list">
           {members &&
             members.map((cur) => (
-              <Link to={`/member/${cur._id}`}>
+              <Link to={`/member/${cur.id}`}>
                 <div className="members__list--card">
                   <img
-                    src={`https://apis.news.newton.ac.th/images${cur.image}`}
+                    src={`https://apis.news.newton.ac.th/images${cur.profile}`}
                     alt=""
                     className="members__list--image"
                     onError={(e) => {
@@ -91,11 +99,13 @@ const Members = () => {
                       e.currentTarget.src = "/notfound.webp";
                     }}
                   />
-                  <h3>{cur.name}</h3>
+                  <h3>
+                    {cur.name} ({cur.nickname})
+                  </h3>
                   <h4>
-                    Year {cur.year} - {cur.track}
+                    Year {cur.year} {cur.track ? " - " + cur.track : ""}
                   </h4>
-                  <h4>{cur.position.join(" / ")}</h4>
+                  <h4>{cur.role}</h4>
                 </div>
               </Link>
             ))}
