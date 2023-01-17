@@ -32,7 +32,7 @@ const Home = () => {
 
   useEffect(() => {
     document.title = `Home | The Newtonian`;
-    fetch(`https://apis.news.newton.ac.th/api/reader/homepage`)
+    fetch(`https://apis.news.newton.ac.th/api/reader/homepage?amount=16`)
       .then((data) => data.json())
       .then((data) => {
         // console.log(data.main.text);

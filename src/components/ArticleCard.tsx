@@ -55,19 +55,14 @@ const ArticleCard: React.FC<{
         className="article-card__author"
         style={{ display: "inline-flex", alignItems: "flex-end" }}
       >
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {props.member.map((member, i) => (
-            <Link to={`/member/${member.id}`}>
-              <h5>
-                {i > 0 ? ", " : ""}
-                {member.name}
-              </h5>
-            </Link>
-          ))}
-        </div>
         <h5>
-          &nbsp;
-          {"- "}
+          {props.member.map((member, i) => (
+            <span>
+              {i > 0 ? ", " : ""}
+              <Link to={`/member/${member.id}`}>{member.name}</Link>
+            </span>
+          ))}
+          {" - "}
           {new Date(props.publishingDate).toLocaleString("en-UK", {
             day: "numeric",
             month: "short",

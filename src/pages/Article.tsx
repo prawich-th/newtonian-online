@@ -54,13 +54,14 @@ const Article = () => {
                 <Link to={`/member/${member.id}`}>{member.name}</Link>
               </span>
             ))}
-            - &nbsp;
+            {" - "}
             {new Date(article.publishingDate).toLocaleDateString("en-UK", {
               year: "numeric",
               month: "long",
               day: "numeric",
-            })}{" "}
-            - {Math.round(article.content.split(" ").length / 300)} min. read
+            })}
+            {" - "}
+            {Math.round(article.content.split(" ").length / 300)} min. read
           </h3>
           <ImageC
             image={`https://apis.news.newton.ac.th/images${article.cover}`}
