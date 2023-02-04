@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ImageC from "../../components/ImageC";
 import Loading from "../../components/Loading";
 import NoPermission from "../../components/NoPermission";
+import nth from "../../utilities/nth";
 
 const ArticlesAction = () => {
   const [permission, setPermission] = useState(false);
@@ -230,9 +231,13 @@ const ArticlesAction = () => {
       </ReactModal>
 
       <div className="articles-action">
-        <div className="articles-action__title">
+        <div className="articles-action__title--ui">
           <h1>The Newtonian Online AMS</h1>
           <p>You are currently loggedin as Prawich Thawansaldivudhi</p>
+        </div>{" "}
+        <div className="articles-action__title--print">
+          <h1>The Newtonian Online - Analytics</h1>
+          <p>{nth(new Date().toISOString())}</p>
         </div>
         <div className="articles-action__list">
           {articles.map((article) => (
@@ -289,7 +294,7 @@ const ArticlesAction = () => {
                   </button>
                   <Link to={`/eics/upload-img?f_path=${article.cover}`}>
                     <button
-                      className="articles-action__btn"
+                      className="articles-action__btn articles-action__no-print"
                       // onClick={() => alert("Under Development. Coming Issue 4")}
                     >
                       <i className="bx bx-image-add"></i>
@@ -298,7 +303,7 @@ const ArticlesAction = () => {
                   <div></div>
                   <div></div>
                   <button
-                    className="articles-action__btn articles-action__btn--delete"
+                    className="articles-action__btn articles-action__btn--delete articles-action__no-print"
                     onClick={() =>
                       setModal({
                         isOpen: true,

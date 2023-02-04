@@ -8,6 +8,7 @@ const Member = () => {
   const [memberData, setMemberData] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
   const [isNotFound, setNotFound] = useState(false);
+  const [memberStatus, setMemberStatus] = useState("Active");
   const id = useParams().id;
   console.log(id);
 
@@ -18,6 +19,21 @@ const Member = () => {
         document.title = `${data.name} | The Newtonian`;
         setMemberData(data);
         setIsLoading(false);
+
+        switch (data.status) {
+          case "ACTI":
+            setMemberStatus("Active");
+            break;
+          case "GRAD":
+            setMemberStatus("Graduated");
+            break;
+          case "LEAV":
+            setMemberStatus("Resigned");
+            break;
+          default:
+            setMemberStatus("Active");
+            break;
+        }
       });
   }, []);
 
@@ -36,11 +52,16 @@ const Member = () => {
               />
             </div>
             <div className="member__info--bio">
-              <h3>{memberData.name}</h3>
+              <h3>
+                {memberData.name} ({memberData.nickname})
+              </h3>
               <h4>
-                Year {memberData.year} - {memberData.track}
+                Year {memberData.year} - {memberData.track}{" "}
+                <span style={{ fontStyle: "italic" }}>({memberStatus})</span>
               </h4>
-              <h5>{memberData.position}</h5>
+              <h5 style={{ color: "var(--signature-grey)" }}>
+                {memberData.role}
+              </h5>
               <p>{memberData.bio}</p>
             </div>
           </div>

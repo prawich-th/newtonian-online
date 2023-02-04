@@ -43,6 +43,10 @@
     justify-content: center;
   }
 
+  @media print {
+    width: 100%;
+  }
+
   @include respond(big-desktop) {
     width: 65%;
   }

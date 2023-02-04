@@ -5,7 +5,8 @@
 html {
   font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  background-color: var(--signature-white); }
   html *::-webkit-scrollbar {
     background-color: transparent;
     width: 15px; }
@@ -103,6 +104,9 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--signature-white); }
+  @media print {
+    .header {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .header {
       width: 65%; } }
@@ -170,6 +174,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .footer {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .footer {
       width: 65%; } }
@@ -190,6 +197,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .home {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .home {
       width: 65%; } }
@@ -314,6 +324,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .issues {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .issues {
       width: 65%; } }
@@ -428,6 +441,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .not-found {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .not-found {
       width: 65%; } }
@@ -441,6 +457,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .categories {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .categories {
       width: 65%; } }
@@ -531,6 +550,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .members {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .members {
       width: 65%; } }
@@ -545,9 +567,9 @@ button {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
     width: 60%;
     gap: 5rem;
-    place-items: center;
     padding-bottom: 2rem; }
     @media only screen and (max-width: 800px) {
       .members__important {
@@ -616,6 +638,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .u-article {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .u-article {
       width: 65%; } }
@@ -700,6 +725,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .articles-action {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .articles-action {
       width: 65%; } }
@@ -709,6 +737,14 @@ button {
   .articles-action a {
     text-decoration: none;
     width: 100%; }
+  @media print {
+    .articles-action__title--ui {
+      display: none; } }
+  .articles-action__title--print {
+    display: none; }
+    @media print {
+      .articles-action__title--print {
+        display: block; } }
   .articles-action__btn {
     width: 100%;
     display: inline-flex;
@@ -730,17 +766,20 @@ button {
     display: flex;
     justify-content: space-between;
     flex-direction: column; }
+  @media print {
+    .articles-action__no-print {
+      display: none; } }
   .articles-action__item {
     border: solid 0.1rem var(--border-color);
     display: block;
     padding: 2rem;
     border-radius: 1.1rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    page-break-inside: avoid;
     display: grid;
     grid-template-columns: 1.5fr 3.5fr;
     padding: 2rem;
-    gap: 2rem;
-    width: 100%; }
+    gap: 2rem; }
     .articles-action__item--cover {
       display: grid;
       align-items: center; }
@@ -768,6 +807,9 @@ button {
     width: 100%;
     display: flex;
     justify-content: center; }
+  @media print {
+    .members-action {
+      width: 100%; } }
   @media only screen and (min-width: 1800px) {
     .members-action {
       width: 65%; } }

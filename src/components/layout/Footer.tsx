@@ -7,7 +7,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__right">
-          <h4>The Newtonian Online Version 1.0</h4>
+          <h4>The Newtonian Online Version 1.3</h4>
         </div>
       </div>
     </div>

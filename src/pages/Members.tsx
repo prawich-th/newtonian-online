@@ -10,6 +10,8 @@ const Members = () => {
       nickname: "Yanitta Iewwongcharoen (Krapook)",
       profile: "/members/krapook.png",
       year: "13",
+      status: "",
+
       track: "Humanities",
       role: "Editor-in-chief",
     },
@@ -22,6 +24,7 @@ const Members = () => {
       profile: "/members/krapook.png",
       year: "13",
       track: "Humanities",
+      status: "",
       role: "Editor-in-chief",
     },
   ]);
@@ -75,7 +78,8 @@ const Members = () => {
                     }}
                   />
                   <h3>
-                    {cur.name} ({cur.nickname})
+                    {cur.name}
+                    <br />({cur.nickname})
                   </h3>
                   <h4>
                     Year {cur.year} - {cur.track}
@@ -100,12 +104,15 @@ const Members = () => {
                     }}
                   />
                   <h3>
-                    {cur.name} ({cur.nickname})
+                    {cur.name}
+                    <br />({cur.nickname})
                   </h3>
                   <h4>
                     Year {cur.year} {cur.track ? " - " + cur.track : ""}
                   </h4>
                   <h4>{cur.role}</h4>
+                  {cur.status === "LEAV" && <h4>Leaved</h4>}
+                  {cur.status === "GRAD" && <h4>Graduated!</h4>}
                 </div>
               </Link>
             ))}

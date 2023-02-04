@@ -8,6 +8,10 @@
     background-color: var(--signature-white);
   }
 
+  @media print {
+    width: 100%;
+  }
+
   @include respond(big-desktop) {
     width: 65%;
   }
