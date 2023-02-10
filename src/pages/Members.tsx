@@ -97,6 +97,9 @@ const Members = () => {
                   <img
                     src={`https://apis.news.newton.ac.th/images${cur.profile}`}
                     alt=""
+                    style={
+                      cur.status !== "ACTI" ? { filter: "grayscale(1)" } : {}
+                    }
                     className="members__list--image"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
@@ -111,8 +114,12 @@ const Members = () => {
                     Year {cur.year} {cur.track ? " - " + cur.track : ""}
                   </h4>
                   <h4>{cur.role}</h4>
-                  {cur.status === "LEAV" && <h4>Leaved</h4>}
-                  {cur.status === "GRAD" && <h4>Graduated!</h4>}
+                  {cur.status === "LEAV" && (
+                    <h4 style={{ fontStyle: "italic" }}>Leaved</h4>
+                  )}
+                  {cur.status === "GRAD" && (
+                    <h4 style={{ fontStyle: "italic" }}>Graduated</h4>
+                  )}
                 </div>
               </Link>
             ))}
