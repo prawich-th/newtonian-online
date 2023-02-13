@@ -27,6 +27,9 @@ const Member = () => {
           case "GRAD":
             setMemberStatus("Graduated");
             break;
+          case "CONS":
+            setMemberStatus("Award Winner");
+            break;
           case "LEAV":
             setMemberStatus("Resigned");
             break;
