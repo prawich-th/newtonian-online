@@ -48,6 +48,7 @@ const Issue = () => {
       },
     },
   ]);
+  const [isNotFound, setIsNotFound] = useState(false);
   const navigate = useNavigate();
   const [letter, setLetter] = useState({
     id: "",
@@ -78,15 +79,50 @@ const Issue = () => {
         setContents(data.articles);
         setPdfLink(data.pdfLink);
         setLetter(data.letter);
-        setIsLoading(false);
         setMain(data.mainArticlesId);
+        setIsLoading(false);
       })
       .catch((err) => {
-        navigate("/conn");
+        setIsNotFound(true);
+        setIsLoading(false);
       });
   }, []);
 
   if (isLoading) return <Loading />;
+
+  if (isNotFound)
+    return (
+      <div className="issue__wrapper">
+        <div className="issue">
+          <div className="issue__info">
+            <div className="issue__info--cover">
+              <ImageC
+                image={`/notfound.webp`}
+                caption={`issue ${param.id} - cover`}
+              />
+            </div>
+            <div className="issue__info--content">
+              <div className="issue__headline">
+                <h1>Issue {param.id}</h1>
+                <h3>To be announced</h3>
+              </div>
+
+              <h4>
+                Issue {param.id} has yet to be released, please come back later!
+              </h4>
+              {/* {contents &&
+                contents
+                  .sort((a, b) => {
+                    let e = 0;
+                    if (a.id === main) e = 1000;
+                    return +b.id - e;
+                  })
+                  .map((e) => <ArticleLink key={e.id} {...e} />)} */}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     <div className="issue__wrapper">

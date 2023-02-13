@@ -44,25 +44,38 @@ const ImageC: React.FC<{
             display: "flex",
             justifyContent: "center",
             position: "relative",
+            alignItems: "center",
           }}
         >
-          <img
-            src={props.image}
-            alt="Image With Caption"
-            style={{
-              height: "100%",
-              width: "fit",
-              // objectFit: "cover",
-            }}
-            onError={(e) => {
-              if (props.notfound === "gone") {
-                setIsGone(true);
-                return;
-              }
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = "/notfound.webp";
-            }}
-          />
+          <div>
+            <img
+              src={props.image}
+              alt="Image With Caption"
+              style={{
+                height: "max-content",
+                width: "65vw",
+              }}
+              onError={(e) => {
+                if (props.notfound === "gone") {
+                  setIsGone(true);
+                  return;
+                }
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "/notfound.webp";
+              }}
+            />
+            <p
+              style={{
+                textAlign: "right",
+                padding: 0,
+                margin: ".5rem 0 0",
+                fontSize: "1.25rem",
+                fontStyle: "italic",
+              }}
+            >
+              {props.caption}
+            </p>
+          </div>
           <i
             style={{
               color: "var(--font-color)",
