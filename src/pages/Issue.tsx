@@ -9,6 +9,7 @@ import {
 import ImageC from "../components/ImageC";
 import Letter from "../components/Letter";
 import Loading from "../components/Loading";
+import Out from "../components/Out";
 import nth from "../utilities/nth";
 
 const ArticleLink: React.FC<{
@@ -98,12 +99,12 @@ const Issue = () => {
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
-        window.open(pdfLink, "_blank", "noreferrer");
+        // window.open(pdfLink, "_blank", "noreferrer");
         setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        window.open(pdfLink, "_blank", "noreferrer");
+        // window.open(pdfLink, "_blank", "noreferrer");
         setIsLoading(false);
       });
   };
@@ -111,7 +112,14 @@ const Issue = () => {
   if (isLoading && toPdf)
     return (
       <Loading
-        msg={`Outbound Traffic: Redirecting you to ${pdfLink},\n you will no longer be under the Newtonian Online policy.`}
+      // msg={`Collecting`}
+      />
+    );
+  if (!isLoading && toPdf)
+    return (
+      <Out
+        // msg={`Outbound Traffic: Redirecting you to ${pdfLink},\n you will no longer be under the Newtonian Online policy.`}
+        link={pdfLink}
       />
     );
   if (isLoading) return <Loading />;
