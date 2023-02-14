@@ -87,7 +87,33 @@ const Issue = () => {
         setIsLoading(false);
       });
   }, []);
+  const [toPdf, setToPdf] = useState(false);
+  const pdfViewHandler = () => {
+    setToPdf(true);
+    setIsLoading(true);
+    console.log("adding view");
+    fetch(`https://apis.news.newton.ac.th/api/reader/viewPdf/${param.id}`, {
+      method: "PATCH",
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data);
+        window.open(pdfLink, "_blank", "noreferrer");
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        window.open(pdfLink, "_blank", "noreferrer");
+        setIsLoading(false);
+      });
+  };
 
+  if (isLoading && toPdf)
+    return (
+      <Loading
+        msg={`Outbound Traffic: Redirecting you to ${pdfLink},\n you will no longer be under the Newtonian Online policy.`}
+      />
+    );
   if (isLoading) return <Loading />;
 
   if (isNotFound)
@@ -139,12 +165,10 @@ const Issue = () => {
               <h1>Issue {param.id}</h1>
               <h3>{nth(pubDate)}</h3>
             </div>
-            <a href={pdfLink} target={`_blank`}>
-              <div className="issue__pdf">
-                <i className="bx bxs-file-pdf"></i>
-                <h3> Access the pdf copy</h3>
-              </div>
-            </a>
+            <div className="issue__pdf" onClick={pdfViewHandler}>
+              <i className="bx bxs-file-pdf"></i>
+              <h3> Access the pdf copy</h3>
+            </div>
             <h4>Table Of Contents</h4>
             {contents &&
               contents

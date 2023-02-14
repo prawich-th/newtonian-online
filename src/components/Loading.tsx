@@ -1,11 +1,14 @@
 import { ClockLoader } from "react-spinners";
 
-const Loading: React.FC = (props) => {
+const Loading: React.FC<{ msg?: string }> = (props) => {
   return (
     <div className="loading__wrapper">
       <div className="loading">
         <ClockLoader size={"80px"} color={"var(--signature-grey)"} />
-        <h3>Loading...</h3>
+        <span>
+          <h3>Loading...</h3>
+          {props.msg && <h4>{props.msg}</h4>}
+        </span>
       </div>
     </div>
   );

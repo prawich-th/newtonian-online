@@ -263,7 +263,8 @@ const ArticlesAction = () => {
                     ))}
                   </h4>
                   <h4>
-                    Category: {article.category} - Views: {article.views}
+                    Category: {article.category} - Views: {article.views} <br />
+                    Issue: {article.issuesId} - Article Id: {article.id}
                   </h4>
                 </div>
                 <div className="articles-action__item--action">

@@ -9,12 +9,23 @@
   height: 100%;
   text-align: center;
   display: grid;
+  justify-items: center;
   gap: 1.25rem;
 
   h3 {
     font-size: 2rem;
     font-weight: 400;
     margin: 0;
+    padding-bottom: 0;
     color: var(--signature-grey);
+  }
+  h4 {
+    font-style: italic;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0;
+    color: var(--signature-grey);
+    white-space: break-spaces;
   }
 }

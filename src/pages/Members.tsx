@@ -120,7 +120,7 @@ const Members = () => {
                   {cur.status === "GRAD" && (
                     <h4 style={{ fontStyle: "italic" }}>Graduated</h4>
                   )}{" "}
-                  {cur.status === "GRAD" && (
+                  {cur.status === "CONS" && (
                     <h4 style={{ fontStyle: "italic" }}>
                       Contestant (Award Winner)
                     </h4>
