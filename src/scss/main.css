@@ -884,6 +884,104 @@ button {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 2rem; }
 
+.issues-eics {
+  width: 80%; }
+  .issues-eics__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  @media print {
+    .issues-eics {
+      width: 100%; } }
+  @media only screen and (min-width: 1800px) {
+    .issues-eics {
+      width: 65%; } }
+  @media only screen and (max-width: 1000px) {
+    .issues-eics {
+      width: 100%; } }
+  .issues-eics a {
+    text-decoration: none;
+    width: 100%; }
+  @media print {
+    .issues-eics__title--ui {
+      display: none; } }
+  .issues-eics__title--print {
+    display: none; }
+    @media print {
+      .issues-eics__title--print {
+        display: block; } }
+  .issues-eics__btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0;
+    font-size: 2rem; }
+    .issues-eics__btn--published {
+      background-color: #57b428;
+      color: white; }
+    .issues-eics__btn--not-published {
+      background-color: #a7a7a7;
+      color: black; }
+    .issues-eics__btn--delete {
+      background-color: #9c1b15;
+      color: white; }
+  .issues-eics__right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+  @media print {
+    .issues-eics__no-print {
+      display: none; } }
+  .issues-eics a {
+    color: var(--text-color); }
+  .issues-eics__article-card {
+    text-decoration: none;
+    border: solid 0.1rem var(--border-color);
+    border-radius: 1.1rem;
+    padding: 1rem 1rem;
+    margin: 0.5rem 0; }
+    .issues-eics__article-card h4 {
+      margin: 0 !important;
+      padding: 0; }
+  .issues-eics__article-main {
+    border: solid 0.1rem #ff4f4f !important; }
+  .issues-eics__item {
+    border: solid 0.1rem var(--border-color);
+    display: block;
+    padding: 2rem;
+    border-radius: 1.1rem;
+    margin-top: 2rem;
+    page-break-inside: avoid;
+    display: grid;
+    grid-template-columns: 1.5fr 3.5fr;
+    padding: 2rem;
+    gap: 2rem; }
+    @media only screen and (max-width: 800px) {
+      .issues-eics__item {
+        grid-template-columns: 1fr; } }
+    .issues-eics__item--cover {
+      display: grid;
+      align-items: center; }
+      .issues-eics__item--cover img {
+        object-fit: cover;
+        width: 100%;
+        height: auto; }
+    .issues-eics__item--info h3 {
+      font-family: "Playfair Display";
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0; }
+    .issues-eics__item--info h4 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0.5rem 0; }
+    .issues-eics__item--action {
+      padding-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2rem; }
+
 .letter {
   width: 100%;
   text-align: justify; }

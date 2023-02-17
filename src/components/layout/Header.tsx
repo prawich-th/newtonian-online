@@ -29,6 +29,15 @@ const Header = () => {
             <li key={"members"}>
               <Link to={"/members"}>Members</Link>
             </li>
+            {localStorage.getItem("token") && (
+              <>
+                <li>
+                  <Link style={{ color: "#CC3333" }} to={"/eics"}>
+                    Eics
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

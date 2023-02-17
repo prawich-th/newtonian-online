@@ -18,6 +18,8 @@ import ImportArticle from "./pages/eics/ImportArticle";
 import ArticlesAction from "./pages/eics/ArticlesAction";
 import UploadImage from "./pages/eics/UploadImg";
 import EicMembers from "./pages/eics/Members";
+import IssueAction from "./pages/eics/IssuesAction";
+import EicsNav from "./pages/eics/EicsNav";
 
 const App = () => {
   const isUnsupported = useMediaQuery({ maxWidth: "330px" });
@@ -66,7 +68,9 @@ const App = () => {
           <Route path="/conn" element={<ConnectionErr />} />
           <Route path="/eics/import" element={<ImportArticle />} />
           <Route path="/eics/articles" element={<ArticlesAction />} />
+          <Route path="/eics/issues" element={<IssueAction />} />
           <Route path="/eics/members" element={<EicMembers />} />
+          <Route path="/eics" element={<EicsNav />} />
           <Route path="/member/:id" element={<Member />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
