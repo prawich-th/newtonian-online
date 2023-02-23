@@ -5,6 +5,25 @@ import Loading from "../components/Loading";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NotFound from "./NotFound";
+
+const Skeleton: React.FC<{
+  height: number;
+  margin?: number;
+  width?: number;
+}> = (props) => {
+  return (
+    <span
+      className="skeleton"
+      style={{
+        width: `${props.width ?? 100}%`,
+        height: `${props.height}rem`,
+        margin: `0 0 ${props.margin ?? 1}rem 0`,
+        background: "var(--signature-white)",
+      }}
+    ></span>
+  );
+};
+
 const Article = () => {
   const [article, setArticle] = useState({
     headline: "",
@@ -38,7 +57,22 @@ const Article = () => {
       });
   }, []);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <div className="article">
+        <div className="article__wrapper">
+          <div className="article__heading">
+            <Skeleton height={8} />
+            <Skeleton height={3} />
+            <Skeleton height={40} />
+            <Skeleton height={2} margin={0.75} />
+            <Skeleton height={2} margin={0.75} />
+            <Skeleton height={2} margin={0.75} />
+            <Skeleton height={2} margin={0.75} />
+          </div>
+        </div>
+      </div>
+    );
 
   if (notFound) return <NotFound />;
 
