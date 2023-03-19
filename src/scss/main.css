@@ -849,6 +849,9 @@ button {
     .members-action__btn--published {
       background-color: #57b428;
       color: white; }
+    .members-action__btn--contestant {
+      background-color: #b47c28;
+      color: white; }
     .members-action__btn--not-published {
       background-color: #a7a7a7;
       color: black; }

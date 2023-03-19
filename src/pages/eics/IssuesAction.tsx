@@ -122,7 +122,7 @@ const IssueAction = () => {
       <div className="issues-eics">
         <div className="issues-eics__title--ui">
           <h1>The Newtonian Online ISSMS</h1>
-          <p>You are currently loggedin as Prawich Thawansaldivudhi</p>
+          <p>You are currently signed in as {eicName}</p>{" "}
         </div>{" "}
         <div className="issues-eics__title--print">
           <h1>The Newtonian Online - Analytics</h1>

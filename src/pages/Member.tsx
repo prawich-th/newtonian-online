@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ArticleList from "../components/ArticleList";
+import ImageC from "../components/ImageC";
 import Loading from "../components/Loading";
 import NotFound from "./NotFound";
 
@@ -49,9 +50,9 @@ const Member = () => {
         <div className="member__info">
           <div className="member__info--left">
             <div className="member__info--image">
-              <img
-                src={`https://apis.news.newton.ac.th/images${memberData.profile}`}
-                alt="member's image"
+              <ImageC
+                image={`https://apis.news.newton.ac.th/images${memberData.profile}`}
+                caption={`${memberData.nickname}'s image`}
               />
             </div>
             <div className="member__info--bio">

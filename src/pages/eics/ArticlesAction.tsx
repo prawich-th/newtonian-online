@@ -233,7 +233,7 @@ const ArticlesAction = () => {
       <div className="articles-action">
         <div className="articles-action__title--ui">
           <h1>The Newtonian Online AMS</h1>
-          <p>You are currently loggedin as Prawich Thawansaldivudhi</p>
+          <p>You are currently signed in as {eicName}</p>
         </div>{" "}
         <div className="articles-action__title--print">
           <h1>The Newtonian Online - Analytics</h1>

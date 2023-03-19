@@ -180,7 +180,7 @@ const EicMembers = () => {
       <div className="members-action">
         <div className="members-action__title">
           <h1>The Newtonian Online MMS</h1>
-          <p>You are currently loggedin as Prawich Thawansaldivudhi</p>
+          <p>You are currently signed in as {eicName}</p>{" "}
         </div>
         <div className="members-action__list">
           {members.map((member) => (
@@ -202,7 +202,7 @@ const EicMembers = () => {
                   <h3>{member.name}</h3>
                   <h4>{member.role}</h4>
                   <h4 style={{ color: "var(--signature-grey)" }}>
-                    Year: {member.year} - Track?: {member.track}
+                    Year: {member.year} - Track: {member.track}
                   </h4>
                   <h5>Bio: {member.bio}</h5>
                 </div>
@@ -214,8 +214,10 @@ const EicMembers = () => {
                   </Link>
                   <button
                     className={`members-action__btn members-action__btn--${
-                      ["ACTI", "GRAD", "WINN"].includes(member.status)
+                      "ACTI" === member.status
                         ? "published"
+                        : member.status === "CONS"
+                        ? "contestant"
                         : "un-published"
                     }`}
                     onClick={() =>

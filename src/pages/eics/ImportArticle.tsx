@@ -8,6 +8,7 @@ import {
 } from "react";
 import { toast } from "react-hot-toast";
 import NoPermission from "../../components/NoPermission";
+import { v4 as uuidv4 } from "uuid";
 
 const catergories = [
   {
@@ -28,7 +29,7 @@ const catergories = [
   },
 
   {
-    name: "Fiction",
+    name: "Fiction / Poetry",
     id: "Fiction",
   },
   {
@@ -61,7 +62,7 @@ const ImportArticle = () => {
       issueNo: 1,
       category: "",
       docId: "",
-      cover: "/articles/",
+      cover: `/articles/${uuidv4()}/cover.webp`,
     },
     // {
     //   headline: "",
@@ -140,7 +141,7 @@ const ImportArticle = () => {
         issueNo: 1,
         category: "",
         docId: "",
-        cover: "/articles/",
+        cover: `/articles/${uuidv4()}/cover.webp`,
       },
     ];
 
@@ -274,13 +275,23 @@ const ImportArticle = () => {
                   onChange={(e) => changeHandler(index, e)}
                 >
                   <option></option>
-                  {members.map((m) => {
-                    return (
-                      <option key={m.id} value={+m.id}>
-                        {m.name} ({m.nickname})
-                      </option>
-                    );
-                  })}
+                  {members
+                    .sort((a, b) => {
+                      if (a.nickname < b.nickname) {
+                        return -1;
+                      }
+                      if (a.nickname > b.nickname) {
+                        return 1;
+                      }
+                      return 0;
+                    })
+                    .map((m) => {
+                      return (
+                        <option key={m.id} value={+m.id}>
+                          {m.nickname} ({m.name})
+                        </option>
+                      );
+                    })}
                 </select>
               </div>
 

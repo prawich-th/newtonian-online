@@ -23,7 +23,7 @@ const Categories = () => {
       id: "AdviceEssay",
     },
     {
-      name: "Fiction",
+      name: "Fiction / Poetry",
       id: "Fiction",
     },
     {
@@ -75,7 +75,7 @@ const Categories = () => {
             console.log(l);
             return (
               <section className="categories__articles">
-                <ArticleList headline={c.name} articles={l} />
+                <ArticleList headline={c.name} articles={l.reverse()} />
               </section>
             );
           })}

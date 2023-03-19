@@ -37,17 +37,20 @@ const EicsNav = () => {
       <div className="issues-eics">
         <div className="issues-eics__title--ui">
           <h1>The Newtonian Online Management System</h1>
-          <p>You are currently loggedin as Prawich Thawansakdivudhi</p>
+          <p>You are currently signed in as {eicName}</p>
         </div>
         <div
           style={{
             fontSize: "1.5rem",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Link to={"/eics/members"}>Members (MMS)</Link> <br />
           <Link to={"/eics/issues"}>Issues (ISSMS)</Link>
           <br />
-          <Link to={"/eics/articles"}>Articles (AMS)</Link>
+          <Link to={"/eics/articles"}>Articles (AMS)</Link> <br />
+          <Link to={"/eics/upload-img"}>Upload Image</Link>
           <br />
         </div>
       </div>
