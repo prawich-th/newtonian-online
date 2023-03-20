@@ -22,8 +22,8 @@ import IssueAction from "./pages/eics/IssuesAction";
 import EicsNav from "./pages/eics/EicsNav";
 
 const App = () => {
-  // const isUnsupported = useMediaQuery({ maxWidth: "330px" });
-  const isUnsupported = false;
+  const isUnsupported = useMediaQuery({ maxWidth: "280px" });
+  // const isUnsupported = false;
   const location = useLocation();
 
   // return (
