@@ -51,6 +51,7 @@ const EicsNav = () => {
           <br />
           <Link to={"/eics/articles"}>Articles (AMS)</Link> <br />
           <Link to={"/eics/upload-img"}>Upload Image</Link>
+          <Link to={"/eics/new-member"}>New Member</Link>
           <br />
         </div>
       </div>

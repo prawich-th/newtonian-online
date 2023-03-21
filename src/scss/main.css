@@ -44,14 +44,13 @@ a {
   color: var(--signature-grey); }
 
 button {
-  width: 80%;
+  width: 50%;
   border: none;
   height: 5rem;
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1.1rem;
-  padding: 2rem;
-  margin: 2rem 0;
+  margin-top: 2rem;
   font-family: inherit;
   transition: transform 0.2s; }
   button:hover {
@@ -692,13 +691,13 @@ button {
     height: 30rem !important;
     display: block; }
   .import__form--field {
-    height: 10rem;
+    height: fit-content;
     border-radius: 1.1rem;
     border: solid 0.1rem var(--border-color);
     padding: 2rem;
     margin: 2rem 0; }
     .import__form--field p {
-      margin: 1rem 0;
+      margin: 0 0 1rem 0;
       font-weight: 600; }
     .import__form--field input {
       margin: 0;
@@ -718,7 +717,7 @@ button {
       border: solid 0.1rem var(--border-color);
       width: 35rem;
       font-family: inherit;
-      height: 75%;
+      height: 10rem;
       font-size: 1.5rem;
       border-radius: 1.1rem;
       background-color: #f9f9f9;

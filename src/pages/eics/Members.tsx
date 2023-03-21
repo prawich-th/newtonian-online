@@ -13,6 +13,9 @@ const EicMembers = () => {
   const [refresh, setRefresh] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [members, setMembers] = useState<any[]>([]);
+  const [allMembers, setAllMembers] = useState<any[]>([]);
+  const [search, setSearch] = useState("");
+
   const [modal, setModal] = useState({
     isOpen: false,
     articleId: 0,
@@ -46,8 +49,32 @@ const EicMembers = () => {
       .then((res: AxiosResponse) => {
         console.log(res.data);
         setMembers(res.data.members);
+        setAllMembers(res.data.members);
       });
   }, [refresh]);
+
+  const searchHandler = (e: any) => {
+    e.preventDefault();
+    console.log(allMembers);
+
+    console.log(search);
+    if (!search) {
+      return setMembers(allMembers);
+    }
+
+    const regex = new RegExp(search, "g");
+
+    setMembers(
+      allMembers.filter(({ name, nickname }) => {
+        const isMatch = regex.test(`${name} ${nickname}`);
+        console.log({
+          test: isMatch,
+          name: `${name} ${nickname}`,
+        });
+        return isMatch;
+      })
+    );
+  };
 
   if (!isLoading) return <Loading />;
   if (!permission) return <NoPermission />;
@@ -178,10 +205,48 @@ const EicMembers = () => {
       </ReactModal>
 
       <div className="members-action">
-        <div className="members-action__title">
-          <h1>The Newtonian Online MMS</h1>
-          <p>You are currently signed in as {eicName}</p>{" "}
+        <div
+          className="members-action__title"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "4fr 1fr",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <h1>The Newtonian Online MMS</h1>
+            <p>You are currently signed in as {eicName}</p>{" "}
+          </div>
+          <Link
+            style={{
+              fontSize: "1.5rem",
+              textAlign: "right",
+            }}
+            to={"/eics/new-member"}
+          >
+            New Member
+          </Link>
         </div>
+        <form
+          className="import__form--field"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button
+            type="submit"
+            onClick={searchHandler}
+            style={{ width: "30%", marginTop: "0" }}
+          >
+            Search
+          </button>
+        </form>
         <div className="members-action__list">
           {members.map((member) => (
             <div className="members-action__item" key={member.id}>

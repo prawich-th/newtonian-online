@@ -31,14 +31,14 @@
     width: 45rem;
 
     &--field {
-      height: 10rem;
+      height: fit-content;
       border-radius: 1.1rem;
       border: solid 0.1rem var(--border-color);
       padding: 2rem;
       margin: 2rem 0;
 
       p {
-        margin: 1rem 0;
+        margin: 0 0 1rem 0;
         font-weight: 600;
       }
       input {
@@ -61,7 +61,7 @@
         border: solid 0.1rem var(--border-color);
         width: 35rem;
         font-family: inherit;
-        height: 75%;
+        height: 10rem;
         font-size: 1.5rem;
         border-radius: 1.1rem;
         background-color: #f9f9f9;

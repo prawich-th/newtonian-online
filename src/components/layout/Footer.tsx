@@ -3,11 +3,11 @@ const Footer = () => {
     <div className="footer__wrapper">
       <div className="footer">
         <div className="footer__copy">
-          All Rights Reserved &copy; 2022 The Newtonian
+          All Rights Reserved &copy; 2022-23 The Newtonian
         </div>
 
         <div className="footer__right">
-          <h4>The Newtonian Online Version 1.3</h4>
+          <h4>The Newtonian Online Version 1.5</h4>
         </div>
       </div>
     </div>
