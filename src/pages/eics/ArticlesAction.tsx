@@ -23,6 +23,9 @@ const ArticlesAction = () => {
     actionColor: "",
     handler: (id: number) => {},
   });
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -51,7 +54,7 @@ const ArticlesAction = () => {
   }, [refresh]);
 
   if (!isLoading) return <Loading />;
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   const deletionHandler = (id: number) => {
     toast.promise(

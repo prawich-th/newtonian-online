@@ -64,6 +64,7 @@ const ImportArticle = () => {
       docId: "",
       cover: `/articles/${uuidv4()}/cover.webp`,
     },
+
     // {
     //   headline: "",
     //   writerId: 0,
@@ -74,6 +75,9 @@ const ImportArticle = () => {
     // },
   ]);
   const [content, setContent] = useState("");
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   useEffect(() => {
     const token: string | null = localStorage.getItem("token");
@@ -210,7 +214,7 @@ const ImportArticle = () => {
     });
   };
 
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   return (
     <div className="u-article__wrapper">

@@ -13,6 +13,9 @@ const EicsNav = () => {
   const [eicName, setEicName] = useState("");
   const [refresh, setRefresh] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,7 +33,7 @@ const EicsNav = () => {
   }, [refresh]);
 
   if (!isLoading) return <Loading />;
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   return (
     <div className="issues-eics__wrapper">
@@ -50,8 +53,16 @@ const EicsNav = () => {
           <Link to={"/eics/issues"}>Issues (ISSMS)</Link>
           <br />
           <Link to={"/eics/articles"}>Articles (AMS)</Link> <br />
-          <Link to={"/eics/upload-img"}>Upload Image</Link>
-          <Link to={"/eics/new-member"}>New Member</Link>
+          <Link to={"/eics/upload-img"}>Upload Image</Link> <br />
+          <Link to={"/eics/new-member"}>New Member</Link> <br />
+          <a
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.reload();
+            }}
+          >
+            Logout
+          </a>
           <br />
         </div>
       </div>

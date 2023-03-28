@@ -25,6 +25,9 @@ const EicMembers = () => {
     actionColor: "",
     handler: (id: number) => {},
   });
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -77,7 +80,7 @@ const EicMembers = () => {
   };
 
   if (!isLoading) return <Loading />;
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   const publicationHandler = (id: number) => {
     toast.promise(

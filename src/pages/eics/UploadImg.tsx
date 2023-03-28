@@ -19,6 +19,9 @@ const UploadImage = () => {
   const [path, setPath] = useState("");
   const [members, setMembers] = useState<any[]>([]);
   const [searchParams] = useSearchParams();
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   const f_path = searchParams.get("f_path");
   useEffect(() => {
@@ -90,7 +93,7 @@ const UploadImage = () => {
     });
   };
 
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   return (
     <div className="u-article__wrapper">

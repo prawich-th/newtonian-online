@@ -17,6 +17,9 @@ const NewMember = () => {
     track: "",
     bio: "",
   });
+  const loggedInLift = () => {
+    setPermission(true);
+  };
 
   useEffect(() => {
     const token: string | null = localStorage.getItem("token");
@@ -72,7 +75,7 @@ const NewMember = () => {
   useEffect(() => {
     console.log(member);
   }, [member]);
-  if (!permission) return <NoPermission />;
+  if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
   return (
     <div className="u-article__wrapper">
