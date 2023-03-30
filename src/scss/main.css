@@ -690,6 +690,9 @@ button {
   .import__form--area {
     height: 30rem !important;
     display: block; }
+  @media only screen and (max-width: 800px) {
+    .import__form {
+      width: 100%; } }
   .import__form--field {
     height: fit-content;
     border-radius: 1.1rem;
@@ -703,7 +706,7 @@ button {
       margin: 0;
       padding: 0;
       border: solid 0.1rem var(--border-color);
-      width: 35rem;
+      width: 80%;
       font-family: inherit;
       height: 5rem;
       border-radius: 1.1rem;
@@ -715,7 +718,7 @@ button {
       margin: 0;
       padding: 0;
       border: solid 0.1rem var(--border-color);
-      width: 35rem;
+      width: 80%;
       font-family: inherit;
       height: 10rem;
       font-size: 1.5rem;
@@ -727,7 +730,7 @@ button {
       margin: 0;
       padding: 0;
       border: solid 0.1rem var(--border-color);
-      width: 35rem;
+      width: 80%;
       font-size: 1.5rem;
       padding: 1rem;
       font-family: inherit;

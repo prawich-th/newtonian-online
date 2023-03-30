@@ -28,6 +28,10 @@
       display: block;
     }
 
+    @include respond(breaking) {
+      width: 100%;
+    }
+
     width: 45rem;
 
     &--field {
@@ -45,7 +49,7 @@
         margin: 0;
         padding: 0;
         border: solid 0.1rem var(--border-color);
-        width: 35rem;
+        width: 80%;
         font-family: inherit;
         height: 5rem;
 
@@ -59,7 +63,7 @@
         margin: 0;
         padding: 0;
         border: solid 0.1rem var(--border-color);
-        width: 35rem;
+        width: 80%;
         font-family: inherit;
         height: 10rem;
         font-size: 1.5rem;
@@ -72,7 +76,7 @@
         margin: 0;
         padding: 0;
         border: solid 0.1rem var(--border-color);
-        width: 35rem;
+        width: 80%;
         font-size: 1.5rem;
 
         padding: 1rem;

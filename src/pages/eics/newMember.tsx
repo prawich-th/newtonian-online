@@ -6,6 +6,7 @@ import NoPermission from "../../components/NoPermission";
 const NewMember = () => {
   const [permission, setPermission] = useState(false);
   const [eicName, setEicName] = useState("");
+  const [permissionLevel, setPermissionLevel] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [name, setname] = useState("");
   const [path, setPath] = useState("");
@@ -35,6 +36,7 @@ const NewMember = () => {
       .then((res: AxiosResponse) => {
         console.log(res.data);
         setEicName(res.data.name);
+        setPermissionLevel(res.data.permission);
         if (res.data.permission >= 2) setPermission(true);
       });
     setIsLoading(false);
@@ -76,6 +78,18 @@ const NewMember = () => {
     console.log(member);
   }, [member]);
   if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
+
+  if (permissionLevel <= 2)
+    return (
+      <div className="u-article__wrapper">
+        <div className="u-article">
+          <div className="u-article__title">
+            <h1>Can't Create Member Profile</h1>
+            <p>Create member profile as {eicName} - insufficient permission</p>
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     <div className="u-article__wrapper">

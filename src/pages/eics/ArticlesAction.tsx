@@ -26,6 +26,7 @@ const ArticlesAction = () => {
   const loggedInLift = () => {
     setPermission(true);
   };
+  const [permissionLevel, setPermissionLevel] = useState(0);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -38,6 +39,7 @@ const ArticlesAction = () => {
       .then((res: AxiosResponse) => {
         console.log(res.data);
         setEicName(res.data.name);
+        setPermissionLevel(res.data.permission);
         if (res.data.permission >= 2) setPermission(true);
       });
 
@@ -306,9 +308,21 @@ const ArticlesAction = () => {
                   </Link>
                   <div></div>
                   <div></div>
+
                   <button
                     className="articles-action__btn articles-action__btn--delete articles-action__no-print"
-                    onClick={() =>
+                    onClick={() => {
+                      if (permissionLevel <= 2)
+                        return setModal({
+                          isOpen: true,
+                          articleId: article.id,
+                          heading: `Can't delete ${article.id} \n(${article.headline})`,
+                          text: "Do you want to proceed, the content won't be deleted forever.",
+                          action: "Can't Delete Article",
+                          actionColor: "delete",
+                          handler: () => {},
+                        });
+
                       setModal({
                         isOpen: true,
                         articleId: article.id,
@@ -317,8 +331,8 @@ const ArticlesAction = () => {
                         action: "Delete Article",
                         actionColor: "delete",
                         handler: deletionHandler,
-                      })
-                    }
+                      });
+                    }}
                   >
                     <i className="bx bx-trash"></i>
                   </button>
