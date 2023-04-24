@@ -193,7 +193,9 @@ const Issue = () => {
             key={letter.id}
             sender={letter.sender}
             content={letter.content}
-            signatures={letter.letterSigner}
+            signatures={letter.letterSigner.sort((a, b) => {
+              return a.members.role.startsWith("Founder") ? -10 : 1;
+            })}
           />
         )}
       </div>
