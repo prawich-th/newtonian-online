@@ -987,9 +987,10 @@ button {
         grid-template-columns: 1fr; } }
     .issues-eics__item--cover {
       display: grid;
-      align-items: center; }
+      align-items: start; }
       .issues-eics__item--cover img {
         object-fit: cover;
+        border-radius: 1.1rem;
         width: 100%;
         height: auto; }
     .issues-eics__item--info h3 {

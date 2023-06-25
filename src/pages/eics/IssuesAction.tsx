@@ -56,6 +56,37 @@ const IssueAction = () => {
   if (!isLoading) return <Loading />;
   if (!permission) return <NoPermission loggedInLift={loggedInLift} />;
 
+  const publicationHandler = (id: number) => {
+    axios
+      .patch(
+        `https://apis.news.newton.ac.th/api/eics/toggle-issue/${id}`,
+        {},
+        {
+          headers: {
+            authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res: AxiosResponse) => {
+        console.log(res.data);
+        setModal({
+          isOpen: false,
+          articleId: 0,
+          heading: "",
+          text: "",
+          action: "",
+          actionColor: "",
+          handler: () => {},
+        });
+        toast.success("Successfully published");
+        setRefresh(refresh + 1);
+      })
+      .catch((err: AxiosError) => {
+        console.log(err.response?.data);
+        toast.error("Something went wrong");
+      });
+  };
+
   return (
     <div className="issues-eics__wrapper">
       <ReactModal
@@ -160,6 +191,16 @@ const IssueAction = () => {
                     LetterId: {issue.lettersId ?? "N/A"} <br />
                     Date Published: {nth(issue.publishingDate)}
                   </h4>
+                  <h3
+                    style={{
+                      fontFamily: "EB Garamond",
+                      fontStyle: "italic",
+                      fontSize: "2rem",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Articles:
+                  </h3>
                   {issue.articles
                     .sort((a: any, b: any) => {
                       let e = 0;
@@ -200,12 +241,12 @@ const IssueAction = () => {
                     )}
                 </div>
                 <div className="issues-eics__item--action">
-                  <Link to={`/article/${issue.id}`}>
+                  <Link to={`/issues/${issue.id}`}>
                     <button className="issues-eics__btn">
                       <i className="bx bx-window-open"></i>
                     </button>
                   </Link>
-                  {/* <button
+                  <button
                     className={`issues-eics__btn issues-eics__btn--${
                       issue.published ? "published" : "un-published"
                     }`}
@@ -214,10 +255,14 @@ const IssueAction = () => {
                         isOpen: true,
                         articleId: issue.id,
                         heading: issue.published
-                          ? `Unpublishing Article ${issue.id} \n(${issue.headline})`
-                          : `Publishing Article ${issue.id} \n(${issue.headline})`,
+                          ? `Unpublishing Issue ${issue.id} \n(${nth(
+                              issue.publishingDate
+                            )})`
+                          : `Publishing Issue ${issue.id} \n(${nth(
+                              issue.publishingDate
+                            )})`,
                         text: "Do you want to proceed?",
-                        action: issue.published ? "Unpubished" : "Publish",
+                        action: issue.published ? "Take Down" : "Publish",
                         actionColor: issue.published ? "delete" : "published",
                         handler: publicationHandler,
                       })
@@ -225,6 +270,7 @@ const IssueAction = () => {
                   >
                     <i className="bx bx-news"></i>
                   </button>
+                  {/* 
                   <Link to={`/eics/upload-img?f_path=${issue.cover}`}>
                     <button
                       className="issues-eics__btn issues-eics__no-print"
