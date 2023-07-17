@@ -35,7 +35,7 @@
         </h3>
         <ImageC
           image="https://apis.news.newton.ac.th/images{data.cover}"
-          caption={`Preview Image of the article ${data.headline}`}
+          caption={`Preview Image of the article: ${data.headline}`}
           notfound="gone"
         />
       </div>
