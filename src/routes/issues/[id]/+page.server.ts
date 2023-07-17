@@ -6,7 +6,7 @@ export const load: PageServerLoad = async ({ params }) => {
     const data = await fetch(`https://apis.news.newton.ac.th/api/reader/issue/${params.id}`);
     const parsed = await data.json();
 
-    console.log(parsed);
+    // console.log(parsed);
 
     return parsed;
   };
