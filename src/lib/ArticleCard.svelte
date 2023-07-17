@@ -28,7 +28,6 @@
       </div>
     </div>
   </span>
-  <!-- <div class="article-card__author" style={{ display: "inline-flex", alignItems: "flex-end" }}> -->
   <div class="article-card__author" style="display: inline-flex; align-items: flex-end;">
     <h5>
       {#each member as member, i}
