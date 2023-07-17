@@ -1,7 +1,7 @@
 <div class="footer__wrapper">
   <div class="footer">
     <div class="footer__copy">
-      All Rights Reserved &copy; 2022-23 The Newtonian Newspaper - <a href="https://newton.ac.th"
+      All Rights Reserved &copy; 2022-24 The Newtonian Newspaper - <a href="https://newton.ac.th"
         >The Newton Sixth Form School</a
       >
     </div>

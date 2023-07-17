@@ -21,7 +21,7 @@
 <div class="letter">
   <h1>Letter From <em>{sender}</em></h1>
   <p>
-    <SvelteMarkdown source={content} isInline />
+    <SvelteMarkdown source={content} />
   </p>
 
   <div class="letter__signatures">
