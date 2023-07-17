@@ -7,26 +7,6 @@
   export let data: PageData;
 
   let loadingPdf = false;
-
-  // const pdfViewHandler = () => {
-  //   setToPdf(true);
-  //   setIsLoading(true);
-  //   console.log("adding view");
-  //   fetch(`https://apis.news.newton.ac.th/api/reader/viewPdf/${param.id}`, {
-  //     method: "PATCH",
-  //   })
-  //     .then((data) => data.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       // window.open(pdfLink, "_blank", "noreferrer");
-  //       setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       // window.open(pdfLink, "_blank", "noreferrer");
-  //       setIsLoading(false);
-  //     });
-  // };
 </script>
 
 <title>Issue {data.id} | The Newtonian</title>
@@ -78,7 +58,7 @@
 
           <h4>Table Of Contents</h4>
           {#each data.thisIssue.articles as article, i}
-            <a class="issue__info--article" href={`/article/${article.id}`}>
+            <a class="issue__info--article" href={`/articles/${article.id}`}>
               <h5>{article.headline}</h5>
               <h6>
                 {" "}
