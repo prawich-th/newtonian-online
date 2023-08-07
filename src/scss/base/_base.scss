@@ -1,5 +1,5 @@
 html {
-  font-family: "EB Garamond", "Times New Roman", serif !important;
+  font-family: "EB Garamond", serif !important;
   font-size: 62.5%;
   scroll-behavior: smooth;
   background-color: var(--signature-white);
@@ -64,11 +64,6 @@ button {
 
   &:hover {
     transform: translateY(-0.5rem);
-    cursor: pointer;
-  }
-
-  &:active {
-    transform: translateY(0rem);
   }
 }
 
