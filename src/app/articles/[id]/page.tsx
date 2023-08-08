@@ -48,11 +48,9 @@ export default async function Article({ params }: { params: { id: string } }) {
             <h2>{article.headline}</h2>
             <h3>
               {article.member.map((member, i) => (
-                <span>
+                <span key={member.id}>
                   {i > 0 ? ", " : " "}
-                  <Link key={member.id} href={`/members/${member.id}`}>
-                    {member.name}
-                  </Link>
+                  <Link href={`/members/${member.id}`}>{member.name}</Link>
                 </span>
               ))}
               {" - "}
