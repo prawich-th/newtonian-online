@@ -6,6 +6,7 @@ const ArticleList: React.FC<{
   articles: articleData[];
   error: string;
 }> = (props) => {
+  // console.log(props);
   return (
     <section className="home__articles">
       <div className="home__articles--title">

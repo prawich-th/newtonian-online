@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <div className="footer__wrapper">
@@ -7,7 +9,17 @@ const Footer = () => {
         </div>
 
         <div className="footer__right">
-          <h4>The Newtonian Online Version 1.5</h4>
+          <h4>
+            The Newtonian Online Version 2.0 <br />
+            <Link
+              href={"/members/1"}
+              style={{
+                fontStyle: "italic",
+              }}
+            >
+              Written by Prawich Thawansakdivudhi
+            </Link>
+          </h4>
         </div>
       </div>
     </div>

@@ -79,7 +79,7 @@ const Home = async ({ promise }: { promise: Promise<HomepageData> }) => {
                 {homepageData.main.member.map((member, i) => (
                   <span>
                     {i > 0 ? ", " : ""}
-                    <Link href={`/member/${member.id}`}>{member.name}</Link>
+                    <Link href={`/members/${member.id}`}>{member.name}</Link>
                   </span>
                 ))}
               </h5>
