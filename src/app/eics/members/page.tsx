@@ -15,15 +15,6 @@ const EicMembers = () => {
   const [allMembers, setAllMembers] = useState<any[]>([]);
   const [search, setSearch] = useState("");
 
-  const [modal, setModal] = useState({
-    isOpen: false,
-    articleId: 0,
-    heading: "",
-    text: "",
-    action: "",
-    actionColor: "",
-    handler: (id: number) => {},
-  });
   const loggedInLift = () => {
     setPermission(true);
   };
@@ -96,28 +87,10 @@ const EicMembers = () => {
       {
         loading: "",
         success: (msg: any) => {
-          setModal({
-            isOpen: false,
-            articleId: 0,
-            heading: "",
-            text: "",
-            action: "",
-            actionColor: "",
-            handler: (id: number) => "",
-          });
           setRefresh(refresh + 1);
           return `Successfully Toggled the publication status of the article ${msg}`;
         },
         error: (msg: any) => {
-          setModal({
-            isOpen: false,
-            articleId: 0,
-            heading: "",
-            text: "",
-            action: "",
-            actionColor: "",
-            handler: (id: number) => "",
-          });
           return msg;
         },
       }
@@ -207,27 +180,10 @@ const EicMembers = () => {
                         ? "contestant"
                         : "un-published"
                     }`}
-                    onClick={() =>
-                      setModal({
-                        isOpen: true,
-                        articleId: member.id,
-                        heading: ["ACTI", "GRAD", "WINN"].includes(
-                          member.status
-                        )
-                          ? `Hiding Member ${member.id} \n(${member.name})`
-                          : `Showing Member ${member.id} \n(${member.name})`,
-                        text: "Do you want to proceed?",
-                        action: ["ACTI", "GRAD", "WINN"].includes(member.status)
-                          ? "Hide"
-                          : "Show",
-                        actionColor: ["ACTI", "GRAD", "WINN"].includes(
-                          member.status
-                        )
-                          ? "delete"
-                          : "published",
-                        handler: publicationHandler,
-                      })
-                    }
+                    onClick={() => {
+                      confirm("Are you sure you want to continue");
+                      publicationHandler(member.id);
+                    }}
                   >
                     <i className="bx bxs-color"></i>
                   </button>

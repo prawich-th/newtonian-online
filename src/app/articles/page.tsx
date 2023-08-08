@@ -65,9 +65,8 @@ export default async function Articles() {
             const l = articles.filter((a) => a.category === c.id);
 
             return (
-              <section className="categories__articles">
+              <section className="categories__articles" key={c.id}>
                 <ArticleList
-                  key={c.id}
                   headline={c.name}
                   articles={l.reverse()}
                   error="We do not have any published article(s) related to this topic yet."
