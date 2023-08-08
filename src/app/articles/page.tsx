@@ -67,6 +67,7 @@ export default async function Articles() {
             return (
               <section className="categories__articles">
                 <ArticleList
+                  key={c.id}
                   headline={c.name}
                   articles={l.reverse()}
                   error="We do not have any published article(s) related to this topic yet."

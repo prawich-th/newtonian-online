@@ -42,7 +42,7 @@ const Members = async () => {
         <section className="members__important">
           {important &&
             important.map((cur) => (
-              <Link href={`/members/${cur.id}`}>
+              <Link href={`/members/${cur.id}`} key={cur.id}>
                 <div className="members__important--card">
                   <ImageC
                     image={`https://apis.news.newton.ac.th/images${cur.profile}`}
@@ -66,7 +66,7 @@ const Members = async () => {
         <section className="members__list">
           {members &&
             members.map((cur) => (
-              <Link href={`/members/${cur.id}`}>
+              <Link href={`/members/${cur.id}`} key={cur.id}>
                 <div className="members__list--card">
                   <ImageC
                     image={`https://apis.news.newton.ac.th/images${cur.profile}`}

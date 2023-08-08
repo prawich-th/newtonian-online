@@ -55,7 +55,7 @@ const ArticleCard: React.FC<{
       >
         <h5>
           {props.member.map((member, i) => (
-            <span>
+            <span key={member.id}>
               {i > 0 ? ", " : ""}
               <Link href={`/members/${member.id}`}>{member.name}</Link>
             </span>
