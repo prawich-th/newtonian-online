@@ -64,11 +64,6 @@ button {
 
   &:hover {
     transform: translateY(-0.5rem);
-    cursor: pointer;
-  }
-
-  &:active {
-    transform: translateY(0rem);
   }
 }
 
