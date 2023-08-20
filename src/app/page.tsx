@@ -79,9 +79,12 @@ const Home = async ({ promise }: { promise: Promise<HomepageData> }) => {
                 {homepageData.main.member.map((member, i) => (
                   <span key={member.id}>
                     {i > 0 ? ", " : ""}
-                    <Link href={`/members/${member.id}`}>{member.name}</Link>
+                    <Link href={`/members/${member.id}`}>
+                      {member.name.trim()}
+                    </Link>
                   </span>
-                ))}
+                ))}{" "}
+                | id: {homepageData.main.id}
               </h5>
               <ReactMarkdown
                 components={{

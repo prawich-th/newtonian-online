@@ -1,4 +1,6 @@
 .import {
+  @include default-padding;
+
   &__area {
     display: flex;
     justify-content: space-between;
@@ -88,5 +90,13 @@
         padding: 0 1rem;
       }
     }
+  }
+
+  &__field {
+    height: fit-content;
+    border-radius: 1.1rem;
+    border: solid 0.1rem var(--border-color);
+    padding: 2rem;
+    margin: 2rem 0;
   }
 }

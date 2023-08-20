@@ -57,15 +57,16 @@ const ArticleCard: React.FC<{
           {props.member.map((member, i) => (
             <span key={member.id}>
               {i > 0 ? ", " : ""}
-              <Link href={`/members/${member.id}`}>{member.name}</Link>
+              <Link href={`/members/${member.id}`}>{member.name.trim()}</Link>
             </span>
           ))}
-          {" - "}
+          {" | "}
           {new Date(props.publishingDate).toLocaleString("en-UK", {
             day: "numeric",
             month: "short",
             year: "numeric",
-          })}
+          })}{" "}
+          | {`id: ${props.id}`}
         </h5>
       </div>
     </div>

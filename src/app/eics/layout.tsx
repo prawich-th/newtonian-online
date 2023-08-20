@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { EicContext } from "./eicProvider";
 import { useEffect, useState } from "react";
 import Loading from "../articles/loading";
+import { Toaster } from "react-hot-toast";
 
 export default function EicsLayout({
   children,
@@ -20,6 +21,7 @@ export default function EicsLayout({
       },
     })
       .then((data) => {
+        console.log(data.status);
         if (data.status !== 200) {
           return redirect("/eics/auth");
         }
@@ -34,5 +36,14 @@ export default function EicsLayout({
 
   if (loading) return <Loading />;
 
-  return <EicContext.Provider value={userData}>{children}</EicContext.Provider>;
+  return (
+    <>
+      <Toaster
+        containerStyle={{
+          fontSize: "1.5rem",
+        }}
+      />
+      <EicContext.Provider value={userData}>{children}</EicContext.Provider>
+    </>
+  );
 }

@@ -50,7 +50,9 @@ export default async function Article({ params }: { params: { id: string } }) {
               {article.member.map((member, i) => (
                 <span key={member.id}>
                   {i > 0 ? ", " : " "}
-                  <Link href={`/members/${member.id}`}>{member.name}</Link>
+                  <Link href={`/members/${member.id}`}>
+                    {member.name.trim()}
+                  </Link>
                 </span>
               ))}
               {" - "}
@@ -61,6 +63,8 @@ export default async function Article({ params }: { params: { id: string } }) {
               })}
               {" - "}
               {Math.round(article.content.split(" ").length / 300)} min. read
+              {" - "}
+              {"id: " + article.id}
             </h3>
             <ImageC
               image={`https://apis.news.newton.ac.th/images${article.cover}`}

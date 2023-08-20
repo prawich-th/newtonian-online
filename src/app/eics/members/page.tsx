@@ -5,10 +5,12 @@ import ImageC from "@/components/ImageC";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { useEicContext } from "../eicProvider";
 
 const EicMembers = () => {
   const [permission, setPermission] = useState(false);
-  const [eicName, setEicName] = useState("");
+  const { name: eicName } = useEicContext();
+
   const [refresh, setRefresh] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [members, setMembers] = useState<any[]>([]);

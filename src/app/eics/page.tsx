@@ -24,6 +24,7 @@ const EicsNav = () => {
           <Link href={"/eics/issues"}>Issues (ISSMS)</Link>
           <br />
           <Link href={"/eics/articles"}>Articles (AMS)</Link> <br />
+          <Link href={"/eics/import-article"}>Import Article</Link> <br />
           <Link href={"/eics/upload-img"}>Upload Image</Link> <br />
           <Link href={"/eics/new-member"}>New Member</Link> <br />
           <a
