@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const Header = () => {
@@ -30,11 +32,13 @@ const Header = () => {
               <Link href={"/members"}>Members</Link>
             </li>
             <>
-              <li>
-                <Link style={{ color: "#CC3333" }} href={"/eics"}>
-                  Eics
-                </Link>
-              </li>
+              {localStorage.getItem("token") && (
+                <li>
+                  <Link style={{ color: "#CC3333" }} href={"/eics"}>
+                    Eics
+                  </Link>
+                </li>
+              )}
             </>
           </ul>
         </div>
