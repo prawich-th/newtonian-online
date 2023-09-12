@@ -111,7 +111,7 @@ const ImportArticle = () => {
     toast.promise(
       new Promise<string>((reslove, reject) => {
         if (!googleDocId.current?.value) reject("Please enter a Google Doc ID");
-        fetch(`http://localhost:8001/api/eics/import-article`, {
+        fetch(`https://apis.news.newton.ac.th/api/eics/import-article`, {
           method: "POST",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
@@ -157,7 +157,7 @@ const ImportArticle = () => {
     toast.promise(
       new Promise<string>((reslove, reject) => {
         if (!googleDocId.current?.value) reject("Please enter a Google Doc ID");
-        fetch(`http://localhost:8001/api/eics/new-article`, {
+        fetch(`https://apis.news.newton.ac.th/api/eics/new-article`, {
           method: "POST",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
