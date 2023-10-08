@@ -147,7 +147,7 @@ const NewMember = () => {
                 }
               >
                 <option></option>
-                <option value={"Medical"}>Medical</option>
+                <option value={"Health Science"}>Health Science</option>
                 <option value={"Computer Science"}>Computer Science</option>
                 <option value={"Newton Business School"}>
                   Newton Business School
