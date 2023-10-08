@@ -883,6 +883,10 @@ button {
     grid-template-columns: 1.5fr 1.5fr 3.5fr;
     padding: 2rem;
     gap: 2rem; }
+    @media only screen and (max-width: 600px) {
+      .members-action__item {
+        display: flex;
+        flex-direction: column; } }
     .members-action__item--cover {
       display: grid;
       align-items: center; }
@@ -891,30 +895,40 @@ button {
         aspect-ratio: 3/4;
         width: 100%;
         height: auto; }
-      .members-action__item--cover--signature {
-        display: grid;
-        align-items: center; }
-        .members-action__item--cover--signature img {
-          object-fit: cover;
-          aspect-ratio: 16/9;
-          width: 100%;
-          height: auto; }
-    .members-action__item--info h3 {
-      font-family: "Playfair Display";
-      font-size: 2.5rem;
-      margin: 0 0 0.5rem 0; }
-    .members-action__item--info h4 {
-      font-weight: 400;
-      font-size: 1.75rem;
-      margin: 0.5rem 0; }
-    .members-action__item--info h5 {
-      font-weight: 400;
-      font-size: 1.5rem;
-      margin: 0.5rem 0; }
+    .members-action__item--signature {
+      display: grid;
+      align-items: center; }
+      @media only screen and (max-width: 600px) {
+        .members-action__item--signature {
+          width: 50%; } }
+      .members-action__item--signature img {
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto; }
+        @media only screen and (max-width: 600px) {
+          .members-action__item--signature img {
+            width: 50%; } }
+    .members-action__item--info {
+      width: 100%; }
+      .members-action__item--info h3 {
+        font-family: "Playfair Display";
+        line-height: 120%;
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem 0;
+        width: 100%;
+        word-break: break-all; }
+      .members-action__item--info h4 {
+        font-weight: 400;
+        font-size: 1.75rem;
+        margin: 0.5rem 0; }
+      .members-action__item--info h5 {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin: 0.5rem 0; }
     .members-action__item--action {
       padding-top: 1rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      display: flex;
       gap: 2rem; }
 
 .issues-eics {

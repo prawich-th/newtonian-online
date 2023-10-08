@@ -65,11 +65,11 @@ const EicMembers = () => {
       return setMembers(allMembers);
     }
 
-    const regex = new RegExp(search, "g");
+    const regex = new RegExp(search, "i");
 
     setMembers(
-      allMembers.filter(({ name, nickname }) => {
-        const isMatch = regex.test(`${name} ${nickname}`);
+      allMembers.filter(({ name, nickname, year }) => {
+        const isMatch = regex.test(`${name} ${nickname} ${year}`);
         console.log({
           test: isMatch,
           name: `${name} ${nickname}`,
@@ -145,8 +145,8 @@ const EicMembers = () => {
         isOpen={modal.isOpen}
         style={{
           content: {
-            width: "60rem",
-            height: "30rem",
+            width: "60%",
+            height: "50%",
             top: "50%",
             left: "50%",
             right: "auto",

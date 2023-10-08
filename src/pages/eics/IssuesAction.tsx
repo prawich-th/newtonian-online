@@ -93,8 +93,8 @@ const IssueAction = () => {
         isOpen={modal.isOpen}
         style={{
           content: {
-            width: "60rem",
-            height: "30rem",
+            width: "60%",
+            height: "50%",
             top: "50%",
             left: "50%",
             right: "auto",
@@ -270,7 +270,6 @@ const IssueAction = () => {
                   >
                     <i className="bx bx-news"></i>
                   </button>
-                  {/* 
                   <Link to={`/eics/upload-img?f_path=${issue.cover}`}>
                     <button
                       className="issues-eics__btn issues-eics__no-print"
@@ -278,7 +277,8 @@ const IssueAction = () => {
                     >
                       <i className="bx bx-image-add"></i>
                     </button>
-                  </Link>
+                  </Link>{" "}
+                  {/*
                   <div></div>
                   <div></div>
                   <button
