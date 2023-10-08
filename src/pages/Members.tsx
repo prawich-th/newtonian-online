@@ -52,8 +52,15 @@ const Members = () => {
           return memberList.push(e);
         });
 
-        setImportant(importantList);
-        setMembers(memberList);
+        let important = data.filter((cur: any) => {
+          return cur.permission === 5;
+        });
+        let members = data.filter((cur: any) => {
+          return cur.permission < 5;
+        });
+
+        setImportant(important);
+        setMembers(members);
         setIsLoading(false);
       });
   }, []);

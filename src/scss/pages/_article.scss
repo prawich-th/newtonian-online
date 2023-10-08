@@ -39,7 +39,10 @@
   &__content {
     text-align: justify;
     width: 60%;
-    font-size: 1.75rem;
+    p {
+      font-size: 2rem;
+      line-height: 150%;
+    }
     // word-break: break-all;
 
     &--image {

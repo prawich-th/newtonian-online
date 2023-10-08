@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer__wrapper">
@@ -7,7 +9,10 @@ const Footer = () => {
         </div>
 
         <div className="footer__right">
-          <h4>The Newtonian Online Version 1.5</h4>
+          <h4>
+            The Newtonian Online Version 2.1 <br />
+            <Link to={"/member/1"}>Written By Prawich Thawansakdivudhi</Link>
+          </h4>
         </div>
       </div>
     </div>

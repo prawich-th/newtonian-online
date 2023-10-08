@@ -55,6 +55,7 @@ const EicsNav = () => {
           <Link to={"/eics/articles"}>Articles (AMS)</Link> <br />
           <Link to={"/eics/upload-img"}>Upload Image</Link> <br />
           <Link to={"/eics/new-member"}>New Member</Link> <br />
+          <Link to={"/eics/import"}>Import Article</Link> <br />
           <a
             onClick={() => {
               localStorage.removeItem("token");
