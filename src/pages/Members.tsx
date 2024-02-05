@@ -53,10 +53,10 @@ const Members = () => {
         });
 
         let important = data.filter((cur: any) => {
-          return cur.permission === 5;
+          return cur.permission === 6;
         });
         let members = data.filter((cur: any) => {
-          return cur.permission < 5;
+          return cur.permission <= 5;
         });
 
         setImportant(important);

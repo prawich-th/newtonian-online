@@ -51,8 +51,15 @@ const EicMembers = () => {
       })
       .then((res: AxiosResponse) => {
         console.log(res.data);
-        setMembers(res.data.members);
-        setAllMembers(res.data.members);
+
+        const sortedMembers = res.data.members.sort((a: any, b: any) => {
+          const permission = b.permission - a.permission;
+          const alphabet = a.name.localeCompare(b.name) * -1;
+
+          return permission || alphabet;
+        });
+        setMembers(sortedMembers);
+        setAllMembers(sortedMembers);
       });
   }, [refresh]);
 
@@ -251,6 +258,8 @@ const EicMembers = () => {
           </button>
         </form>
         <div className="members-action__list">
+          {/* Individual Card for each of the members */}
+
           {members.map((member) => (
             <div className="members-action__item" key={member.id}>
               <div className="members-action__item--cover">
@@ -270,7 +279,8 @@ const EicMembers = () => {
                   <h3>{member.name}</h3>
                   <h4>{member.role}</h4>
                   <h4 style={{ color: "var(--signature-grey)" }}>
-                    Year: {member.year} - Track: {member.track}
+                    Year: {member.year} - Track: {member.track} |{" "}
+                    <i>Importance Level - {member.permission}</i>
                   </h4>
                   <h5>Bio: {member.bio}</h5>
                 </div>
