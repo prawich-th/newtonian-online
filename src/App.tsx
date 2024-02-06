@@ -60,7 +60,7 @@ const App = () => {
           fontSize: "1.5rem",
         }}
       />
-      <SimpleBar style={{}}>
+      <SimpleBar>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

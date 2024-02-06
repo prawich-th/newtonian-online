@@ -322,7 +322,7 @@ const EicMembers = () => {
                   >
                     <i className="bx bxs-color"></i>
                   </button>
-                  <Link to={`/eics/upload-img?f_path=${member.profile}`}>
+                  <Link to={`/eics/upload-img?f_path="${member.profile}`}>
                     <button
                       className="members-action__btn"
                       // onClick={() => alert("Under Development. Coming Issue 4")}
@@ -330,7 +330,7 @@ const EicMembers = () => {
                       <i className="bx bx-face"></i>
                     </button>
                   </Link>{" "}
-                  <Link to={`/eics/upload-img?f_path=${member.signature}`}>
+                  <Link to={`/eics/upload-img?f_path="${member.signature}`}>
                     <button
                       className="members-action__btn"
                       // onClick={() => alert("Under Development. Coming Issue 4")}

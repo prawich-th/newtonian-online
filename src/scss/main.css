@@ -77,6 +77,10 @@ button:hover {
   }
 }
 
+.simplebar-placeholder {
+  display: none;
+}
+
 :root {
   --signature-white: #eeece9;
   --signature-grey: #9e9e9e;
@@ -724,8 +728,8 @@ button:hover {
 }
 @media (prefers-color-scheme: dark) {
   .member__info--right img {
-    -webkit-filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%); /* Safari/Chrome */
-    filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg) brightness(116%) contrast(94%);
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
   }
 }
 
@@ -1167,8 +1171,10 @@ button:hover {
 }
 .members-action__item--signature img {
   object-fit: cover;
-  aspect-ratio: 16/9;
   width: 100%;
+  background-color: whitesmoke;
+  outline: 2px solid orangered;
+  outline-offset: -2px;
   height: auto;
 }
 @media only screen and (max-width: 600px) {

@@ -23,7 +23,7 @@ const UploadImage = () => {
     setPermission(true);
   };
 
-  const f_path = searchParams.get("f_path");
+  const f_path = searchParams.get("f_path")?.slice(1);
   useEffect(() => {
     const token: string | null = localStorage.getItem("token");
 

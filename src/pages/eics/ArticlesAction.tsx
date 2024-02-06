@@ -298,7 +298,7 @@ const ArticlesAction = () => {
                   >
                     <i className="bx bx-news"></i>
                   </button>
-                  <Link to={`/eics/upload-img?f_path=${article.cover}`}>
+                  <Link to={`/eics/upload-img?f_path="${article.cover}`}>
                     <button
                       className="articles-action__btn articles-action__no-print"
                       // onClick={() => alert("Under Development. Coming Issue 4")}
