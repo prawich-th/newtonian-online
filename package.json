@@ -23,7 +23,6 @@
     "react-router": "^6.4.0",
     "react-router-dom": "^6.4.0",
     "react-spinners": "^0.13.4",
-    "simplebar-react": "^3.2.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

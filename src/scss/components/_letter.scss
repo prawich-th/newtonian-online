@@ -44,10 +44,8 @@
         padding-bottom: 2rem;
 
         @media (prefers-color-scheme: dark) {
-          -webkit-filter: invert(98%) sepia(100%) saturate(418%)
-            hue-rotate(297deg) brightness(116%) contrast(94%); /* Safari/Chrome */
-          filter: invert(98%) sepia(100%) saturate(418%) hue-rotate(297deg)
-            brightness(116%) contrast(94%);
+          filter: brightness(0) invert(1);
+          -webkit-filter: brightness(0) invert(1);
         }
       }
     }

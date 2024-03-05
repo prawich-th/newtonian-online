@@ -21,7 +21,6 @@ import EicMembers from "./pages/eics/Members";
 import IssueAction from "./pages/eics/IssuesAction";
 import EicsNav from "./pages/eics/EicsNav";
 import NewMember from "./pages/eics/newMember";
-import SimpleBar from "simplebar-react";
 
 const App = () => {
   const isUnsupported = useMediaQuery({ maxWidth: "280px" });
@@ -41,16 +40,14 @@ const App = () => {
 
   if (isUnsupported)
     return (
-      <SimpleBar>
-        <div className="unsupport__wrapper">
-          <div className="unsupport">
-            <i className="bx bx-devices"></i>
-            <br />
-            This screen resolution is not supported. If you're using a folable
-            phone please unfold your screen.
-          </div>
+      <div className="unsupport__wrapper">
+        <div className="unsupport">
+          <i className="bx bx-devices"></i>
+          <br />
+          This screen resolution is not supported. If you're using a folable
+          phone please unfold your screen.
         </div>
-      </SimpleBar>
+      </div>
     );
 
   return (
@@ -60,28 +57,26 @@ const App = () => {
           fontSize: "1.5rem",
         }}
       />
-      <SimpleBar>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/issues" element={<Issues />} />
-            <Route path="/issues/:id" element={<Issue />} />
-            <Route path="/article/:id" element={<Article />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/members" element={<Members />} />
-            <Route path="/eics/upload-img" element={<UploadImage />} />
-            <Route path="/conn" element={<ConnectionErr />} />
-            <Route path="/eics/import" element={<ImportArticle />} />
-            <Route path="/eics/articles" element={<ArticlesAction />} />
-            <Route path="/eics/issues" element={<IssueAction />} />
-            <Route path="/eics/members" element={<EicMembers />} />
-            <Route path="/eics/new-member" element={<NewMember />} />
-            <Route path="/eics" element={<EicsNav />} />
-            <Route path="/member/:id" element={<Member />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </SimpleBar>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/issues" element={<Issues />} />
+          <Route path="/issues/:id" element={<Issue />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/members" element={<Members />} />
+          <Route path="/eics/upload-img" element={<UploadImage />} />
+          <Route path="/conn" element={<ConnectionErr />} />
+          <Route path="/eics/import" element={<ImportArticle />} />
+          <Route path="/eics/articles" element={<ArticlesAction />} />
+          <Route path="/eics/issues" element={<IssueAction />} />
+          <Route path="/eics/members" element={<EicMembers />} />
+          <Route path="/eics/new-member" element={<NewMember />} />
+          <Route path="/eics" element={<EicsNav />} />
+          <Route path="/member/:id" element={<Member />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
     </>
   );
 };
