@@ -55,9 +55,14 @@ const Members = () => {
         let important = data.filter((cur: any) => {
           return cur.permission === 6;
         });
-        let members = data.filter((cur: any) => {
-          return cur.permission <= 5;
-        });
+        let members = data
+          .filter((cur: any) => {
+            return cur.permission <= 5;
+          })
+          .sort((a: any, b: any) => {
+            if (b.status !== "ACTI") return b.id - 1000 - a.id;
+            return b.permission - a.permission;
+          });
 
         setImportant(important);
         setMembers(members);
@@ -118,7 +123,9 @@ const Members = () => {
                     <br />({cur.nickname})
                   </h3>
                   <h4>
-                    Year {cur.year} {cur.track ? " - " + cur.track : ""}
+                    {+cur.year <= 13 &&
+                      `Year ${cur.year} ${cur.track ? " - " + cur.track : ""}`}
+                    {+cur.year === 15 && `Executives / Supervisor`}
                   </h4>
                   <h4>{cur.role}</h4>
                   {cur.status === "LEAV" && (

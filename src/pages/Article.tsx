@@ -37,9 +37,18 @@ const Article = () => {
   const navigate = useNavigate();
 
   const articleId = useParams().id;
-
+  let isLoggedIn = false;
   useEffect(() => {
-    fetch(`https://apis.news.newton.ac.th/api/reader/article/${articleId}`)
+    if (localStorage.getItem("token")) isLoggedIn = true;
+    console.log(isLoggedIn);
+    fetch(`https://apis.news.newton.ac.th/api/reader/article/${articleId}`, {
+      method: "GET",
+      headers: {
+        Authorization: isLoggedIn
+          ? `Bearer ${localStorage.getItem("token")}`
+          : "",
+      },
+    })
       .then((data) => {
         if (data.status !== 200) setNotFound(true);
         return data;
