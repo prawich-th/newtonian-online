@@ -1,35 +1,21 @@
 {
-  "name": "the-newtonian",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "sass": "sass --watch ./src/scss/main.scss:./src/scss/main.css"
-  },
-  "dependencies": {
-    "@types/react-modal": "^3.13.1",
-    "@types/uuid": "^9.0.1",
-    "axios": "^1.1.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.4.0",
-    "react-markdown": "^8.0.3",
-    "react-modal": "^3.16.1",
-    "react-respo": "^0.2.1",
-    "react-responsive": "^9.0.0",
-    "react-router": "^6.4.0",
-    "react-router-dom": "^6.4.0",
-    "react-spinners": "^0.13.4",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
-  }
+	"name": "newtonian-online",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"vite": "^5.0.3"
+	}
 }
