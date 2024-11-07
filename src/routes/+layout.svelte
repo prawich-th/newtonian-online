@@ -60,11 +60,21 @@
           </a>
         </li>
       </ul>
+      <ul style="margin-top: 1rem;">
+        <li>
+          <a href="/privacy">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/terms">Terms & Conditions</a>
+        </li>
+      </ul>
     </div>
     <div class="right">
       <h1>The Newtonian Online <em>v2.0</em></h1>
       <p>
         Reimagined by <a href="/members/1"><em>Prawich Thawansakdivudhi</em></a>
+        <br />
+        with <a href="/members/2"><em>Koramist Samoorapoom</em></a>
       </p>
     </div>
   </div>

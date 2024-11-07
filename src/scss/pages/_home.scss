@@ -1,0 +1,206 @@
+.home {
+  @include default-padding;
+
+  margin-top: 3rem;
+  &__banner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    // grid-template-areas:
+    //   "main main other"
+    //   "main main other";
+
+    @include custom(1200px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__main {
+    grid-area: "main";
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      //   aspect-ratio: 16 / 9;
+    }
+
+    &--tags {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      span {
+        color: var(--newtonian-white);
+        padding: 0.5rem 1rem;
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+
+    &--info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2.5rem;
+      padding-top: 5rem;
+      background-image: linear-gradient(
+        to bottom,
+        transparent 1%,
+        var(--newtonian-marine) 70%
+      );
+
+      color: var(--newtonian-white);
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        font-family: "Andika", sans-serif;
+        line-height: 1.2;
+        margin: 0;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0;
+        a {
+          color: var(--newtonian-white);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__other {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include custom(1200px) {
+      flex-direction: row;
+    }
+    @include custom(800px) {
+      flex-direction: column;
+    }
+    &--item {
+      width: 100%;
+
+      position: relative;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      &--tags {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        span {
+          color: var(--newtonian-white);
+          padding: 0.5rem 1rem;
+          font-family: "Poppins", sans-serif;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+
+      &--info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2.5rem;
+        padding-top: 5rem;
+        background-image: linear-gradient(
+          to bottom,
+          transparent 1%,
+          var(--newtonian-marine) 70%
+        );
+
+        color: var(--newtonian-white);
+        h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          font-family: "Andika", sans-serif;
+          line-height: 1.2;
+          margin: 0;
+        }
+        p {
+          font-size: 1.5rem;
+          font-weight: 300;
+          margin: 0;
+          a {
+            color: var(--newtonian-white);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__articles {
+    width: 100%;
+    h2 {
+      font-size: 3rem;
+      height: 3.5rem;
+      font-family: Andika, sans-serif;
+      align-self: center;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        // height: 3rem;
+        height: 100%;
+        background-color: var(--newtonian-marine);
+        transform: translateY(0.5rem);
+        margin-right: 1rem;
+      }
+    }
+    &--list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      @include custom(1000px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &--item {
+      img {
+        padding-bottom: 0.5rem;
+        width: 100%;
+      }
+      h3 {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        font-family: Andika, sans-serif;
+        margin: 0;
+        padding: 1rem 0;
+      }
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--dark-gray);
+        margin: 0;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+        text-align: justify;
+      }
+      a {
+        color: var(--dark-gray);
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -4,6 +4,9 @@
   <h3>Welcome to the Newtonian Online v2</h3>
   <h3><strong>THIS SITE IS CURRENTLY UNDER CONSTRUCTION</strong></h3>
   <p>
+    continue anyways <a href="/home">here</a>
+  </p>
+  <p>
     please visit <a href="https://news.newton.ac.th">news.newton.ac.th</a>
   </p>
   <p>
