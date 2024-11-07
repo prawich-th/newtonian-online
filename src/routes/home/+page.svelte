@@ -20,14 +20,14 @@
     <div class="home__other">
       <a href="/articles/1">
         <div class="home__other--item">
-          <img src="/cover.webp" alt="The Newtonian Online" />
+          <img src="/student.png" alt="The Newtonian Online" />
           <div class="home__other--item--info">
             <div class="home__other--item--tags">
-              <span style="background-color: #a50000">Literature</span>
+              <span style="background-color: darkgreen">Interview</span>
               <span style="background-color: #001a53">Newton</span>
             </div>
-            <p class="author">Sakulya Kovitkoolkri | 22 June 2024</p>
-            <h1>To live is to Suffer</h1>
+            <p class="author">Pakitsaree Koysantisook | 22 June 2024</p>
+            <h1>Student Spotlight: T 12Med B</h1>
           </div>
         </div>
       </a>
@@ -55,56 +55,67 @@
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="1"
+        tags={[{ name: "Literature", color: "#a50000" }]}
+      />
+      <ArticleItem
+        title="Student Spotlight"
+        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        date="2024-06-22"
+        cover="/student.png"
+        id="2"
+        tags={[{ name: "Interview", color: "darkgreen" }]}
+      />
+      <ArticleItem
+        title="Conspiracy behind Julius Caesar"
+        author={{ name: "Kasira Chayanan", id: "4" }}
+        date="2024-06-22"
+        cover="/cover.webp"
+        id="3"
+        tags={[
+          { name: "Essay", color: "#aa2000" },
+          { name: "History", color: "#a50000" },
+        ]}
       />
       <ArticleItem
         title="To live is to suffer"
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="4"
+        tags={[{ name: "Literature", color: "#a50000" }]}
       />
       <ArticleItem
         title="To live is to suffer"
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="5"
+        tags={[{ name: "Literature", color: "#a50000" }]}
       />
       <ArticleItem
         title="To live is to suffer"
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="6"
+        tags={[{ name: "Literature", color: "#a50000" }]}
       />
       <ArticleItem
         title="To live is to suffer"
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="7"
+        tags={[{ name: "Literature", color: "#a50000" }]}
       />
       <ArticleItem
         title="To live is to suffer"
         author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
         date="2024-06-22"
         cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+        id="8"
+        tags={[{ name: "Literature", color: "#a50000" }]}
       />
     </div>
   </div>
