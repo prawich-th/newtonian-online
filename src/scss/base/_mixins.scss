@@ -57,3 +57,33 @@
     width: 90%;
   }
 }
+
+@mixin narrow-padding {
+  width: 50%;
+
+  @at-root .page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media print {
+    width: 95%;
+  }
+
+  @include respond(big-desktop) {
+    width: 65%;
+  }
+
+  @include custom(1000px) {
+    width: 90%;
+  }
+
+  @include custom(1300px) {
+    width: 60%;
+  }
+
+  @include respond(phone) {
+    width: 95%;
+  }
+}

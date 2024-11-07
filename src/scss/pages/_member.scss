@@ -1,16 +1,66 @@
 .member {
   padding-top: 2rem;
-  @include default-padding;
+  @include narrow-padding;
+
+  &__actions {
+    button {
+      transition: all 0.3s ease;
+      user-select: none;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    &--subscribe {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      margin: 0;
+      margin-top: 1rem;
+      background-color: var(--newtonian-marine);
+      color: #fff;
+      border-radius: 1.1rem;
+    }
+    &--subscribed {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      margin: 0;
+      margin-top: 1rem;
+      background-color: var(--dark-gray);
+      color: white;
+      border-radius: 1.1rem;
+    }
+  }
   &__banner {
     display: grid;
-    grid-template-columns: 1fr 1.75fr 1fr;
-    gap: 2rem;
-
+    grid-template-columns: 1fr 2fr;
+    gap: 0 2rem;
+    width: 100%;
+    &--image {
+      width: 100%;
+    }
     img {
       width: 100%;
+      border-radius: 1.1rem;
+    }
+
+    @include custom(1000px) {
+      grid-template-columns: 1fr;
+      gap: 2rem 0;
     }
 
     &--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
       h2 {
         font-size: 3rem;
         font-family: Andika, sans-serif;
@@ -31,9 +81,74 @@
           font-size: 4rem;
         }
       }
+      h3 {
+        font-size: 2rem;
+        margin: 0;
+        margin-top: 1rem;
+        font-weight: 400;
+        font-family: Andika, sans-serif;
+      }
       p {
         font-size: 1.5rem;
         text-align: justify;
+        margin: 0;
+      }
+    }
+  }
+
+  &__articles {
+    width: 100%;
+    h2 {
+      font-size: 2.5rem;
+      height: 3.5rem;
+      font-family: Andika, sans-serif;
+      align-self: center;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        // height: 3rem;
+        height: 100%;
+        background-color: var(--newtonian-marine);
+        transform: translateY(0.5rem);
+        margin-right: 1rem;
+      }
+    }
+    &--list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      @include custom(1000px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &--item {
+      img {
+        padding-bottom: 0.5rem;
+        width: 100%;
+      }
+      h3 {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        font-family: Andika, sans-serif;
+        margin: 0;
+        padding: 1rem 0;
+      }
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--dark-gray);
+        margin: 0;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+        text-align: justify;
+      }
+      a {
+        color: var(--dark-gray);
+        text-decoration: underline;
       }
     }
   }

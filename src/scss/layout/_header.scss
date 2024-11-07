@@ -23,6 +23,11 @@ header {
     align-items: center;
     font-family: Poppins, sans-serif;
     gap: 2rem;
+
+    @include respond(phone) {
+      display: none !important;
+    }
+
     li {
       margin: 0 1rem;
     }
