@@ -1,6 +1,14 @@
 .article-item {
   height: 100%;
 
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
   img {
     width: 100%;
     margin-bottom: 1rem;
@@ -36,6 +44,7 @@
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0;
+    font-family: "PT Sans", sans-serif;
     a {
       color: var(--dark-gray);
       text-decoration: underline;

@@ -16,18 +16,6 @@
   <p>
     a <a href="https://instagram.com/prawich.th"><em>prawich-th</em></a> site
   </p>
-  <ArticleItem
-    title="Conspiracy behind Julius Caesar"
-    author={{ name: "Kasira Chayanan", id: "4" }}
-    date="2024-06-22"
-    cover="/cover.webp"
-    content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-    id="3"
-    tags={[
-      { name: "Essay", color: "#aa2000" },
-      { name: "History", color: "#a50000" },
-    ]}
-  />
 </div>
 
 <style lang="scss">

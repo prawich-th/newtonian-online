@@ -32,13 +32,15 @@
 
     <img class="article__info--banner" src="/cover.webp" alt="Cover" />
     <div class="article__info--authors">
-      <div class="article__info--authors--item">
-        <img src="/jean.png" alt="Sakulya Kovitkoolkri" />
-        <span>
-          <h2>Sakulya Kovitkoolkri</h2>
-          <p>Jean | Year 13 Med A</p>
-        </span>
-      </div>
+      <a href="/members/2">
+        <div class="article__info--authors--item">
+          <img src="/jean.png" alt="Sakulya Kovitkoolkri" />
+          <span>
+            <h2>Sakulya Kovitkoolkri</h2>
+            <p>Jean | Year 13 Med A</p>
+          </span>
+        </div>
+      </a>
     </div>
     <p class="article__info--editor">
       Edited By <a href="/members/1">Prawich Thawansakdivudhi</a>

@@ -9,8 +9,8 @@
     tags,
   }: {
     title: string;
-    id: string;
-    author: { name: string; id: string };
+    id: string | number;
+    author: { name: string; id: string | number };
     date: string;
     cover: string;
     content?: string;

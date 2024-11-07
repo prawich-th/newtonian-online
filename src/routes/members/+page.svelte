@@ -5,8 +5,6 @@
 </script>
 
 <div class="container">
-  <h1>{data.title}</h1>
-  {#each data.members as member}
-    <p>{member}</p>
-  {/each}
+  <h1>This page is under construction</h1>
+  go to<a href="/members/1">example member</a>
 </div>

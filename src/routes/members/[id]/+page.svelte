@@ -1,8 +1,11 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
+  import ArticleItem from "../../home/article-item.svelte";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
+
+  console.log(data);
 
   let status = $state(data.member.subscribed);
 </script>
@@ -10,7 +13,7 @@
 <div class="member">
   <div class="member__banner">
     <div class="member__banner--image">
-      <img src="/DSC_0472.jpg" alt="Prawich" />
+      <img src={data.member.cover} alt="Prawich" />
     </div>
 
     <div class="member__banner--info">
@@ -49,22 +52,14 @@
     <h2>Associated Works</h2>
     <div class="member__articles--list">
       {#each data.articles as article}
-        <div class="member__articles--item">
-          <a href="/members/2">
-            <img src={article.cover} alt="Cover" />
-          </a>
-          <h4>
-            <a href="/members/2">{article.author}</a> | {new Date(
-              article.date
-            ).toLocaleDateString("en-UK", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })}
-          </h4>
-          <h3>{article.title}</h3>
-          <p>{article.content}</p>
-        </div>
+        <ArticleItem
+          author={{ name: article.author.name, id: article.author.id }}
+          id={article.id}
+          title={article.title}
+          date={article.date}
+          cover={article.cover}
+          tags={article.tags}
+        />
       {/each}
     </div>
   </div>

@@ -52,7 +52,7 @@
     <div class="home__articles--list">
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="1"
@@ -60,7 +60,7 @@
       />
       <ArticleItem
         title="Student Spotlight"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/student.png"
         id="2"
@@ -79,7 +79,7 @@
       />
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="4"
@@ -87,7 +87,7 @@
       />
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="5"
@@ -95,7 +95,7 @@
       />
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="6"
@@ -103,7 +103,7 @@
       />
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="7"
@@ -111,7 +111,7 @@
       />
       <ArticleItem
         title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "1" }}
+        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
         date="2024-06-22"
         cover="/cover.webp"
         id="8"

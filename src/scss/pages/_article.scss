@@ -19,6 +19,8 @@
       font-size: 1.5rem;
       font-weight: 300;
       margin: 0;
+      font-family: "Andika", sans-serif;
+
       a {
         color: var(--dark-gray);
         text-decoration: underline;
@@ -29,6 +31,7 @@
       font-size: 1.5rem;
       font-weight: 300;
       margin: 0;
+      font-family: "Andika", sans-serif;
     }
 
     &--banner {
@@ -43,6 +46,11 @@
       display: flex;
       gap: 1rem;
       margin-bottom: 1rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
 
       &--item {
         display: flex;
@@ -66,11 +74,12 @@
         p {
           color: var(--dark-gray);
           margin: 0;
+          margin-top: -0.5rem;
           font-size: 1.5rem;
         }
         img {
-          width: 8rem;
-          height: 8rem;
+          width: 7.5rem;
+          height: 7.5rem;
           border-radius: 50%;
           object-fit: cover;
           object-position: top;
