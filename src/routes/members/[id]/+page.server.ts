@@ -74,6 +74,32 @@ const members = [
       },
     ],
   },
+  {
+    member: {
+      id: 3,
+      firstname: "Boonruk",
+      lastname: "Seanghirunwattana",
+      nickname: "Shang",
+      position: "Head Writer",
+      cover: "/shang.webp",
+      year: 14,
+      track: "Medicine",
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, temporibus sint autem modi fugit animi dolorem reprehenderit blanditiis dicta alias natus voluptatem nemo consectetur porro rem molestias adipisci expedita facere.",
+      subscribed: true,
+    },
+    articles: [
+      {
+        title: "The Newton Musical: Technical Director",
+        id: 2,
+        date: new Date().toISOString(),
+        author: { name: "Prawich Thawansakdivudhi", id: 1 },
+        cover: "/cover.webp",
+        tags: [{ name: "Musical", color: "#001a99" }],
+        content:
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, temporibus sint autem modi fugit animi dolorem reprehenderit blanditiis dicta alias natus voluptatem nemo consectetur porro rem molestias adipisci expedita facere.",
+      },
+    ],
+  },
 ];
 
 export const load: PageServerLoad = async ({ params }) => {

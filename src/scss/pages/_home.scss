@@ -29,6 +29,10 @@
       object-fit: cover;
       object-position: center;
       aspect-ratio: 4 / 2.5;
+
+      @include respond(phone) {
+        aspect-ratio: 1/1;
+      }
     }
 
     &--tags {

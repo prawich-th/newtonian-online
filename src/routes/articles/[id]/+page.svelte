@@ -31,6 +31,11 @@
 
 <div class="article">
   <div class="article__info">
+    <div class="article__info--tags">
+      {#each data.article.tags as tag}
+        <span style="background-color: {tag.color}">{tag.name}</span>
+      {/each}
+    </div>
     <h1 class="article__info--title">{data.article.title}</h1>
 
     <img class="article__info--banner" src={data.article.cover} alt="Cover" />
@@ -56,7 +61,15 @@
         <a href={`/members/${editor.id}`}>{editor.name}</a>
       {/each}
     </p>
-    <p class="article__info--date">Published: 22nd June 2024, 15:20</p>
+    <p class="article__info--date">
+      Published: {new Date(data.article.date).toLocaleDateString("en-UK", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      })}
+    </p>
   </div>
   <main class="article__content">
     <SvelteMarkdown source={data.article.content} />

@@ -18,16 +18,16 @@
       </div>
     </a>
     <div class="home__other">
-      <a href="/articles/1">
+      <a href="/articles/2">
         <div class="home__other--item">
           <img src="/student.png" alt="The Newtonian Online" />
           <div class="home__other--item--info">
             <div class="home__other--item--tags">
-              <span style="background-color: darkgreen">Interview</span>
-              <span style="background-color: #001a53">Newton</span>
+              <span style="background-color: darkgreen">Essay</span>
+              <span style="background-color: #001a99">Musical</span>
             </div>
-            <p class="author">Pakitsaree Koysantisook | 22 June 2024</p>
-            <h1>Student Spotlight: T 12Med B</h1>
+            <p class="author">Prawich Thawansakdivudhi | 22 June 2024</p>
+            <h1>The Newton Musical: Technical Director</h1>
           </div>
         </div>
       </a>
