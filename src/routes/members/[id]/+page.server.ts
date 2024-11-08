@@ -27,12 +27,12 @@ const members = [
           " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, temporibus sint autem modi fugit animi dolorem reprehenderit blanditiis dicta alias natus voluptatem nemo consectetur porro rem molestias adipisci expedita facere.",
       },
       {
-        title: "To Live is to Suffer is that so?",
+        title: "How to build a Web-app",
         id: 1,
         date: new Date().toISOString(),
-        tags: [{ name: "Health", color: "#FF0000" }],
-        author: { name: "Sakulya Kovitkoolkri", id: 2 },
-        cover: "/cover.webp",
+        tags: [{ name: "Advice", color: "#00000a" }],
+        author: { name: "Prawich Thawansakdivudhi", id: 1 },
+        cover: "/student.png",
         content:
           " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, temporibus sint autem modi fugit animi dolorem reprehenderit blanditiis dicta alias natus voluptatem nemo consectetur porro rem molestias adipisci expedita facere.",
       },
