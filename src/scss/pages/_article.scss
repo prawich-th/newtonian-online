@@ -32,7 +32,7 @@
     }
 
     &--editor {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 300;
       margin: 0;
       font-family: "Andika", sans-serif;
@@ -44,14 +44,14 @@
     }
 
     &--date {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 300;
       margin: 0;
       font-family: "Andika", sans-serif;
     }
 
     &--banner {
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
@@ -62,7 +62,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin: 1.5rem 0;
 
       a {
         text-decoration: none;
@@ -114,7 +114,7 @@
 
   &__content {
     margin-top: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: justify;
     font-weight: 300;
     line-height: 1.5;
@@ -145,7 +145,7 @@
 
     p:first-child::first-letter {
       color: var(--newtonian-marine);
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
       font-style: italic;
     }
@@ -159,8 +159,13 @@
     }
 
     @include respond(phone) {
-      font-size: 2rem;
+      font-size: 2.75rem;
       line-height: 1.5;
+
+      p:first-child::first-letter {
+        color: var(--newtonian-marine);
+        font-size: 4rem;
+      }
     }
   }
 }
