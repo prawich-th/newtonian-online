@@ -1,64 +1,171 @@
+@use "../base/mixins";
+
 .article {
-  &__wrapper {
-    display: grid;
-    width: 100%;
-    place-items: center;
+  @include mixins.narrow-padding;
+
+  @include mixins.respond(phone) {
+    width: 90%;
   }
 
-  &__heading {
-    text-align: center;
-    display: grid;
-    width: 60%;
+  &__info {
+    &--tags {
+      display: flex;
+      gap: 1rem;
+      margin-top: 4rem;
+      z-index: 10;
 
-    @include respond(tab-land) {
-      width: 80%;
+      span {
+        padding: 0.5rem 1rem;
+        color: var(--newtonian-white);
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: Poppins, sans-serif;
+      }
     }
-    @include respond(tab-port) {
-      width: 100%;
+
+    &--title {
+      font-size: 5rem;
+      font-weight: 700;
+      font-family: var(--heading-font), sans-serif;
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem;
+      line-height: 1;
     }
 
-    place-items: center;
-
-    h2 {
-      margin-top: 1rem !important;
+    &--editor {
+      font-size: 1.75rem;
+      font-weight: 300;
       margin: 0;
-      width: 100%;
-      font-family: "Playfair Display";
-      // line-height: 120%;
-      font-size: 4rem;
+      font-family: var(--heading-font), sans-serif;
+
+      a {
+        color: var(--dark-gray);
+        text-decoration: underline;
+      }
     }
 
-    h3 {
-      font-weight: 400;
-      font-size: 2rem;
-      margin: 1rem 0rem 1.75rem 0rem;
-      color: #737373;
+    &--date {
+      font-size: 1.75rem;
+      font-weight: 300;
+      margin: 0;
+      font-family: var(--heading-font), sans-serif;
+    }
+
+    &--banner {
+      // margin-bottom: 1rem;
+      width: 100%;
+      // aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &--authors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      &--item {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        gap: 2rem;
+
+        span {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 300;
+          line-height: 1.2;
+          margin: 0;
+          font-family: var(--heading-font), sans-serif;
+          color: var(--dark-gray);
+
+          @include mixins.respond(phone) {
+            font-size: 2rem;
+          }
+        }
+        p {
+          color: var(--dark-gray);
+          margin: 0;
+          //   margin-top: -0.5rem;
+          font-size: 1.5rem;
+        }
+        img {
+          aspect-ratio: 1/1;
+          display: block;
+          width: 7.5rem;
+          height: 7.5rem;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
     }
   }
 
   &__content {
+    margin-top: 2rem;
+    font-size: 2.5rem;
     text-align: justify;
-    width: 60%;
-    p {
-      font-size: 2rem;
-      line-height: 150%;
-    }
-    // word-break: break-all;
+    font-weight: 300;
+    line-height: 1.5;
+    font-family: "EB Garamond", serif;
 
-    &--image {
-      display: grid;
-      place-items: center;
+    p:first-child {
+      text-indent: 4rem;
 
-      .image-c {
-        width: 70%;
+      @include mixins.respond(phone) {
+        text-indent: 2.5rem;
       }
     }
 
-    @include respond(tab-port) {
-      width: 80%;
+    h1,
+    h2,
+    h2,
+    h4,
+    h5 {
+      text-indent: 0;
+      font-family: var(--heading-font), sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 120%;
+      margin-bottom: 0;
     }
-    @include respond(breaking) {
-      width: 100%;
+
+    p:first-child::first-letter {
+      color: var(--newtonian-marine);
+      font-size: 4rem;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    li {
+      text-indent: 0rem;
+      margin-bottom: 1rem;
+      a {
+        color: var(--newtonian-marine);
+      }
+    }
+
+    @include mixins.respond(phone) {
+      font-size: 2rem;
+      line-height: 1.5;
+      text-align: left;
+      p:first-child::first-letter {
+        color: var(--newtonian-marine);
+        font-size: 4rem;
+      }
     }
   }
 }

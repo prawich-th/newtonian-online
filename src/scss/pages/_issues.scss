@@ -1,26 +1,74 @@
+@use "../base/mixins";
+
 .issues {
-  h2 {
-    font-weight: 400;
-    font-style: italic;
-    margin: 0 0 1rem 0;
+  margin-top: 3rem;
+
+  h1 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
   }
-  @include default-padding;
 
   &__list {
-    justify-items: center;
     display: grid;
-    gap: 2.25rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    place-self: center;
+    align-items: start;
+    justify-content: center;
+    align-self: center;
+    gap: 3rem 5rem;
 
-    @include respond(tab-land) {
-      grid-template-columns: 1fr 1fr 1fr;
+    a {
+      color: black;
+      text-decoration: none;
+      height: 100%;
+      width: 100%;
     }
-    @include custom(800px) {
-      grid-template-columns: 1fr 1fr;
+    img {
+      margin-bottom: 1rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      border: 0.1rem solid var(--dark-gray);
     }
-    @include custom(450px) {
+    h4 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      line-height: 1.5;
+      margin: 0;
+      text-align: center;
+    }
+
+    h5 {
+      font-family: "PT Sans", sans-serif;
+      line-height: 1.5;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin: 0;
+      text-align: center;
+    }
+    @include mixins.custom(1150px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mixins.custom(750px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mixins.custom(500px) {
       grid-template-columns: 1fr;
+      width: 90%;
     }
-    width: 100%;
+
+    &--card {
+      height: 100%;
+      display: block;
+    }
   }
+
+  @include mixins.default-padding;
 }

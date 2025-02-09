@@ -1,92 +1,161 @@
+@use "../base/mixins";
+
 .member {
-  &__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  width: 80%;
+  padding-top: 2rem;
 
-  @include custom(1000px) {
-    width: 100%;
-  }
-  &__info {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    width: 100%;
-
-    @include respond(breaking) {
-      grid-template-columns: 1fr;
+  &__actions {
+    button {
+      transition: all 0.3s ease;
+      user-select: none;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
     }
 
-    &--left {
+    &--subscribe {
       width: 100%;
-      gap: 2rem;
-
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      @include custom(1100px) {
-        grid-template-columns: 1fr 2fr;
-      }
-      @include respond(breaking) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-      }
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      margin: 0;
+      margin-top: 1rem;
+      background-color: var(--newtonian-marine);
+      color: #fff;
+      border-radius: 1.1rem;
+    }
+    &--subscribed {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      margin: 0;
+      margin-top: 1rem;
+      background-color: var(--dark-gray);
+      color: white;
+      border-radius: 1.1rem;
+    }
+  }
+  &__banner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0 2rem;
+    width: 100%;
+    &--image {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      border-radius: 1.1rem;
+      aspect-ratio: 3/4;
+      object-fit: cover;
     }
 
-    &--bio {
-      h3 {
-        font-size: 2.75rem;
+    @include mixins.custom(1000px) {
+      grid-template-columns: 1fr;
+      gap: 2rem 0;
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+
+      h2 {
+        font-size: 2.5rem;
+        font-family: var(--heading-font), sans-serif;
         font-weight: 400;
-        margin: 1rem 0;
-      }
-      h4 {
         margin: 0;
-        font-weight: 400;
-        font-size: 1.75rem;
+        font-style: italic;
       }
-      h5 {
-        font-size: 1.5rem;
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+        line-height: 1;
+        font-family: var(--heading-font), sans-serif;
+
+        .first {
+          font-size: 5rem;
+        }
+
+        .last {
+          font-size: 4rem;
+        }
+      }
+      h3 {
+        font-size: 2rem;
+        margin: 0;
+        margin-top: 1rem;
         font-weight: 400;
-        margin: 1rem 0;
+        font-family: var(--heading-font), sans-serif;
       }
       p {
-        width: 70%;
-        @include respond(tab-port) {
-          width: 100%;
-        }
-      }
-    }
-
-    &--image {
-      display: block;
-      width: 100%;
-
-      @include respond(breaking) {
-        height: 100%;
-        justify-self: center;
-      }
-
-      img {
-        width: 100%;
-        object-fit: cover;
-        aspect-ratio: 3/4;
-      }
-    }
-
-    &--right {
-      width: 100%;
-      align-self: center;
-      @include respond(tab-port) {
-        display: none;
-      }
-      img {
-        width: 100%;
-
-        @media (prefers-color-scheme: dark) {
-          filter: brightness(0) invert(1);
-          -webkit-filter: brightness(0) invert(1);
-        }
+        font-size: 1.5rem;
+        text-align: justify;
+        margin: 0;
       }
     }
   }
+
+  &__articles {
+    width: 100%;
+    h2 {
+      font-size: 2.5rem;
+      height: 3.5rem;
+      font-family: var(--heading-font), sans-serif;
+      align-self: center;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        // height: 3rem;
+        height: 100%;
+        background-color: var(--newtonian-marine);
+        transform: translateY(0.5rem);
+        margin-right: 1rem;
+      }
+    }
+    &--list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      @include mixins.custom(1000px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &--item {
+      img {
+        padding-bottom: 0.5rem;
+        width: 100%;
+      }
+      h3 {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        font-family: var(--heading-font), sans-serif;
+        margin: 0;
+        padding: 1rem 0;
+      }
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--dark-gray);
+        margin: 0;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 0;
+        text-align: justify;
+      }
+      a {
+        color: var(--dark-gray);
+        text-decoration: underline;
+      }
+    }
+  }
+  @include mixins.narrow-padding;
 }

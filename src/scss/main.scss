@@ -1,32 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700;1,800&display=swap");
+@use "base/base";
+@use "base/variables";
+@use "base/mixins";
+
+@use "layout/header";
+@use "layout/page";
+@use "layout/footer";
+
+@use "pages/member";
+@use "pages/article";
+@use "pages/home";
+@use "pages/members";
+@use "pages/issue";
+@use "pages/issues";
+@use "pages/articles";
+
+@use "components/article-item";
+
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
-@import url("https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap");
-
-@import "base/mixins";
-@import "base/base";
-@import "base/variables";
-
-@import "layout/header";
-@import "layout/footer";
-
-@import "pages/home";
-@import "pages/article";
-@import "pages/issues";
-@import "pages/issue";
-@import "pages/not-found";
-@import "pages/categories";
-@import "pages/member";
-@import "pages/members";
-@import "pages/u-article";
-@import "pages/eics/import";
-@import "pages/eics/articles-action";
-@import "pages/eics/members-action";
-@import "pages/eics/issues-eics";
-
-@import "components/letter";
-@import "components/article-card";
-@import "components/image-c";
-@import "components/loading";
-@import "components/issue-card";
-@import "components/unsupport";
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");

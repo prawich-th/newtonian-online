@@ -1,103 +1,28 @@
 html {
-  font-family: "EB Garamond", serif !important;
+  font-family: "PT Sans", sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background-color: var(--signature-white);
-
-  // *::-webkit-scrollbar {
-  //   background-color: transparent;
-  //   width: 15px;
-  // }
-  // *::-webkit-scrollbar-track {
-  //   background-color: transparent;
-  // }
-  // *::-webkit-scrollbar-thumb {
-  //   border-radius: 20px;
-  //   border: 4px solid transparent;
-  //   background-color: #b7b1a96d;
-  //   backdrop-filter: blur(1.5rem);
-  //   background-clip: content-box;
-  // }
+  background-color: var(--background-color);
 }
 
 body {
   margin: 0;
-  scrollbar-gutter: stable;
-  background-color: var(--background-color);
-  overflow: overlay;
-  color: var(--font-color);
-}
-
-main {
-  // margin: 2rem 4rem 2rem 4rem;
-  margin: 2rem;
-  min-height: calc(100vh - 18.5rem);
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-p {
-  font-size: 1.75rem;
-}
-
-a {
-  color: var(--signature-grey);
+  padding: 0;
 }
 
 button {
-  width: 50%;
   border: none;
-  height: 5rem;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 1.1rem;
-  margin-top: 2rem;
   font-family: inherit;
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: translateY(-0.5rem);
-  }
+  color: inherit;
 }
 
-.skeleton {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateX(-100%);
-    background-image: linear-gradient(
-      90deg,
-      rgba(#888682, 0) 0,
-      rgba(#888682, 0.05) 20%,
-      rgba(#888682, 0.08) 60%,
-      rgba(#888682, 0)
-    );
-    animation: shimmer 2s infinite;
-    content: "";
-  }
-
-  @keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Merriweather", sans-serif;
 }
 
-.simplebar-placeholder {
-  display: none;
+img {
+  width: 100%;
 }
