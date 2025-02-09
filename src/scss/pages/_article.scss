@@ -1,9 +1,9 @@
 @use "../base/mixins";
 
 .article {
-  @include narrow-padding;
+  @include mixins.narrow-padding;
 
-  @include respond(phone) {
+  @include mixins.respond(phone) {
     width: 90%;
   }
 
@@ -55,7 +55,7 @@
     &--banner {
       // margin-bottom: 1rem;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      // aspect-ratio: 16 / 9;
       object-fit: cover;
       object-position: center;
     }
@@ -91,7 +91,7 @@
           font-family: var(--heading-font), sans-serif;
           color: var(--dark-gray);
 
-          @include respond(phone) {
+          @include mixins.respond(phone) {
             font-size: 2rem;
           }
         }
@@ -108,7 +108,7 @@
           height: 7.5rem;
           border-radius: 50%;
           object-fit: cover;
-          object-position: top;
+          object-position: center;
         }
       }
     }
@@ -125,7 +125,7 @@
     p:first-child {
       text-indent: 4rem;
 
-      @include respond(phone) {
+      @include mixins.respond(phone) {
         text-indent: 2.5rem;
       }
     }
@@ -158,10 +158,10 @@
       }
     }
 
-    @include respond(phone) {
-      font-size: 2.75rem;
+    @include mixins.respond(phone) {
+      font-size: 2rem;
       line-height: 1.5;
-
+      text-align: left;
       p:first-child::first-letter {
         color: var(--newtonian-marine);
         font-size: 4rem;

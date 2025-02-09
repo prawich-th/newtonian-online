@@ -3,7 +3,7 @@
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
-  console.log(data.article.member);
+  // console.log(data.article.member);
 </script>
 
 <svelte:head>
@@ -47,7 +47,7 @@
 
     <img
       class="article__info--banner"
-      src={`https://apis.news.newton.ac.th/images${data.article.cover}`}
+      src={`${data.article.cover}`}
       alt="Cover"
     />
     <div class="article__info--authors">
@@ -55,15 +55,31 @@
         <a href={`/members/${author.id}`}>
           <div class="article__info--authors--item">
             <img
-              src={`https://apis.news.newton.ac.th/images${author.profile}`}
+              src={`${author.profile}`}
               alt={author.name}
+              onerror={(event) => {
+                // @ts-ignore
+                event.target!.src = "/fallback-profile.png";
+                console.error("Profile image not found");
+                author.profile = "/fallback-profile.png";
+              }}
             />
+
             <span>
               <h2>{author.name}</h2>
-              <p>
-                {author.nickname} | Year {author.year}
-                {author.track}
-              </p>
+              {#if author.year <= 13}
+                <p>
+                  {author.nickname} | Year {author.year}
+
+                  {#if author.year >= 10}
+                    {author.track}
+                  {/if}
+                </p>
+              {:else}
+                <p>
+                  {author.nickname} | Alumni / Supervisor
+                </p>
+              {/if}
             </span>
           </div>
         </a>
@@ -74,7 +90,7 @@
       <!-- {#each data.article.editors as editor}
         <a href={`/members/${editor.id}`}>{editor.name}</a>
       {/each} -->
-      The Newtonian
+      <em>The Newtonian</em>
     </p>
     <p class="article__info--date">
       Published: {new Date(data.article.publishingDate).toLocaleDateString(

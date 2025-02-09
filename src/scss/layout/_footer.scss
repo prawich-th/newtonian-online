@@ -1,4 +1,4 @@
-@use "../base/mixins" as *;
+@use "../base/mixins";
 
 footer {
   background-color: var(--primary-gray);
@@ -21,11 +21,10 @@ footer {
       width: 100%;
     }
 
-    @include respond(big-desktop) {
+    @include mixins.respond(big-desktop) {
       width: 65%;
     }
-
-    @include custom(1000px) {
+    @include mixins.custom(1000px) {
       width: 85%;
       flex-direction: column-reverse;
       gap: 2rem;

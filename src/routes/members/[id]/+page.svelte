@@ -1,6 +1,6 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
-  import ArticleItem from "../../home/article-item.svelte";
+  import ArticleItem from "../../article-item.svelte";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
@@ -14,8 +14,12 @@
   <div class="member__banner">
     <div class="member__banner--image">
       <img
-        src={`https://apis.news.newton.ac.th/images${data.profile}`}
+        src={`${data.profile}`}
         alt={`Profile Picture of ${data.name}`}
+        onerror={(e) => {
+          // @ts-ignore
+          e.target.src = "/fallback-member.png";
+        }}
       />
     </div>
 

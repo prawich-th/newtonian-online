@@ -110,7 +110,7 @@ export const load: PageServerLoad = async ({ params }) => {
   const raw = await fetch("https://apis.news.newton.ac.th/api/member/" + id);
   const data = (await raw.json()) as member;
 
-  console.log(data);
+  // console.log(data);
 
   return data;
 };
@@ -120,6 +120,6 @@ export const actions: Actions = {
     const form = await request.formData();
     const subscribed = form.get("subscribed");
     const id = form.get("id");
-    console.log(subscribed, id);
+    // console.log(subscribed, id);
   },
 };

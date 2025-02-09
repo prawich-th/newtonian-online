@@ -6,19 +6,30 @@
 
   let contribution = $state(false);
 
-  console.log(data.letter.letterSigner);
+  // console.log(data.letter.letterSigner);
+
+  // if (data.letter) {
+  //   let signatures = data.letter.letterSigner.sort((a, b) => {
+  //     if (
+  //       a.members.role.startsWith("Founder") ||
+  //       a.members.role.startsWith("Editor")
+  //     ) {
+  //       return -1;
+  //     }
+  //     return 0;
+  //   });
+  // }
 </script>
 
 <div class="issue">
   <section class="issue__info">
     <div class="issue__info--cover">
-      <img
-        src="https://apis.news.newton.ac.th/images{data.cover}"
-        alt="Issue Cover"
-      />
-      <div class="issue__pdf">
-        <h3>Access the pdf copy</h3>
-      </div>
+      <img src={data.cover} alt="Issue Cover" />
+      <form action="?/pdf" method="post">
+        <input type="hidden" value={data.pdfLink} name="link" />
+        <input type="hidden" value={data.id} name="issue" />
+        <button class="issue__pdf">Access the pdf copy</button>
+      </form>
     </div>
     <div class="issue__info--content">
       <div class="issue__headline">
@@ -47,23 +58,26 @@
       </div>
     </div>
   </section>
-  <section class="issue__letter">
-    <h2>Letter from the {data.letter.sender}</h2>
+  {#if data.letter}
+    <!-- content here -->
+    <section class="issue__letter">
+      <h2>Letter from the {data.letter.sender}</h2>
 
-    <SvelteMarkdown source={data.letter.content} />
-    <br /><br />
-    {#each data.letter.letterSigner as signature}
-      <img
-        src={`https://apis.news.newton.ac.th/images${signature.members.signature}`}
-        alt="signature"
-        style="width: 15rem;"
-      />
-      <p>
-        {signature.members.name} <br />
-        {signature.members.role}
-      </p>
-    {/each}
-  </section>
+      <SvelteMarkdown source={data.letter.content} />
+      <br /><br />
+      {#each data.letter.letterSigner as signature}
+        <img
+          src={`${signature.members.signature}`}
+          alt="signature"
+          style="width: 15rem;"
+        />
+        <p>
+          {signature.members.name} <br />
+          {signature.members.role}
+        </p>
+      {/each}
+    </section>
+  {/if}
   {#if contribution}
     <!-- <section class="issue__contributors">
       <h2>Contributors</h2>
