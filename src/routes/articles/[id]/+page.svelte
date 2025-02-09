@@ -3,7 +3,7 @@
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
-  // console.log(data.article.member);
+  let firstAuthor = data.article.member[0];
 </script>
 
 <svelte:head>
@@ -14,13 +14,13 @@
     name="url"
     content={`https://news.newton.ac.th/articles/${data.article.id}`}
   />
-  <meta name="author" content={data.article.member[0].name} />
+  <meta name="author" content={firstAuthor.name} />
   <meta property="og:image" content={data.article.cover} />
   <meta
     property="og:url"
     content={`https://news.newton.ac.th/articles/${data.article.id}`}
   />
-  <meta property="og:author" content={data.article.member[0].name} />
+  <meta property="og:author" content={firstAuthor.name} />
   <meta property="dateCreated" content={data.article.publishingDate} />
   <meta property="datePublished" content={data.article.publishingDate} />
   <meta property="og:type" content="article" />
@@ -32,7 +32,7 @@
     property="article:modified_time"
     content={data.article.publishingDate}
   />
-  <meta property="article:author" content={data.article.member[0].name} />
+  <meta property="article:author" content={firstAuthor.name} />
   <meta property="og:site_name" content="The Newtonian" />
 </svelte:head>
 
@@ -57,11 +57,10 @@
             <img
               src={`${author.profile}`}
               alt={author.name}
-              onerror={(event) => {
+              onerror={(e) => {
+                console.log(author.profile);
                 // @ts-ignore
-                event.target!.src = "/fallback-profile.png";
-                console.error("Profile image not found");
-                author.profile = "/fallback-profile.png";
+                e.target.src = "/fallback-member.png";
               }}
             />
 

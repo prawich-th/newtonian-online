@@ -11,6 +11,8 @@
   // console.log(interesting);
 </script>
 
+<title>The Newtonian</title>
+
 <div class="home">
   <div class="home__banner">
     <a href={`/articles/${data.articles.main.id}`}>
