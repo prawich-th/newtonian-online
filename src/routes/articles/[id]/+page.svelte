@@ -60,7 +60,7 @@
               onerror={(e) => {
                 console.log(author.profile);
                 // @ts-ignore
-                e.target.src = "/fallback-member.png";
+                e.target.src = "/fallback-profile.webp";
               }}
             />
 

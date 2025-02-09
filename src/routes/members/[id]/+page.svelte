@@ -18,7 +18,7 @@
         alt={`Profile Picture of ${data.name}`}
         onerror={(e) => {
           // @ts-ignore
-          e.target.src = "/fallback-member.png";
+          e.target.src = "/fallback-member.webp";
         }}
       />
     </div>

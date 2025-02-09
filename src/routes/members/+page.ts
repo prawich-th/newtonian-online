@@ -1,7 +1,7 @@
 import type { member } from "$lib/types/member";
-import type { PageServerLoad } from "./$types";
+import type { PageLoad } from "./$types";
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageLoad = async ({ params }) => {
   const data = await fetch("https://apis.news.newton.ac.th/api/member");
 
   const members: member[] = await data.json();

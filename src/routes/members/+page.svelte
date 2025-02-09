@@ -14,7 +14,7 @@
             alt={`portrait of ${cur.name}`}
             onerror={(e) => {
               // @ts-ignore
-              e.target.src = "/fallback-member.png";
+              e.target.src = "/fallback-member.webp";
             }}
           />
           <h4>{cur.role}</h4>
@@ -38,7 +38,7 @@
             alt={`portrait of ${cur.name}`}
             onerror={(e) => {
               // @ts-ignore
-              e.target.src = "/fallback-member.png";
+              e.target.src = "/fallback-member.webp";
             }}
           />
           <h4>{cur.role}</h4>

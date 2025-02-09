@@ -7,7 +7,7 @@ interface homepagedata {
 
 export const load = async ({ params }) => {
   const data = await fetch(
-    "https://apis.news.newton.ac.th/api/reader/homepage?amount=16"
+    "https://apis.news.newton.ac.th/api/reader/homepage?amount=18"
   );
 
   const articles: { main: article; articles: [article] } = await data.json();

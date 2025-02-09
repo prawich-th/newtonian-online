@@ -13,5 +13,8 @@ export const load = async ({ url }) => {
 
   if (!category) category = "Articles";
 
-  return { articles, category } as { articles: article[]; category: string };
+  return { articles: articles.reverse(), category } as {
+    articles: article[];
+    category: string;
+  };
 };
