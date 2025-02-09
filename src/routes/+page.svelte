@@ -6,8 +6,8 @@
 
   // console.log(data.articles.main);
 
-  let interesting = data.articles.articles.splice(0, 2);
-  let featured = data.articles.articles;
+  let interesting = data.articles.articles.slice(0, 2);
+  let featured = data.articles.articles.slice(2);
   // console.log(interesting);
 </script>
 
