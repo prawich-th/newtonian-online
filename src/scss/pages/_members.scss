@@ -1,6 +1,8 @@
+@use "../base/mixins";
+
 .members {
-  @include default-padding;
   margin-top: 3rem;
+
   img {
     width: 100%;
     height: 100%;
@@ -106,4 +108,6 @@
       width: 100%;
     }
   }
+
+  @include default-padding;
 }

@@ -1,122 +1,88 @@
-<script>
+<script lang="ts">
   import ArticleItem from "./article-item.svelte";
+  import type { PageData } from "./$types";
+
+  let { data }: { data: PageData } = $props();
+
+  // console.log(data.articles.main);
+
+  let interesting = data.articles.articles.splice(0, 2);
+  let featured = data.articles.articles;
+  console.log(interesting);
 </script>
 
 <div class="home">
   <div class="home__banner">
-    <a href="/articles/1">
+    <a href={`/articles/${data.articles.main.id}`}>
       <div class="home__main">
-        <img src="/cover.webp" alt="The Newtonian Online" />
+        <img
+          src={`https://apis.news.newton.ac.th/images${data.articles.main.cover}`}
+          alt="The Newtonian Online"
+        />
         <div class="home__main--info">
           <div class="home__main--tags">
-            <span style="background-color: #a50000">Literature</span>
-            <span style="background-color: #001a53">Newton</span>
+            <span style="background-color: #001a53"
+              >{data.articles.main.category}</span
+            >
           </div>
-          <p class="author">Sakulya Kovitkoolkri | 22 June 2024</p>
-          <h1>To live is to Suffer</h1>
+          <p class="author">
+            {#each data.articles.main.member as m}
+              {m.name}{/each} | {new Date(
+              data.articles.main.publishingDate
+            ).toLocaleDateString("en-UK", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
+          <h1>{data.articles.main.headline}</h1>
         </div>
       </div>
     </a>
     <div class="home__other">
-      <a href="/articles/2">
-        <div class="home__other--item">
-          <img src="/student.png" alt="The Newtonian Online" />
-          <div class="home__other--item--info">
-            <div class="home__other--item--tags">
-              <span style="background-color: darkgreen">Essay</span>
-              <span style="background-color: #001a99">Musical</span>
+      {#each interesting as i}
+        <a href="/articles/2">
+          <div class="home__other--item">
+            <img
+              src={`https://apis.news.newton.ac.th/images${i.cover}`}
+              alt="The Newtonian Online"
+            />
+            <div class="home__other--item--info">
+              <div class="home__other--item--tags">
+                <span style="background-color: #001a53">{i.category}</span>
+              </div>
+              <p class="author">
+                {#each i.member as m}
+                  {m.name}{/each} | {new Date(
+                  data.articles.main.publishingDate
+                ).toLocaleDateString("en-UK", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+              <h1>{i.headline}</h1>
             </div>
-            <p class="author">Prawich Thawansakdivudhi | 22 June 2024</p>
-            <h1>The Newton Musical: Technical Director</h1>
           </div>
-        </div>
-      </a>
-      <a href="/articles/1">
-        <div class="home__other--item">
-          <img src="/cover.webp" alt="The Newtonian Online" />
-          <div class="home__other--item--info">
-            <div class="home__other--item--tags">
-              <span style="background-color: #a50000">Literature</span>
-              <span style="background-color: #001a53">Newton</span>
-            </div>
-            <p class="author">Sakulya Kovitkoolkri | 22 June 2024</p>
-            <h1>To live is to Suffer</h1>
-          </div>
-        </div>
-      </a>
+        </a>
+      {/each}
     </div>
   </div>
 
   <div class="home__articles">
     <h2>Featuring</h2>
+
     <div class="home__articles--list">
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="1"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
-      <ArticleItem
-        title="Student Spotlight"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/student.png"
-        id="2"
-        tags={[{ name: "Interview", color: "darkgreen" }]}
-      />
-      <ArticleItem
-        title="Conspiracy behind Julius Caesar"
-        author={{ name: "Kasira Chayanan", id: "4" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="3"
-        tags={[
-          { name: "Essay", color: "#aa2000" },
-          { name: "History", color: "#a50000" },
-        ]}
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="4"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="5"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="6"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="7"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
-      <ArticleItem
-        title="To live is to suffer"
-        author={{ name: "Sakulya Kovitkoolkri", id: "2" }}
-        date="2024-06-22"
-        cover="/cover.webp"
-        id="8"
-        tags={[{ name: "Literature", color: "#a50000" }]}
-      />
+      {#each featured as f}
+        <ArticleItem
+          title={f.headline}
+          author={f.member[0]}
+          date={f.publishingDate}
+          cover={f.cover}
+          id={f.id}
+          tags={[{ name: f.category, color: "#001a53" }]}
+        />
+      {/each}
     </div>
   </div>
 </div>

@@ -677,6 +677,11 @@ sade@^1.7.4, sade@^1.8.1:
   dependencies:
     mri "^1.1.0"
 
+sass-migrator@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/sass-migrator/-/sass-migrator-2.3.1.tgz#c71e0988d153175450d23156a8c39612b9a7b013"
+  integrity sha512-JXXLZfzrnxtUWz/TS4xnbJq4g709wqYFgUb2s32FTDsEQSgPThRWrwT49vxfQK+eUbavJUzoQZ/tR5lq7fFnyA==
+
 sass@^1.80.6:
   version "1.80.6"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.80.6.tgz#5d0aa55763984effe41e40019c9571ab73e6851f"

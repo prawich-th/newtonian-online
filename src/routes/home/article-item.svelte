@@ -22,7 +22,10 @@
   <div>
     <a href=" /articles/{id}">
       <div class="article-item__image">
-        <img src={cover} alt="Cover" />
+        <img
+          src={`https://apis.news.newton.ac.th/images${cover}`}
+          alt="Cover"
+        />
         <div class="article-item__tags">
           {#each tags as tag}
             <span style="background-color: {tag.color}">{tag.name}</span>

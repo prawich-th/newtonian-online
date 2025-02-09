@@ -4,7 +4,7 @@
     <div className="issues__list">
       {issueList.map((issue: any) => {
         return (
-          <IssueCard
+          <IssueCar
             key={issue.id}
             no={issue.id}
             publishingDate={issue.publishingDate}

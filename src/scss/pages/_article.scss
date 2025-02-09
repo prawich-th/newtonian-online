@@ -1,3 +1,5 @@
+@use "../base/mixins";
+
 .article {
   @include narrow-padding;
 
@@ -25,7 +27,7 @@
     &--title {
       font-size: 5rem;
       font-weight: 700;
-      font-family: "Andika", sans-serif;
+      font-family: var(--heading-font), sans-serif;
       margin-top: 0.5rem;
       margin-bottom: 2.5rem;
       line-height: 1;
@@ -35,7 +37,7 @@
       font-size: 1.75rem;
       font-weight: 300;
       margin: 0;
-      font-family: "Andika", sans-serif;
+      font-family: var(--heading-font), sans-serif;
 
       a {
         color: var(--dark-gray);
@@ -47,7 +49,7 @@
       font-size: 1.75rem;
       font-weight: 300;
       margin: 0;
-      font-family: "Andika", sans-serif;
+      font-family: var(--heading-font), sans-serif;
     }
 
     &--banner {
@@ -86,7 +88,7 @@
           font-weight: 300;
           line-height: 1.2;
           margin: 0;
-          font-family: "Andika", sans-serif;
+          font-family: var(--heading-font), sans-serif;
           color: var(--dark-gray);
 
           @include respond(phone) {
@@ -128,19 +130,17 @@
       }
     }
 
-    // p {
-    //   margin-bottom: 1rem;
-    // }
-
     h1,
     h2,
     h2,
     h4,
     h5 {
       text-indent: 0;
-      font-family: "Andika", sans-serif;
+      font-family: var(--heading-font), sans-serif;
       font-weight: 400;
       font-style: italic;
+      line-height: 120%;
+      margin-bottom: 0;
     }
 
     p:first-child::first-letter {

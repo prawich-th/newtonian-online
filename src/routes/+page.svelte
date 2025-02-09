@@ -26,7 +26,7 @@
     h1 {
       font-size: 5rem;
       font-weight: 700;
-      font-family: "Andika", sans-serif;
+      font-family: var(--heading-font), sans-serif;
     }
 
     h3 {

@@ -1,3 +1,5 @@
+import type { article } from "$lib/types/articles.js";
+
 const articles = [
   {
     id: 1,
@@ -60,9 +62,15 @@ const articles = [
 ];
 
 export const load = async ({ params }) => {
-  const id = +params.id - 1;
+  const id = +params.id;
+
+  const data = await fetch(
+    `https://apis.news.newton.ac.th/api/reader/article/${id}`
+  );
+
+  const article = await data.json();
 
   return {
-    article: articles[id],
-  };
+    article,
+  } as { article: article };
 };

@@ -1,5 +1,7 @@
 import { json, type Actions } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
+import type { member } from "$lib/types/member";
+import type { article } from "$lib/types/articles";
 
 const members = [
   {
@@ -103,11 +105,14 @@ const members = [
 ];
 
 export const load: PageServerLoad = async ({ params }) => {
-  const id = +params.id - 1;
+  const id = +params.id;
 
-  // console.log(id, members[id]);
+  const raw = await fetch("https://apis.news.newton.ac.th/api/member/" + id);
+  const data = (await raw.json()) as member;
 
-  return members[id];
+  console.log(data);
+
+  return data;
 };
 
 export const actions: Actions = {

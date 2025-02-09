@@ -37,7 +37,9 @@
 }
 
 @mixin default-padding {
-  width: 80%;
+  & {
+    width: 80%;
+  }
 
   @at-root .page {
     width: 100%;
@@ -59,7 +61,9 @@
 }
 
 @mixin narrow-padding {
-  width: 50%;
+  & {
+    width: 50%;
+  }
 
   @at-root .page {
     width: 100%;

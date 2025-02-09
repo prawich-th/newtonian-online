@@ -32,7 +32,7 @@
 <footer>
   <div class="footer">
     <div class="left">
-      <p>&copy; 2024 All Rights Reserved. The Newtonian Newspaper Club</p>
+      <p>&copy; 2025 All Rights Reserved. The Newtonian Newspaper Club</p>
       <ul class="footer__nav">
         <li>
           <a href="/school">School</a>
@@ -74,7 +74,7 @@
       <p>
         Reimagined by <a href="/members/1"><em>Prawich Thawansakdivudhi</em></a>
         <br />
-        with <a href="/members/2"><em>Koramist Samoorapoom</em></a>
+        with <a href="/members/2"><em>Koramist Samorapoom</em></a>
       </p>
     </div>
   </div>
