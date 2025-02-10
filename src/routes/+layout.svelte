@@ -35,13 +35,13 @@
       <p>&copy; 2025 All Rights Reserved. The Newtonian Newspaper Club</p>
       <ul class="footer__nav">
         <li>
-          <a href="/school">School</a>
+          <a href="/articles?filter=essay">Essay</a>
         </li>
         <li>
-          <a href="/lit">Literature</a>
+          <a href="/articles?filter=interview">Interview</a>
         </li>
         <li>
-          <a href="/academics">Academics</a>
+          <a href="/articles">Other</a>
         </li>
         <li>
           <a href="/issues">Issues</a>

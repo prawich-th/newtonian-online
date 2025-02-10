@@ -12,7 +12,7 @@
       <a href={`/issues/${issue.id}`}>
         <div class="issues__list--card">
           <img src={issue.cover} alt={`Cover of Issue ${issue.id}`} />
-          <h4>Issue {issue.id}</h4>
+          <h4>Issue {issue.name}</h4>
           <h5>
             {new Date(issue.publishingDate).toLocaleDateString("en-UK", {
               day: "numeric",

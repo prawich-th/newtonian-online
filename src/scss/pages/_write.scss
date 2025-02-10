@@ -1,0 +1,61 @@
+@use "../base/mixins";
+
+.write {
+  form {
+    margin-bottom: 2rem;
+
+    button {
+      width: 20%;
+      // height: 5rem;
+      background-color: var(--primary-gray);
+      padding: 1rem;
+      border-radius: 1.1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      user-select: none;
+      font-size: 1.5rem;
+      &:hover {
+        cursor: pointer;
+        //   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.14);
+        transform: scale(1.02);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    select {
+      width: calc(100%);
+      font-family: "PT Sans", sans-serif;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 1.1rem;
+      user-select: none;
+      box-sizing: border-box;
+      border: 0.2rem solid grey;
+      font-size: 1.5rem;
+    }
+
+    input {
+      width: calc(100%);
+      font-family: "PT Sans", sans-serif;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 1.1rem;
+      user-select: none;
+      box-sizing: border-box;
+      border: 0.2rem solid grey;
+      font-size: 1.5rem;
+
+      &:focus {
+        border: 0.2rem solid var(--newtonian-marine);
+      }
+
+      &:read-only {
+        background-color: lightgrey;
+      }
+    }
+  }
+
+  @include mixins.narrow-padding;
+}

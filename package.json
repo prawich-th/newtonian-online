@@ -19,6 +19,11 @@
 		"vite": "^5.0.3"
 	},
 	"dependencies": {
+		"@cartamd/plugin-attachment": "^4.1.1",
+		"@cartamd/plugin-code": "^4.0.6",
+		"@cartamd/plugin-emoji": "^4.2.1",
+		"@cartamd/plugin-slash": "^4.1.2",
+		"carta-md": "^4.6.7",
 		"sass": "^1.80.6",
 		"sass-migrator": "^2.3.1",
 		"svelte-markdown": "^0.4.1"

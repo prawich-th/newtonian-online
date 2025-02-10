@@ -6,6 +6,9 @@
 
   let contribution = $state(false);
 
+  let important = data.articles.find((a) => a.id === data.mainArticlesId);
+  let articles = data.articles.filter((a) => a.id !== data.mainArticlesId);
+
   // console.log(data.letter.letterSigner);
 
   // if (data.letter) {
@@ -33,7 +36,7 @@
     </div>
     <div class="issue__info--content">
       <div class="issue__headline">
-        <h1>Issue {data.id}</h1>
+        <h1>Issue {data.name}</h1>
         <h3>
           {new Date().toLocaleDateString("en-UK", {
             day: "numeric",
@@ -46,7 +49,16 @@
       <div class="issue__content">
         <h2>Table Of Contents</h2>
         <div class="issue__content--list">
-          {#each data.articles as article}
+          {#if important}
+            <a href={`/articles/${important.id}`}>
+              <span>
+                <h4>{important.headline}</h4>
+                <h5>{important.member[0].name}</h5>
+              </span>
+            </a>
+          {/if}
+
+          {#each articles as article}
             <a href={`/articles/${article.id}`}>
               <span>
                 <h4>{article.headline}</h4>
