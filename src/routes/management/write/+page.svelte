@@ -68,6 +68,36 @@
   let author = $state(0);
   let headline = $state("");
   let value = $state("");
+
+  let authorinfo = {
+    id: 0,
+    name: "",
+    nickname: "",
+    year: 0,
+    track: "all",
+  };
+
+  let authorfilter: {
+    year: number;
+    track: string;
+  } = $state({
+    year: 0,
+    track: "all",
+  });
+
+  $effect(() => {
+    authorinfo = data.members.members.find((m: any) => m.id === author) || {
+      id: 0,
+      name: "",
+      nickname: "",
+      year: 0,
+      track: "all",
+    };
+    console.log(authorinfo);
+    console.log("effect");
+    authorfilter.year = authorinfo.year;
+    authorfilter.track = authorinfo.track;
+  });
 </script>
 
 <div class="write">
@@ -81,16 +111,55 @@
       bind:value={headline}
     />
     <!-- <input type="text" name="authorid" placeholder="Authorid" /> -->
+
+    <select name="year" bind:value={authorfilter.year}>
+      {#each [{ name: "Year 8", id: 8 }, { name: "Year 9", id: 9 }, { name: "Year 10", id: 10 }, { name: "Year 11", id: 11 }, { name: "Year 12", id: 12 }, { name: "Year 13", id: 13 }, { name: "Alumni", id: 14 }] as cur}
+        <!-- content here -->
+        <option value={cur.id}>
+          {cur.name}
+        </option>
+      {/each}
+    </select>
+    <select name="track" bind:value={authorfilter.track}>
+      <option value={"Health Science"}>Health Science</option>
+      <option value={"Computer Science"}>Computer Science</option>
+      <option value={"Newton Business School"}>Newton Business School</option>
+      <option value={"No Track"}>No Track</option>
+    </select>
+
     <select name="author" bind:value={author}>
-      {#each data.members.members as cur}
+      {#each data.members.members.filter((m: any) => {
+        if (m.year > 13) {
+          if (authorfilter.year !== 14) return false;
+
+          if (authorfilter.year && authorfilter.track !== "all") {
+            return m.year === authorfilter.year && m.track === authorfilter.track;
+          }
+          if (authorfilter.year) {
+            return m.year === authorfilter.year;
+          }
+          if (authorfilter.track !== "all") {
+            return m.track === authorfilter.track;
+          }
+          return true;
+        }
+        if (!authorfilter.year && authorfilter.track === "all") {
+          return true;
+        }
+        if (authorfilter.year && authorfilter.track !== "all") {
+          return m.year === authorfilter.year && m.track === authorfilter.track;
+        }
+        if (authorfilter.year) {
+          return m.year === authorfilter.year;
+        }
+        if (authorfilter.track !== "all") {
+          return m.track === authorfilter.track;
+        }
+        return false;
+      }) as cur}
         <!-- content here -->
         <option value={cur.id}>
           {cur.name} | {cur.nickname}
-          | {#if cur.year <= 13}
-            Year {cur.year}
-          {:else}
-            Alumni / Supervisor
-          {/if}
         </option>
       {/each}
     </select>
