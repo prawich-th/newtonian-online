@@ -26,19 +26,26 @@
     <div class="member__banner--info">
       <span>
         <h2>{data.role}</h2>
-        <h1>
-          <span class="first">{data.name.split(" ")[0]}</span> <br />
-          <span class="last">{data.name.split(" ")[1]}</span>
-        </h1>
+        <span class="name">
+          <h1 class="first">{data.name.split(" ")[0]}</h1>
+          <br />
+          <h1 class="last">{data.name.split(" ")[1]}</h1>
+        </span>
         <h3>
-          "{data.nickname}" Year {data.year}
-          {data.track}
+          "{data.nickname}"
+
+          {#if data.year > 13}
+            | Alumni / Supervisor
+          {:else}
+            Year {data.year}
+            {data.track}
+          {/if}
         </h3>
       </span>
       <p>{data.bio}</p>
     </div>
     <div class="member__actions">
-      <form
+      <!-- <form
         action="?/subscribe"
         method="post"
         use:enhance
@@ -51,7 +58,7 @@
         <button class="member__actions--{status ? 'subscribed' : 'subscribe'}">
           {status ? "Subscribed" : "Subscribe"}
         </button>
-      </form>
+      </form> -->
     </div>
   </div>
 
