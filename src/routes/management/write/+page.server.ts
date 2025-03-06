@@ -86,5 +86,5 @@ export const load: PageServerLoad = async ({ cookies }) => {
 
   if (!user) throw redirect(301, "/management/login");
   console.log(members.members[0]);
-  return { user, members };
+  return { user, members, token: userAuth };
 };

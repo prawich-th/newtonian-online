@@ -23,9 +23,14 @@
 		"@cartamd/plugin-code": "^4.0.6",
 		"@cartamd/plugin-emoji": "^4.2.1",
 		"@cartamd/plugin-slash": "^4.1.2",
+		"@types/uuid": "^10.0.0",
+		"@uploadthing/svelte": "^7.3.0",
 		"carta-md": "^4.6.7",
 		"sass": "^1.80.6",
 		"sass-migrator": "^2.3.1",
-		"svelte-markdown": "^0.4.1"
+		"svelte-markdown": "^0.4.1",
+		"uploadthing": "^7.5.2",
+		"uuid": "^11.1.0",
+		"uuidv4": "^6.2.13"
 	}
 }

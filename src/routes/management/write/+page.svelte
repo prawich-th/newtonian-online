@@ -55,7 +55,40 @@
     extensions: [
       attachment({
         async upload(file) {
-          return "https://apis.news.newton.ac.th/images/article-content/integral/1.webp";
+          const formData = new FormData();
+          formData.append("image", file);
+          formData.append(
+            "path",
+            "/articles/" +
+              headline
+                .replace(/[^a-zA-Z ]/g, "")
+                .split(" ")
+                .join("-")
+          );
+          formData.append(
+            "filename",
+            file.name
+              .replace(/[^a-zA-Z ]/g, "")
+              .split(" ")
+              .join("-") + ".webp"
+          );
+
+          const raw = await fetch(
+            "https://apis.news.newton.ac.th/api/eics/upload-img",
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${data.token}`,
+              },
+              body: formData,
+            }
+          );
+
+          const path = await raw.json();
+          return (
+            path ||
+            "https://apis.news.newton.ac.th/images/fallback-profile.webp"
+          );
         },
       }),
       emoji(),
