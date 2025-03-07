@@ -22,7 +22,14 @@
   <div>
     <a href=" /articles/{id}">
       <div class="article-item__image">
-        <img src={`${cover}`} alt="Cover" />
+        <img
+          src={`${cover}`}
+          alt="Cover"
+          onerror={(e) => {
+            // @ts-ignore
+            e.target.src = "/fallback-member.webp";
+          }}
+        />
         <div class="article-item__tags">
           {#each tags as tag}
             <span style="background-color: {tag.color}">{tag.name}</span>

@@ -17,7 +17,14 @@
   <div class="home__banner">
     <a href={`/articles/${data.articles.main.id}`}>
       <div class="home__main">
-        <img src={`${data.articles.main.cover}`} alt="The Newtonian Online" />
+        <img
+          src={`${data.articles.main.cover}`}
+          alt="The Newtonian Online"
+          onerror={(e) => {
+            // @ts-ignore
+            e.target.src = "/fallback-member.webp";
+          }}
+        />
         <div class="home__main--info">
           <div class="home__main--tags">
             <span style="background-color: #001a53"
@@ -42,7 +49,14 @@
       {#each interesting as i}
         <a href={`/articles/${i.id}`}>
           <div class="home__other--item">
-            <img src={`${i.cover}`} alt="The Newtonian Online" />
+            <img
+              src={`${i.cover}`}
+              alt="The Newtonian Online"
+              onerror={(e) => {
+                // @ts-ignore
+                e.target.src = "/fallback-member.webp";
+              }}
+            />
             <div class="home__other--item--info">
               <div class="home__other--item--tags">
                 <span style="background-color: #001a53">{i.category}</span>
