@@ -1,5 +1,6 @@
 import { redirect, type Actions } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
+import { uuid } from "uuidv4";
 
 export const actions: Actions = {
   async save({ request, cookies }) {
@@ -11,6 +12,7 @@ export const actions: Actions = {
     const author = data.get("author");
     const category = data.get("category");
     const issueNo = data.get("issue");
+    const cover = `https://apis.news.newton.ac.th/images/articles/${uuid()}/cover.webp`;
 
     console.log({
       content,
@@ -37,8 +39,8 @@ export const actions: Actions = {
           writerId: author,
           category,
           docId: "",
-          cover: "",
           issueNo,
+          cover,
         }),
       }
     );
